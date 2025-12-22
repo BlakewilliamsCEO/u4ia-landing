@@ -50,32 +50,33 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      background: rgba(13, 13, 18, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+      z-index: 100;
+      padding: 1.25rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
       font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff6b5b, #7b6bff, #5bffd0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-decoration: none;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -577,6 +578,10 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
       .nav-links {
         display: none;
       }
@@ -899,15 +904,13 @@
 </head>
 <body>
   <nav>
-    <div class="nav-inner">
-      <a href="/" class="logo">U4IA</a>
-      <div class="nav-links">
-        <a href="/#problem">The Inertia Problem</a>
-        <a href="/how-it-works.html">30 Min Setup</a>
-        <a href="/#features">Features</a>
-        <a href="/#pricing">Pricing</a>
-        <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
-      </div>
+    <a href="/" class="logo">U4IA</a>
+    <div class="nav-links">
+      <a href="/#problem">The Inertia Problem</a>
+      <a href="/how-it-works.html">30 Min Setup</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
     </div>
   </nav>
 

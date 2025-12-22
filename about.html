@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | U4IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0d0d12;
+      --bg-secondary: #13131a;
+      --bg-card: #1a1a24;
+      --text-primary: #f5f5f7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-coral: #ff6b5b;
+      --accent-electric: #7b6bff;
+      --accent-teal: #5bffd0;
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Instrument Serif', serif;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff6b5b, #7b6bff, #5bffd0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-coral);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 107, 91, 0.3);
+    }
+
+    .btn-arrow {
+      display: inline-flex;
+    }
+
+    .lucide {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 12rem 0 6rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-electric));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Story Section */
+    .story-section {
+      padding: 4rem 0;
+    }
+
+    .story-content {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .founder-card {
+      position: sticky;
+      top: 120px;
+    }
+
+    .founder-image {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .founder-title {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .founder-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .founder-links a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .founder-links a:hover {
+      background: var(--accent-electric);
+      color: white;
+      border-color: var(--accent-electric);
+    }
+
+    .founder-links svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .story-text h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .story-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .story-text p strong {
+      color: var(--text-primary);
+    }
+
+    .story-text .highlight {
+      color: var(--accent-teal);
+    }
+
+    .pull-quote {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--text-primary);
+      border-left: 3px solid var(--accent-electric);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      line-height: 1.5;
+    }
+
+    /* Credentials */
+    .credentials-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .credentials-section h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .credential-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .credential-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-electric));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .credential-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Speaking */
+    .speaking-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .speaking-section h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .speaking-subtitle {
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .speaking-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+
+    .speaking-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding: 1rem 1.5rem;
+      background: var(--bg-card);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* The Approach */
+    .approach-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .approach-section h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .approach-subtitle {
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .approach-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .approach-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .approach-icon.coral { background: rgba(255, 107, 91, 0.15); }
+    .approach-icon.purple { background: rgba(123, 107, 255, 0.15); }
+    .approach-icon.teal { background: rgba(91, 255, 208, 0.15); }
+
+    .approach-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .approach-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 6rem 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(123, 107, 255, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta-section p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .cta-section .btn {
+      position: relative;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .story-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .founder-card {
+        position: static;
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .founder-links {
+        justify-content: center;
+      }
+
+      .credentials-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 10rem 0 4rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .speaking-logos {
+        gap: 1rem;
+      }
+
+      .speaking-logo {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">U4IA</a>
+    <div class="nav-links">
+      <a href="/#problem">The Inertia Problem</a>
+      <a href="/how-it-works.html">30 Min Setup</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/about.html">About</a>
+      <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>I spent 15 years watching <em>partner programs fail.</em></h1>
+      <p class="subtitle">Two exits later, I'm going for the jugular.</p>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <div class="founder-card">
+          <div class="founder-image">
+            <img src="blake-williams.jpg" alt="Blake Williams with family">
+          </div>
+          <div class="founder-name">Blake Williams</div>
+          <div class="founder-title">Founder, U4IA</div>
+          <div class="founder-links">
+            <a href="https://www.linkedin.com/in/ecosystem-led-growth-marketing/" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="story-text">
+          <h2>The pattern was always the same.</h2>
+          
+          <p>Partnership team closes a deal. Logos get added to the website. Press release goes out. Everyone celebrates.</p>
+          
+          <p>Then... nothing.</p>
+          
+          <p>The partner's sellers never engage. The enablement materials collect dust. QBRs become awkward status updates about "pipeline we're working on" that never materializes. Six months later, someone asks "whatever happened with that partnership?" and nobody has a good answer.</p>
+
+          <p class="pull-quote">I've seen it happen with Microsoft. With AWS. With companies spending millions on partner programs that produce nothing.</p>
+
+          <p>After 15 years building enterprise partnerships — <strong>$800M+ in attributable pipeline</strong>, two companies built and sold, 80+ partnership agreements with companies like Microsoft, AWS, McKinsey, and Workday — I finally understood why.</p>
+
+          <h2>The industry has it backwards.</h2>
+          
+          <p>Partner leaders preach that it takes 18 months to see revenue. They're not lying — they're just operating systems that prize <em>relationships</em> over <em>revenue</em> and use relationships as the basis for trust.</p>
+          
+          <p>But here's the truth: <strong>no board wants to wait 18 months for signal.</strong> No CFO is going to keep funding a growth initiative that can't show meaningful results they can represent as worthy of continued investment. The 18-month timeline isn't a feature — it's a symptom of broken systems.</p>
+
+          <p>Revenue teams want <span class="highlight">partner-sourced revenue</span> — net new pipeline, not just "influence" on deals that were already going to close. They want it to be as profitable as direct channels. Deal acceleration is nice, but it's a second-order benefit, not the primary bet.</p>
+
+          <p>And here's what I know for sure: one or sometimes both partner teams have very low functional support despite verbal commitment to the strategy. So partner leaders attend QBRs quarter after quarter, launch campaigns, and value is slow to accrete. It's random when it's present. Unpredictable. Unscalable.</p>
+
+          <h2>Then I looked at the incentive structure.</h2>
+          
+          <p>$50 billion gets spent on MDF programs annually. <strong>More than half goes unused.</strong> Why? Because the incentives happen too late and are unequally distributed to the business.</p>
+          
+          <p>From a partner experience perspective, the people we were counting on to do the dirty work — the sellers, the CS reps, the account managers — had <strong>zero reason</strong> to pitch in and help hit targets. Other than fondness for the partner leader. And we know that shit never works out. Not at scale. Not within the time constraint needed to realize real revenue targets.</p>
+
+          <p class="pull-quote">Social capital sustains relationships. It doesn't catalyze action.</p>
+
+          <h2>So I designed a system that makes inertia impossible.</h2>
+          
+          <p>I back-solved for a specific target: <strong>$250K MRR as a new revenue run rate within 6 months.</strong> One-man team. Minimal systems. Tons of work and enablement to execute.</p>
+
+          <p>I realized the "quality vs. quantity" debate is only valuable when you have data and track record to know where to focus. But if you don't have 18 months — and you don't — that's an untenable condition. So I built a system that made that question <strong>immaterial</strong>. Pursue both. Let the data tell you where to double down.</p>
+
+          <p>But I didn't just need signal. Not in a quarter. Not in a month. Not in a week. <strong>I needed outcomes both partner businesses could actually bet on — in as little as 30 minutes.</strong></p>
+
+          <h2>The answer: a partner experience for everyone.</h2>
+          
+          <p>For all ships to rise fast, <strong>everyone has to win.</strong> Not just the partner leader. Not just the business. The individual sellers, CS reps, execs, and marketers inside the partner's organization — the people with the relationships — need a reason to act.</p>
+          
+          <p>U4IA meets them where they already work — Gmail, Slack, LinkedIn — and surfaces intro opportunities hiding in relationships they already have. AI agents scan, match, and draft. Humans approve with one click. Everyone gets paid when value is created.</p>
+
+          <p><strong>One founder. A team of AI agents. Partner-sourced revenue for everyone.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="credentials-section">
+    <div class="container">
+      <h2>The track record</h2>
+      <div class="credentials-grid">
+        <div class="credential-card">
+          <div class="credential-number">$800M+</div>
+          <div class="credential-label">Attributable pipeline through partnerships</div>
+        </div>
+        <div class="credential-card">
+          <div class="credential-number">2×</div>
+          <div class="credential-label">Companies founded & acquired</div>
+        </div>
+        <div class="credential-card">
+          <div class="credential-number">80+</div>
+          <div class="credential-label">Enterprise partnerships structured</div>
+        </div>
+        <div class="credential-card">
+          <div class="credential-number">50+</div>
+          <div class="credential-label">Partner orgs trained on GTM</div>
+        </div>
+        <div class="credential-card">
+          <div class="credential-number">15+</div>
+          <div class="credential-label">Years in partnerships</div>
+        </div>
+        <div class="credential-card">
+          <div class="credential-number">$50M+</div>
+          <div class="credential-label">Partner-driven revenue managed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="speaking-section">
+    <div class="container">
+      <h2>Where I've shared this thinking</h2>
+      <p class="speaking-subtitle">Industry stages where partnerships leaders actually listen</p>
+      <div class="speaking-logos">
+        <div class="speaking-logo">Forrester B2B Summit</div>
+        <div class="speaking-logo">Catalyst</div>
+        <div class="speaking-logo">Crossbeam Supernode</div>
+        <div class="speaking-logo">Reveal Nearbound</div>
+        <div class="speaking-logo">HubSpot Partner Accelerator</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-section">
+    <div class="container">
+      <h2>The thesis</h2>
+      <p class="approach-subtitle">Partner-sourced revenue doesn't fail because of relationships. It fails because the people with the relationships have no reason to act.</p>
+      <div class="approach-grid">
+        <div class="approach-card">
+          <div class="approach-icon coral">💰</div>
+          <h3>Incentivize the Individual</h3>
+          <p>MDF goes to businesses. SPIFFs go to the people actually making intros. Everyone wins or nobody does.</p>
+        </div>
+        <div class="approach-card">
+          <div class="approach-icon purple">🤖</div>
+          <h3>Automate the Work</h3>
+          <p>AI agents scan relationships, match against ICP, draft intros. Humans just approve. One click.</p>
+        </div>
+        <div class="approach-card">
+          <div class="approach-icon teal">⚡</div>
+          <h3>Signal in 30 Minutes</h3>
+          <p>Not 18 months. Not a quarter. First intros can happen the same day you install. Real outcomes, immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Partner-sourced revenue. For everyone.</h2>
+      <p>30 minutes from install to first intro. No training required.</p>
+      <a href="/how-it-works.html" class="btn btn-primary">See the 30 Min Setup <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 U4IA. Built in Dallas.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U4IA | Partner Activation Everywhere Partners Already Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --text-primary: #f5f5f7;
+      --text-secondary: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --accent-coral: #ff6b5b;
+      --accent-coral-glow: rgba(255, 107, 91, 0.4);
+      --accent-electric: #7b6bff;
+      --accent-teal: #5bffd0;
+      --gradient-hero: linear-gradient(135deg, #ff6b5b 0%, #7b6bff 50%, #5bffd0 100%);
+      --border-subtle: rgba(255,255,255,0.06);
+      --font-display: 'Syne', sans-serif;
+      --font-serif: 'Instrument Serif', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Lucide icon base styles */
+    .lucide {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .lucide-lg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .lucide-xl {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Animated Background */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow-1 {
+      top: -200px;
+      right: -200px;
+      background: var(--accent-coral);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-glow-2 {
+      bottom: -300px;
+      left: -300px;
+      background: var(--accent-electric);
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -30px) scale(1.1); }
+      66% { transform: translate(-30px, 50px) scale(0.95); }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-coral);
+      color: var(--bg-primary);
+      box-shadow: 0 0 30px var(--accent-coral-glow), 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px var(--accent-coral-glow), 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-primary .btn-arrow {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      margin-left: 0.25rem;
+      animation: btnArrowPulse 1.5s ease-in-out infinite;
+    }
+
+    .btn-primary .btn-arrow .lucide {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2.5;
+    }
+
+    @keyframes btnArrowPulse {
+      0%, 100% { transform: translate(0, 0); opacity: 1; }
+      50% { transform: translate(3px, -3px); opacity: 0.7; }
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 6rem;
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 6rem);
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 6rem);
+      background: linear-gradient(
+        180deg,
+        rgba(10, 10, 15, 0.35) 0%,
+        rgba(10, 10, 15, 0.55) 50%,
+        rgba(10, 10, 15, 0.75) 100%
+      );
+      z-index: -1;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      max-width: 1000px;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 107, 91, 0.4);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--accent-coral);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-coral);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease 0.1s both;
+      text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.8s ease 0.2s both;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      animation: fadeInUp 0.8s ease 0.3s both;
+    }
+
+    .hero-visual {
+      position: relative;
+      animation: fadeIn 1s ease 0.4s both;
+    }
+
+    /* Network Visualization */
+    .network-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .network-node {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: nodeFloat 4s ease-in-out infinite;
+      color: var(--text-primary);
+    }
+
+    .network-node::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: var(--gradient-hero);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s;
+    }
+
+    .network-node:hover::after {
+      opacity: 0.5;
+    }
+
+    .node-center {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--gradient-hero);
+      border: none;
+      animation-delay: 0s;
+    }
+
+    .node-center .lucide {
+      width: 44px;
+      height: 44px;
+      stroke: white;
+    }
+
+    .node-1 { top: 10%; left: 20%; animation-delay: 0.2s; }
+    .node-2 { top: 5%; right: 25%; animation-delay: 0.4s; }
+    .node-3 { top: 35%; right: 5%; animation-delay: 0.6s; }
+    .node-4 { bottom: 25%; right: 10%; animation-delay: 0.8s; }
+    .node-5 { bottom: 10%; left: 30%; animation-delay: 1s; }
+    .node-6 { top: 40%; left: 5%; animation-delay: 1.2s; }
+
+    @keyframes nodeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .node-center {
+      animation: nodePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 40px var(--accent-coral-glow);
+      }
+      50% { 
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 60px var(--accent-coral-glow);
+      }
+    }
+
+    /* Connection Lines SVG */
+    .network-lines {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .network-lines line {
+      stroke: url(#lineGradient);
+      stroke-width: 1;
+      opacity: 0.3;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      position: relative;
+      margin-top: -4rem;
+      padding: 3rem 0;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Problem Section */
+    .problem-section {
+      padding: 10rem 0;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-coral);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      max-width: 1000px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1024px) {
+      .section-heading {
+        white-space: normal;
+      }
+    }
+
+    .section-subheading {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
+    .section-subheading .emphasis {
+      display: block;
+      color: var(--accent-coral);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    /* Typewriter Effect */
+    .typewriter-container {
+      display: inline;
+      position: relative;
+    }
+
+    .typewriter-word {
+      display: inline;
+      color: var(--accent-coral);
+      font-style: italic;
+    }
+
+    .typewriter-cursor {
+      display: inline;
+      color: var(--accent-coral);
+      font-weight: 100;
+      animation: cursorBlink 1s step-end infinite;
+      margin-left: -0.05em;
+      margin-right: 0.04em;
+    }
+
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .typewriter-word.typing {
+      animation: none;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .problem-card {
+      padding: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-hero);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .problem-card:hover::before {
+      opacity: 1;
+    }
+
+    .problem-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 107, 91, 0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent-coral);
+    }
+
+    .problem-icon .lucide {
+      width: 28px;
+      height: 28px;
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Solution Section */
+    .solution-section {
+      padding: 10rem 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .solution-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem;
+    }
+
+    .solution-header .section-heading {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .solution-description {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Integration Visual */
+    .integration-flow-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .integration-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+      flex-wrap: nowrap;
+    }
+
+    .integration-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      min-width: 110px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .integration-item:hover {
+      transform: scale(1.05);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .integration-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .integration-icon img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .integration-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .integration-arrow {
+      color: var(--accent-coral);
+      animation: arrowPulse 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .integration-arrow .lucide {
+      width: 24px;
+      height: 24px;
+    }
+
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.5; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(5px); }
+    }
+
+    .integration-center {
+      background: var(--gradient-hero);
+      border: none;
+      min-width: 160px;
+      flex-shrink: 0;
+    }
+
+    .integration-center .integration-name {
+      color: var(--bg-primary);
+      font-weight: 700;
+    }
+
+    .integration-center .integration-icon {
+      color: var(--bg-primary);
+    }
+
+    /* Infrastructure Layer */
+    .infra-layer {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px dashed rgba(255,255,255,0.1);
+      position: relative;
+    }
+
+    .infra-layer::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 20px;
+      background: var(--bg-secondary);
+    }
+
+    .infra-layer::after {
+      content: '↓';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .infra-label {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .infra-bars {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .infra-bar {
+      flex: 1;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .infra-bar::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .hubspot-bar::before {
+      background: #FF7A59;
+    }
+
+    .partnerstack-bar::before {
+      background: linear-gradient(180deg, #6366F1 0%, #A855F7 100%);
+    }
+
+    .infra-bar:hover {
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .infra-bar-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .infra-bar-content img {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .infra-bar-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .infra-bar-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sync-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--accent-teal);
+      font-family: var(--font-display);
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .sync-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-teal);
+      border-radius: 50%;
+      animation: syncPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes syncPulse {
+      0%, 100% { 
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(91, 255, 208, 0.4);
+      }
+      50% { 
+        opacity: 0.6;
+        box-shadow: 0 0 0 6px rgba(91, 255, 208, 0);
+      }
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 10rem 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .feature-card {
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    }
+
+    .feature-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      transition: all 0.4s ease;
+    }
+
+    .feature-card:hover .feature-number {
+      background: linear-gradient(135deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      color: var(--accent-coral);
+    }
+
+    .feature-icon .lucide {
+      width: 48px;
+      height: 48px;
+      stroke-width: 1.5;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-highlight {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 107, 91, 0.1);
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-coral);
+    }
+
+    /* Large Coming Soon Feature Card */
+    .feature-card-large {
+      margin-top: 3rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(22, 22, 31, 0.9) 0%, rgba(30, 25, 35, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card-large::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
+    }
+
+    .feature-card-large::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(123, 107, 255, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .coming-soon-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(123, 107, 255, 0.2);
+      border: 1px solid rgba(123, 107, 255, 0.4);
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-electric);
+    }
+
+    .feature-large-content {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-large-icon {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--accent-electric), var(--accent-teal));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-large-icon .lucide {
+      width: 36px;
+      height: 36px;
+      stroke: white;
+      stroke-width: 1.5;
+    }
+
+    .feature-large-text {
+      flex: 1;
+    }
+
+    .feature-large-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .feature-large-text p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .feature-large-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .feature-highlight.highlight-gold {
+      background: rgba(245, 197, 24, 0.15);
+      color: #f5c518;
+      border: 1px solid rgba(245, 197, 24, 0.3);
+    }
+
+    .feature-large-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 0.75rem;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .platform-logo {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .platform-logo:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+
+    .platform-logo img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .feature-large-content {
+        flex-direction: column;
+      }
+
+      .feature-card-large {
+        padding: 2rem;
+      }
+
+      .coming-soon-badge {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-large-logos {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+
+    /* Modern PX Section */
+    .px-section {
+      padding: 10rem 0;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(30, 25, 40, 0.5) 50%, var(--bg-primary) 100%);
+      position: relative;
+    }
+
+    .px-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(180deg, transparent, var(--accent-electric), transparent);
+    }
+
+    .px-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .px-heading {
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    .emphasis-and {
+      color: var(--accent-coral);
+      font-style: italic;
+    }
+
+    .px-philosophy {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .px-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 4rem;
+    }
+
+    .px-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      text-align: left;
+    }
+
+    /* PX Comparison Slider */
+    .px-comparison {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .px-comparison-container {
+      position: relative;
+      height: 450px;
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+    }
+
+    .px-side {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .px-traditional {
+      background: linear-gradient(135deg, rgba(40, 30, 35, 0.95) 0%, rgba(30, 25, 30, 0.95) 100%);
+      border: 1px solid rgba(255, 107, 91, 0.2);
+      border-radius: 24px;
+      z-index: 1;
+    }
+
+    .px-modern {
+      background: linear-gradient(135deg, rgba(22, 22, 31, 0.98) 0%, rgba(30, 35, 45, 0.98) 100%);
+      border: 1px solid rgba(91, 255, 208, 0.3);
+      border-radius: 24px;
+      z-index: 2;
+      clip-path: inset(0 70% 0 0);
+    }
+
+    .px-side-content {
+      padding: 3rem;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .px-traditional .px-side-content {
+      text-align: center;
+    }
+
+    .px-modern .px-side-content {
+      text-align: center;
+    }
+    
+    .px-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .px-traditional .px-card-label {
+      color: rgba(255, 107, 91, 0.6);
+    }
+
+    .px-modern .px-card-label {
+      color: var(--accent-teal);
+    }
+
+    .px-traditional h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    .px-modern h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      text-align: center;
+    }
+
+    .px-card-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .px-traditional .px-list li {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .px-traditional .px-list li::before {
+      color: rgba(255, 107, 91, 0.4);
+    }
+
+    .px-modern .px-list li {
+      color: var(--text-secondary);
+    }
+
+    .px-modern .px-list li::before {
+      color: var(--accent-teal);
+    }
+
+    .px-slider-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30%;
+      width: 40px;
+      transform: translateX(-50%);
+      z-index: 10;
+      cursor: ew-resize;
+      pointer-events: auto;
+    }
+
+    .px-slider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
+      transform: translateX(-50%);
+    }
+
+    .px-slider-grip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-electric);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-electric);
+      box-shadow: 0 4px 20px rgba(123, 107, 255, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .px-slider-grip:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 4px 30px rgba(123, 107, 255, 0.5);
+    }
+
+    .px-slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding: 0 1rem;
+    }
+
+    .px-label-old {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: rgba(255, 107, 91, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .px-label-new {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--accent-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .px-card {
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .px-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric));
+    }
+
+    .px-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--accent-electric), var(--accent-teal));
+    }
+
+    .px-card-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-coral);
+      margin-bottom: 1rem;
+    }
+
+    .px-card:nth-child(2) .px-card-label {
+      color: var(--accent-teal);
+    }
+
+    .px-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .px-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .px-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-coral);
+    }
+
+    .px-card:nth-child(2) .px-list li::before {
+      color: var(--accent-teal);
+    }
+
+    @media (max-width: 768px) {
+      .px-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .px-section {
+        padding: 6rem 0;
+      }
+
+      .px-comparison-container {
+        height: 500px;
+      }
+
+      .px-side-content {
+        padding: 2rem;
+      }
+    }
+
+    /* Monetization Section */
+    /* Pricing Section */
+    .pricing-section {
+      padding: 10rem 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-heading {
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    .pricing-subhead {
+      font-size: 1.35rem;
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    .pricing-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 32px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
+    }
+
+    .pricing-card-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pricing-amount {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      font-weight: 400;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .pricing-period {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .pricing-subsection {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pricing-subsection:last-of-type {
+      margin-bottom: 2.5rem;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .pricing-subsection-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-revenue-share {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .revenue-share-item {
+      text-align: center;
+      flex: 1;
+      max-width: 250px;
+    }
+
+    .revenue-share-plus {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .revenue-percent {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-teal);
+      display: block;
+    }
+
+    .revenue-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    .pricing-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+    }
+
+    .feature-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: rgba(91, 255, 208, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-teal);
+    }
+
+    .feature-check .lucide {
+      width: 12px;
+      height: 12px;
+      stroke-width: 3;
+    }
+
+    .pricing-feature span:last-child {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .pricing-cta {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .pricing-features {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-revenue-share {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .revenue-share-plus {
+        font-size: 1.25rem;
+      }
+
+      .pricing-card {
+        padding: 2rem;
+      }
+
+      .pricing-subsection {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 10rem 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-coral-glow) 0%, transparent 70%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .cta-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-heading em {
+      font-style: italic;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-description {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn-large {
+      padding: 1.25rem 3rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-free-note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .cta-free-note::before {
+      content: '✦ ';
+      color: var(--accent-teal);
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 2rem;
+      }
+
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .network-visual {
+        max-width: 350px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .integration-visual {
+        flex-direction: column;
+      }
+
+      .integration-arrow {
+        transform: rotate(90deg);
+      }
+
+      .infra-bars {
+        flex-direction: column;
+      }
+
+      .infra-bar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .infra-bar-desc {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- SVG Defs -->
+  <svg style="display: none;">
+    <defs>
+      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ff6b5b"/>
+        <stop offset="100%" style="stop-color:#7b6bff"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <nav>
+    <div class="logo">U4IA</div>
+    <div class="nav-links">
+      <a href="#problem">The Inertia Problem</a>
+      <a href="#solution">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#cta" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Background Video -->
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+      <source src="./hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-eyebrow">The Partner Activation Platform</div>
+          <h1>Partner enablement, incentives, and activation — <em>everywhere your partners already work.</em></h1>
+          <p class="hero-description">U4IA drives partner activation into Gmail, Slack, and LinkedIn 10X — so your partnerships always drive revenue.</p>
+          <div class="hero-ctas">
+            <a href="#cta" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+            <a href="#solution" class="btn btn-ghost">See How It Works</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="network-visual">
+            <svg class="network-lines" viewBox="0 0 500 500">
+              <line x1="250" y1="250" x2="120" y2="70" />
+              <line x1="250" y1="250" x2="380" y2="50" />
+              <line x1="250" y1="250" x2="450" y2="200" />
+              <line x1="250" y1="250" x2="420" y2="380" />
+              <line x1="250" y1="250" x2="180" y2="430" />
+              <line x1="250" y1="250" x2="50" y2="220" />
+            </svg>
+            <div class="network-node node-center">
+              <!-- Lucide: link -->
+              <svg class="lucide" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </div>
+            <div class="network-node node-1">
+              <!-- Lucide: mail -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #EA4335;">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div class="network-node node-2">
+              <!-- Lucide: message-square -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #7b6bff;">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="network-node node-3">
+              <!-- Lucide: calendar -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #4285F4;">
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+              </svg>
+            </div>
+            <div class="network-node node-4">
+              <!-- Lucide: handshake -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #5bffd0;">
+                <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+                <path d="m21 3 1 11h-2"/>
+                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+                <path d="M3 4h8"/>
+              </svg>
+            </div>
+            <div class="network-node node-5">
+              <!-- Lucide: dollar-sign -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #f5c518;">
+                <line x1="12" x2="12" y1="2" y2="22"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="network-node node-6">
+              <!-- Lucide: target -->
+              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #ff6b5b;">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">73%</div>
+          <div class="stat-label">Of deals start with warm intros</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">5.2×</div>
+          <div class="stat-label">Higher close rate vs cold</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">$375</div>
+          <div class="stat-label">Max payout per intro</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">2 min</div>
+          <div class="stat-label">Average time to match</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem-section" id="problem">
+    <div class="container">
+      <div class="section-label">The Partner Inertia Problem</div>
+      <h2 class="section-heading">Your partner network <span class="typewriter-container"><span class="typewriter-word" id="rotating-word">is</span><span class="typewriter-cursor">|</span></span>worth millions more.</h2>
+      <p class="section-subheading">Your partners want to help. <span class="emphasis">They just can't.</span></p>
+      
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <!-- Lucide: target -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <h3>Your Partners Have Quotas Too</h3>
+          <p>Sellers, CS leaders, and execs at partner companies are measured on their numbers—not yours. Asking them to learn your product and carve out time for referrals means asking them to deprioritize what they're actually paid to do.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <!-- Lucide: graduation-cap -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+              <path d="M22 10v6"/>
+              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+            </svg>
+          </div>
+          <h3>The Learning Curve Is a Non-Starter</h3>
+          <p>You can't expect people at another company to become experts in your value prop, handle objections, and spot ideal use cases. That's a full-time job—and they already have one.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <!-- Lucide: eye-off -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+              <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+              <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+              <line x1="2" x2="22" y1="2" y2="22"/>
+            </svg>
+          </div>
+          <h3>They Can't See Which Customers Fit</h3>
+          <p>Even your most willing partners have no idea which of their accounts are perfect for you. Without real-time signal on pain points and fit, they're guessing—or just not trying.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <!-- Lucide: heart-handshake -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/>
+              <path d="m18 15-2-2"/>
+              <path d="m15 18-2-2"/>
+            </svg>
+          </div>
+          <h3>Good Intentions Don't Close Deals</h3>
+          <p>Partners want to help customers solve more problems. But wanting to help and actually making the intro are miles apart when there's no clear signal, no easy path, and no reward for the effort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution-section" id="solution">
+    <div class="container">
+      <div class="solution-header">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-heading">One intelligence layer across everything.</h2>
+        <p class="solution-description">U4IA connects to your existing tools and builds a living map of your relationships—then surfaces the exact introductions that matter, the moment they matter.</p>
+      </div>
+
+      <div class="integration-flow-wrapper">
+        <div class="integration-visual">
+          <div class="integration-item">
+            <div class="integration-icon">
+              <!-- Gmail Logo -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail">
+            </div>
+            <div class="integration-name">Gmail</div>
+          </div>
+          <div class="integration-item">
+            <div class="integration-icon">
+              <!-- Slack Logo -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack">
+            </div>
+            <div class="integration-name">Slack</div>
+          </div>
+          <div class="integration-item">
+            <div class="integration-icon">
+              <!-- Google Calendar Logo -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar">
+            </div>
+            <div class="integration-name">Calendar</div>
+          </div>
+          <span class="integration-arrow">
+            <!-- Lucide: arrow-right -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
+          </span>
+          <div class="integration-item integration-center">
+            <div class="integration-icon">
+              <!-- Lucide: zap -->
+              <svg class="lucide" viewBox="0 0 24 24" style="width: 36px; height: 36px;">
+                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+              </svg>
+            </div>
+            <div class="integration-name">U4IA Intelligence</div>
+          </div>
+          <span class="integration-arrow">
+            <!-- Lucide: arrow-right -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
+          </span>
+          <div class="integration-item">
+            <div class="integration-icon">
+              <!-- Lucide: circle-dollar-sign -->
+              <svg class="lucide" viewBox="0 0 24 24" style="width: 36px; height: 36px; color: #22c55e;">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+                <path d="M12 18V6"/>
+              </svg>
+            </div>
+            <div class="integration-name">Revenue</div>
+          </div>
+        </div>
+
+        <!-- Infrastructure Layer -->
+        <div class="infra-layer">
+          <div class="infra-label">Synced in real-time across your entire flow</div>
+          <div class="infra-bars">
+            <div class="infra-bar hubspot-bar">
+              <div class="infra-bar-content">
+                <!-- HubSpot Logo -->
+                <img src="https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png" alt="HubSpot">
+                <span class="infra-bar-name">HubSpot</span>
+              </div>
+              <span class="infra-bar-desc">CRM & contact sync</span>
+              <div class="sync-indicator">
+                <span class="sync-dot"></span>
+                <span>Live sync</span>
+              </div>
+            </div>
+            <div class="infra-bar partnerstack-bar">
+              <div class="infra-bar-content">
+                <!-- PartnerStack Logo (simple bar chart representation) -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="14" width="5" height="8" rx="1" fill="#6366F1"/>
+                  <rect x="9.5" y="9" width="5" height="13" rx="1" fill="#8B5CF6"/>
+                  <rect x="16" y="4" width="5" height="18" rx="1" fill="#A855F7"/>
+                </svg>
+                <span class="infra-bar-name">PartnerStack</span>
+              </div>
+              <span class="infra-bar-desc">Partner attribution & payouts</span>
+              <div class="sync-indicator">
+                <span class="sync-dot"></span>
+                <span>Live sync</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-label">Platform Features</div>
+      <h2 class="section-heading">U4IA works while your partners work.</h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-number">01</span>
+          <div class="feature-icon">
+            <!-- Lucide: crosshair -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" x2="18" y1="12" y2="12"/>
+              <line x1="6" x2="2" y1="12" y2="12"/>
+              <line x1="12" x2="12" y1="6" y2="2"/>
+              <line x1="12" x2="12" y1="22" y2="18"/>
+            </svg>
+          </div>
+          <h3>Precise ICP Matching</h3>
+          <p>Multi-dimensional qualification across industry, tech stack, company size, and buying signals. Every contact scored and tiered—perfect fit, okay fit, or avoid—so partners only see opportunities worth pursuing.</p>
+          <span class="feature-highlight">Signal over noise</span>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-number">02</span>
+          <div class="feature-icon">
+            <!-- Lucide: users -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Persona Matching</h3>
+          <p>Company fit isn't enough. U4IA identifies the VP of Sales, the CRO, the founder—whoever actually holds budget and makes decisions. Intros go to people who can say yes.</p>
+          <span class="feature-highlight">Right person, right account</span>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-number">03</span>
+          <div class="feature-icon">
+            <!-- Lucide: map-pin -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>Pain Point Mapping</h3>
+          <p>Every opportunity surfaces with the specific problem it solves, why your product is the answer, and the exact language to use. Partners sound like experts without studying a single deck.</p>
+          <span class="feature-highlight">Context without the learning curve</span>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-number">04</span>
+          <div class="feature-icon">
+            <!-- Lucide: zap -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+            </svg>
+          </div>
+          <h3>Instant Intent & Intro Drafts</h3>
+          <p>The moment a buying signal fires, partners get a ready-to-send intro with the right context, the right ask, and the right demo assets attached. One click. Warm handoff complete.</p>
+          <span class="feature-highlight">Speed to value</span>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-number">05</span>
+          <div class="feature-icon">
+            <!-- Lucide: message-square-text -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <path d="M13 8H7"/>
+              <path d="M17 12H7"/>
+            </svg>
+          </div>
+          <h3>Natural Language Attribution</h3>
+          <p>Forget UTM links and portal logins. U4IA reads real conversations to understand who influenced what. Revenue gets attributed to the relationships that actually drove it—automatically.</p>
+          <span class="feature-highlight">True attribution</span>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-number">06</span>
+          <div class="feature-icon">
+            <!-- Lucide: graduation-cap -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+              <path d="M22 10v6"/>
+              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+            </svg>
+          </div>
+          <h3>Personalized Enablement</h3>
+          <p>Interactive demos, call recordings, battle cards—delivered at the exact moment they're useful, for the exact opportunity at hand. Not a portal to explore. Just what partners need, when they need it.</p>
+          <span class="feature-highlight">Enablement that sticks</span>
+        </div>
+      </div>
+
+      <!-- Coming Soon Feature Card -->
+      <div class="feature-card-large">
+        <div class="coming-soon-badge">Coming Soon</div>
+        <div class="feature-large-content">
+          <div class="feature-large-icon">
+            <!-- Lucide: headphones -->
+            <svg class="lucide" viewBox="0 0 24 24">
+              <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
+            </svg>
+          </div>
+          <div class="feature-large-text">
+            <h3>Live Call Intelligence</h3>
+            <p>U4IA joins your partners' sales calls—delivering real-time questions, battle cards, and enablement materials directly in the chat while the conversation happens. After the call, full context gets processed to surface opportunities the customer didn't even articulate yet.</p>
+            <div class="feature-large-highlights">
+              <span class="feature-highlight">Real-time AI co-pilot</span>
+              <span class="feature-highlight highlight-gold">2× partner referral fees</span>
+              <div class="feature-large-logos">
+                <div class="platform-logo" title="Zoom">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="#2D8CFF" d="M4 6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2l4 3V7l-4 3V8a2 2 0 0 0-2-2H4z"/>
+                  </svg>
+                </div>
+                <div class="platform-logo" title="Microsoft Teams">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="#5059C9" d="M16.5 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+                    <path fill="#7B83EB" d="M12 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                    <path fill="#7B83EB" d="M18 9h3a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-1V10a1 1 0 0 1 1-1h-1z"/>
+                    <path fill="#5059C9" d="M18 18h-1v-8h2a1 1 0 0 1 1 1v4a3 3 0 0 1-3 3h1z"/>
+                    <path fill="#7B83EB" d="M14.5 10H6a1 1 0 0 0-1 1v8a2.5 2.5 0 0 0 2.5 2.5h5a2.5 2.5 0 0 0 2.5-2.5v-8a1 1 0 0 0-1-1z"/>
+                    <path fill="#fff" d="M12 13H8.5v1H11v3H8.5v1H12a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5z"/>
+                    <path fill="#fff" d="M8 13h-.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5H8v-5z"/>
+                  </svg>
+                </div>
+                <div class="platform-logo" title="Google Meet">
+                  <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="#00832d" d="M12.5 11.5v-4l5.5 4-5.5 4v-4z"/>
+                    <path fill="#0066da" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h6A2.5 2.5 0 0 1 15 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 4 16.5v-9z"/>
+                    <path fill="#e94235" d="M15 9.5l5-3.5v12l-5-3.5v-5z"/>
+                    <path fill="#2684fc" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h6A2.5 2.5 0 0 1 15 7.5v2l-11-2v-.5z"/>
+                    <path fill="#00ac47" d="M4 16.5v-2l11 2v.5a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 4 16.5z"/>
+                    <path fill="#ffba00" d="M15 14.5v-5l5-3.5v12l-5-3.5z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern PX Section -->
+  <section class="px-section" id="px">
+    <div class="container">
+      <div class="px-content">
+        <div class="section-label">Modern Partner Experience</div>
+        <h2 class="section-heading px-heading">For partners — <span class="emphasis-and">and</span> the people inside them.</h2>
+        <p class="px-philosophy">High-performing partnerships are built on getting value to the customer, partner, and your business — fast. Then we learn to trust. Then we scale. Your partner experience should hold the same standard for the people doing the work.</p>
+        <p class="px-tagline">U4IA just makes you the easiest and best partner to work with.</p>
+        
+        <div class="px-comparison">
+          <div class="px-comparison-container">
+            <!-- Traditional PX (Left/Background) -->
+            <div class="px-side px-traditional">
+              <div class="px-side-content">
+                <div class="px-card-label">Traditional Partner Experience</div>
+                <h3>Hope they figure it out</h3>
+                <ul class="px-list">
+                  <li>Months of onboarding and certification</li>
+                  <li>Portal dashboards nobody checks</li>
+                  <li>Revenue share... eventually... maybe</li>
+                  <li>Train partners to sell for you</li>
+                  <li>Enablement scales with headcount</li>
+                  <li>Partners need to learn your business</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Modern PX (Right/Foreground) -->
+            <div class="px-side px-modern">
+              <div class="px-side-content">
+                <div class="px-card-label">Modern Partner Experience</div>
+                <h3>Make it impossible to fail</h3>
+                <ul class="px-list">
+                  <li>Install extension, connect CRM, done</li>
+                  <li>Real-time payout notifications</li>
+                  <li>Cash now, not company upside later</li>
+                  <li>Recruit partners to install</li>
+                  <li>Enablement scales with software</li>
+                  <li>Partners just need to show up</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Slider Handle -->
+            <div class="px-slider-handle">
+              <div class="px-slider-line"></div>
+              <div class="px-slider-grip">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M8 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <path d="M16 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="px-slider-labels">
+            <span class="px-label-old">← Old way</span>
+            <span class="px-label-new">New way →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monetization Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-heading pricing-heading">We don't get paid until you get to qualified pipeline.</h2>
+        <p class="pricing-subhead">Free for everyone in your entire ecosystem. Completely aligned incentives.</p>
+      </div>
+      
+      <div class="pricing-card">
+        <div class="pricing-card-header">
+          <div class="pricing-amount">$0</div>
+          <div class="pricing-period">until you see results</div>
+        </div>
+        
+        <div class="pricing-subsection">
+          <h3 class="pricing-subsection-title">Everything you can do before you pay</h3>
+          <div class="pricing-features">
+            <div class="pricing-features-col">
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Onboard unlimited partners</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Activate 1000s of people in partner orgs</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Enrich unlimited domains</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Qualify unlimited ICP + personas</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Personalize unlimited email drafts</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Add unlimited enablement resources</span>
+              </div>
+            </div>
+            <div class="pricing-features-col">
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Bi-directional HubSpot integration</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Deep custom ICP configuration</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Ecosystem-wide partner leaderboards</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Custom attribution modeling</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Slack & email notifications</span>
+              </div>
+              <div class="pricing-feature">
+                <span class="feature-check">
+                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span>Personalized onboarding experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pricing-subsection">
+          <h3 class="pricing-subsection-title">How we get paid</h3>
+          <div class="pricing-revenue-share">
+            <div class="revenue-share-item">
+              <span class="revenue-percent">10%</span>
+              <span class="revenue-label">of intent & intro SPIFFs</span>
+            </div>
+            <span class="revenue-share-plus">+</span>
+            <div class="revenue-share-item">
+              <span class="revenue-percent">10%</span>
+              <span class="revenue-label">of partner referral fees</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pricing-cta">
+          <a href="#" class="btn btn-primary btn-large">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+        </div>
+        
+        <p class="pricing-note">No credit card required. No contract. Cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <h2 class="cta-heading">Your partners want to help. <em>Now they can.</em></h2>
+      <p class="cta-description">Give your future customers a serendipitous experience. Give your partners the easiest way possible to make great referrals. Give your team the absolute clearest path to partner-sourced pipeline — <em>Fast.</em></p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary btn-large">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">U4IA</div>
+      <p class="footer-text">© 2025 U4IA. Relationship intelligence for revenue teams.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Typewriter rotation effect
+    const words = [
+      'is',
+      'could be',
+      'should be', 
+      'oughta be',
+      'will be',
+      'has to be',
+      'is about to be'
+    ];
+    
+    let currentIndex = 0;
+    const wordElement = document.getElementById('rotating-word');
+    
+    async function typeWord(word) {
+      // Type out the word
+      for (let i = 0; i <= word.length; i++) {
+        wordElement.textContent = word.substring(0, i);
+        await sleep(80);
+      }
+    }
+    
+    async function deleteWord(word) {
+      // Delete the word
+      for (let i = word.length; i >= 0; i--) {
+        wordElement.textContent = word.substring(0, i);
+        await sleep(50);
+      }
+    }
+    
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    async function rotateWords() {
+      while (true) {
+        const currentWord = words[currentIndex];
+        
+        // Type the word
+        await typeWord(currentWord);
+        
+        // Pause on the complete word
+        await sleep(2000);
+        
+        // Delete the word
+        await deleteWord(currentWord);
+        
+        // Small pause before next word
+        await sleep(300);
+        
+        // Move to next word
+        currentIndex = (currentIndex + 1) % words.length;
+      }
+    }
+    
+    // Start the animation when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      // Small delay before starting
+      setTimeout(rotateWords, 1000);
+
+      // PX Comparison Slider
+      const container = document.querySelector('.px-comparison-container');
+      const modernSide = document.querySelector('.px-modern');
+      const sliderHandle = document.querySelector('.px-slider-handle');
+      
+      if (container && modernSide && sliderHandle) {
+        let isDragging = false;
+        
+        const updateSlider = (clientX) => {
+          const rect = container.getBoundingClientRect();
+          let percentage = ((clientX - rect.left) / rect.width) * 100;
+          percentage = Math.max(5, Math.min(95, percentage));
+          
+          // Clip from RIGHT - drag right to reveal more of modern side
+          modernSide.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+          sliderHandle.style.left = `${percentage}%`;
+        };
+        
+        // Mouse events
+        sliderHandle.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          updateSlider(e.clientX);
+        });
+        
+        document.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+        
+        // Touch events
+        sliderHandle.addEventListener('touchstart', (e) => {
+          isDragging = true;
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          updateSlider(e.touches[0].clientX);
+        });
+        
+        document.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+        
+        // Click anywhere on container to move slider
+        container.addEventListener('click', (e) => {
+          if (e.target === sliderHandle || e.target.closest('.px-slider-handle')) return;
+          updateSlider(e.clientX);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

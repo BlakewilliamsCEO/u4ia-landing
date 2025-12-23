@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | U4IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0d0d12;
+      --bg-secondary: #13131a;
+      --bg-card: #1a1a24;
+      --text-primary: #f5f5f7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-coral: #ff6b5b;
+      --accent-electric: #7b6bff;
+      --accent-teal: #5bffd0;
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Instrument Serif', serif;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff6b5b, #7b6bff, #5bffd0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-coral);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 107, 91, 0.3);
+    }
+
+    .lucide {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .content-section {
+      padding: 2rem 0 6rem;
+    }
+
+    .content-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      color: var(--text-primary);
+    }
+
+    .content-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .content-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .content-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .content-section ul, .content-section ol {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .content-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .content-section strong {
+      color: var(--text-primary);
+    }
+
+    .content-section a {
+      color: var(--accent-teal);
+      text-decoration: none;
+    }
+
+    .content-section a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 8rem 0 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">U4IA</a>
+    <div class="nav-links">
+      <a href="/#problem">The Inertia Problem</a>
+      <a href="/how-it-works.html">30 Min Setup</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/about.html">About</a>
+      <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Terms of Service</h1>
+      <p class="subtitle">Last updated: December 23, 2025</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By installing the U4IA PartnerOS Chrome extension or using our services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use our services.</p>
+
+      <h2>2. Description of Service</h2>
+      <p>U4IA PartnerOS is a partner referral platform that:</p>
+      <ul>
+        <li>Monitors your Gmail and calendar (with your permission) for business conversations</li>
+        <li>Identifies prospects that match your partner company's ideal customer profile</li>
+        <li>Generates personalized introduction drafts</li>
+        <li>Tracks referral commissions when introductions lead to closed deals</li>
+      </ul>
+
+      <h2>3. Eligibility</h2>
+      <p>To use U4IA, you must:</p>
+      <ul>
+        <li>Be at least 18 years old</li>
+        <li>Have a valid Google account</li>
+        <li>Be authorized by your employer (if applicable) to use third-party tools with your work email</li>
+        <li>Have the authority to grant us access to your Gmail and calendar data</li>
+      </ul>
+
+      <h2>4. Your Account</h2>
+      <p>You are responsible for:</p>
+      <ul>
+        <li>Maintaining the security of your account credentials</li>
+        <li>All activity that occurs under your account</li>
+        <li>Ensuring your use complies with your employer's policies</li>
+        <li>Promptly notifying us of any unauthorized access</li>
+      </ul>
+
+      <h2>5. Acceptable Use</h2>
+      <p>You agree NOT to:</p>
+      <ul>
+        <li>Use the service to spam or send unsolicited bulk communications</li>
+        <li>Misrepresent your relationship with contacts when making introductions</li>
+        <li>Use the service for any illegal purpose</li>
+        <li>Attempt to reverse engineer, decompile, or disassemble the software</li>
+        <li>Share your account credentials with others</li>
+        <li>Circumvent any security measures or access controls</li>
+        <li>Use the service to collect data for purposes other than making introductions</li>
+      </ul>
+
+      <h2>6. Commission Payments</h2>
+
+      <h3>6.1 Earning Commissions</h3>
+      <p>You may earn commissions when an introduction you make through U4IA results in a closed deal with the partner company. Commission amounts and terms are set by each partner company and displayed in the extension before you make an introduction.</p>
+
+      <h3>6.2 Payment Terms</h3>
+      <ul>
+        <li>Commissions are paid after the partner company confirms the deal has closed</li>
+        <li>Minimum payout threshold may apply (typically $50)</li>
+        <li>Payments are made via our payment partner (Tremendous)</li>
+        <li>You are responsible for any applicable taxes on commission income</li>
+      </ul>
+
+      <h3>6.3 Commission Disputes</h3>
+      <p>If you believe a commission was not properly credited, contact us within 90 days of the expected payment date. We will investigate and work with the partner company to resolve the dispute.</p>
+
+      <h2>7. Intellectual Property</h2>
+      <p>U4IA and its original content, features, and functionality are owned by U4IA and are protected by international copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works based on our service without express written permission.</p>
+
+      <h2>8. Privacy</h2>
+      <p>Your use of U4IA is also governed by our <a href="/privacy.html">Privacy Policy</a>, which describes how we collect, use, and protect your data. By using our service, you consent to our data practices as described in the Privacy Policy.</p>
+
+      <h2>9. Third-Party Services</h2>
+      <p>Our service integrates with third-party services including Google, Anthropic, and others. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.</p>
+
+      <h2>10. Disclaimers</h2>
+
+      <div class="highlight-box">
+        <p><strong>THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.</strong> We do not guarantee that:</p>
+        <ul>
+          <li>The service will be uninterrupted or error-free</li>
+          <li>Any particular introduction will result in a commission</li>
+          <li>The AI-generated drafts will be accurate or appropriate for all situations</li>
+          <li>The service will identify all potential opportunities in your communications</li>
+        </ul>
+      </div>
+
+      <h2>11. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, U4IA shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+      <ul>
+        <li>Loss of profits or revenue</li>
+        <li>Loss of business relationships</li>
+        <li>Loss of data</li>
+        <li>Damages resulting from unauthorized access to your account</li>
+      </ul>
+      <p>Our total liability shall not exceed the amount you paid us (if any) in the 12 months preceding the claim.</p>
+
+      <h2>12. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless U4IA, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
+      <ul>
+        <li>Your use of the service</li>
+        <li>Your violation of these Terms</li>
+        <li>Your violation of any rights of another party</li>
+        <li>Any introduction you make through our platform</li>
+      </ul>
+
+      <h2>13. Termination</h2>
+      <p>We may terminate or suspend your access to the service immediately, without prior notice, for any reason, including:</p>
+      <ul>
+        <li>Violation of these Terms</li>
+        <li>Fraudulent or illegal activity</li>
+        <li>At the request of your employer or the partner company</li>
+        <li>Extended period of inactivity</li>
+      </ul>
+      <p>You may terminate your account at any time by uninstalling the extension and emailing us at <a href="mailto:support@u4ia.ai">support@u4ia.ai</a>.</p>
+
+      <h2>14. Changes to Terms</h2>
+      <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the new Terms on this page and updating the "Last updated" date. Your continued use of the service after changes constitutes acceptance of the modified Terms.</p>
+
+      <h2>15. Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law provisions. Any disputes shall be resolved in the courts located in Dallas County, Texas.</p>
+
+      <h2>16. Contact</h2>
+      <p>If you have any questions about these Terms, please contact us:</p>
+      <ul>
+        <li>Email: <a href="mailto:legal@u4ia.ai">legal@u4ia.ai</a></li>
+        <li>Website: <a href="https://u4ia.ai">u4ia.ai</a></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 U4IA. Built in Dallas.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | U4IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0d0d12;
+      --bg-secondary: #13131a;
+      --bg-card: #1a1a24;
+      --text-primary: #f5f5f7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-coral: #ff6b5b;
+      --accent-electric: #7b6bff;
+      --accent-teal: #5bffd0;
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Instrument Serif', serif;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 30, 35, 0.4);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff6b5b, #7b6bff, #5bffd0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-coral);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 107, 91, 0.3);
+    }
+
+    .lucide {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    /* Content */
+    .content-section {
+      padding: 2rem 0 6rem;
+    }
+
+    .content-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      color: var(--text-primary);
+    }
+
+    .content-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .content-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .content-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .content-section ul {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .content-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .content-section strong {
+      color: var(--text-primary);
+    }
+
+    .content-section a {
+      color: var(--accent-teal);
+      text-decoration: none;
+    }
+
+    .content-section a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .data-table th,
+    .data-table td {
+      text-align: left;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .data-table th {
+      color: var(--text-primary);
+      font-weight: 600;
+      background: var(--bg-card);
+    }
+
+    .data-table td {
+      color: var(--text-secondary);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 8rem 0 3rem;
+      }
+
+      .data-table {
+        font-size: 0.9rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">U4IA</a>
+    <div class="nav-links">
+      <a href="/#problem">The Inertia Problem</a>
+      <a href="/how-it-works.html">30 Min Setup</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/about.html">About</a>
+      <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Last updated: December 23, 2025</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+
+      <h2>Overview</h2>
+      <p>U4IA ("we," "our," or "us") provides a Chrome extension and platform that helps professionals identify and act on referral opportunities within their existing business relationships. This Privacy Policy explains how we collect, use, and protect your information when you use the U4IA PartnerOS Chrome extension and related services.</p>
+
+      <div class="highlight-box">
+        <p><strong>The key principle:</strong> We only analyze conversations with external parties. Internal company emails never leave your browser and are never sent to our servers.</p>
+      </div>
+
+      <h2>Information We Collect</h2>
+
+      <h3>Account Information</h3>
+      <p>When you sign in with Google, we collect:</p>
+      <ul>
+        <li>Your email address</li>
+        <li>Your name</li>
+        <li>Your profile picture (for display purposes)</li>
+      </ul>
+
+      <h3>Email and Calendar Data</h3>
+      <p>With your permission, our Chrome extension accesses:</p>
+      <ul>
+        <li><strong>Gmail messages</strong> — To identify conversations with external business contacts that may represent referral opportunities</li>
+        <li><strong>Google Calendar events</strong> — To identify meetings with external parties and understand relationship context</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>What we DO NOT access:</strong></p>
+        <ul>
+          <li>Internal company emails (emails between you and coworkers at the same domain)</li>
+          <li>Personal emails to family or friends</li>
+          <li>Email attachments</li>
+          <li>Draft emails</li>
+          <li>Deleted emails</li>
+        </ul>
+      </div>
+
+      <h3>How We Determine "External" vs "Internal"</h3>
+      <p>When you sign up, you specify your company's email domain(s). Any email conversation involving only people at your company domain is considered "internal" and is <strong>never sent to our servers</strong>. Only conversations with participants from external domains are analyzed.</p>
+
+      <h2>How We Use Your Information</h2>
+
+      <table class="data-table">
+        <tr>
+          <th>Data Type</th>
+          <th>How We Use It</th>
+        </tr>
+        <tr>
+          <td>Account info</td>
+          <td>To identify you and manage your account</td>
+        </tr>
+        <tr>
+          <td>External email content</td>
+          <td>To identify companies that match your partner's ideal customer profile and detect buying signals</td>
+        </tr>
+        <tr>
+          <td>Calendar meetings</td>
+          <td>To understand relationship context (prospect vs. customer vs. vendor)</td>
+        </tr>
+        <tr>
+          <td>Company enrichment data</td>
+          <td>To score how well a contact's company matches your partner's target market</td>
+        </tr>
+      </table>
+
+      <h2>Third-Party Services</h2>
+      <p>We use the following third-party services to provide our functionality:</p>
+
+      <table class="data-table">
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Data Shared</th>
+        </tr>
+        <tr>
+          <td>Anthropic (Claude AI)</td>
+          <td>Analyze conversation content for buying signals and generate intro drafts</td>
+          <td>External email snippets, company context</td>
+        </tr>
+        <tr>
+          <td>The Companies API</td>
+          <td>Enrich company data (industry, size, tech stack)</td>
+          <td>Company domain names only</td>
+        </tr>
+        <tr>
+          <td>Google APIs</td>
+          <td>Authentication and email/calendar access</td>
+          <td>OAuth tokens (encrypted at rest)</td>
+        </tr>
+      </table>
+
+      <h2>Data Storage and Security</h2>
+      <ul>
+        <li><strong>Encryption:</strong> All OAuth tokens are encrypted at rest using Fernet symmetric encryption</li>
+        <li><strong>Database:</strong> Your data is stored in a PostgreSQL database hosted on Railway (US region)</li>
+        <li><strong>Transmission:</strong> All data is transmitted over HTTPS/TLS</li>
+        <li><strong>Access:</strong> Only you can access your opportunities and drafts. Tenant administrators can see aggregate metrics but not individual email content.</li>
+      </ul>
+
+      <h2>Data Retention</h2>
+      <ul>
+        <li><strong>Account data:</strong> Retained while your account is active</li>
+        <li><strong>Opportunity records:</strong> Retained for 2 years for commission tracking purposes</li>
+        <li><strong>Email content:</strong> We store only snippets and extracted signals, not full email bodies. Snippets are retained for 90 days.</li>
+        <li><strong>Deletion:</strong> You can request complete deletion of your data at any time by emailing <a href="mailto:privacy@u4ia.ai">privacy@u4ia.ai</a></li>
+      </ul>
+
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> — Request a copy of all data we have about you</li>
+        <li><strong>Delete</strong> — Request deletion of your account and all associated data</li>
+        <li><strong>Revoke</strong> — Disconnect your Gmail/Calendar access at any time from the extension settings</li>
+        <li><strong>Export</strong> — Request an export of your opportunities and commission history</li>
+      </ul>
+
+      <h2>Chrome Extension Permissions</h2>
+      <p>Our Chrome extension requests the following permissions:</p>
+
+      <table class="data-table">
+        <tr>
+          <th>Permission</th>
+          <th>Why We Need It</th>
+        </tr>
+        <tr>
+          <td>identity</td>
+          <td>To sign you in with Google OAuth</td>
+        </tr>
+        <tr>
+          <td>storage</td>
+          <td>To cache your preferences and opportunities locally</td>
+        </tr>
+        <tr>
+          <td>alarms</td>
+          <td>To periodically sync new opportunities in the background</td>
+        </tr>
+        <tr>
+          <td>notifications</td>
+          <td>To alert you when high-value opportunities are detected</td>
+        </tr>
+        <tr>
+          <td>sidePanel</td>
+          <td>To display opportunities alongside Gmail</td>
+        </tr>
+        <tr>
+          <td>mail.google.com</td>
+          <td>To read email content and inject opportunity badges</td>
+        </tr>
+      </table>
+
+      <h2>Children's Privacy</h2>
+      <p>U4IA is designed for business professionals. We do not knowingly collect information from anyone under the age of 18. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last updated" date. Your continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+      <ul>
+        <li>Email: <a href="mailto:privacy@u4ia.ai">privacy@u4ia.ai</a></li>
+        <li>Website: <a href="https://u4ia.ai">u4ia.ai</a></li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>For data deletion requests:</strong> Email <a href="mailto:privacy@u4ia.ai">privacy@u4ia.ai</a> with the subject line "Data Deletion Request" and we will process your request within 30 days.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 U4IA. Built in Dallas.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

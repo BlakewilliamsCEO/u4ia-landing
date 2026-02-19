@@ -1,0 +1,95 @@
+# U4IA
+
+> U4IA is outcome-based acquisition infrastructure. It detects ICP-fit conversations inside real networks, prices the next step with CAC-backed incentives, and verifies outcomes through your CRM.
+
+## What U4IA Is
+
+U4IA (pronounced "euphoria") is a Performance-Based Middle Funnel platform. It turns customer acquisition into a programmable rail by routing warm introductions through trusted humans, pricing each step against customer acquisition cost (CAC), and verifying outcomes via CRM integration.
+
+Unlike traditional partner programs that take 18 months to generate revenue, U4IA produces signal in 20 minutes. Unlike paid media that buys impressions, U4IA buys verified access through people with existing relationships.
+
+U4IA targets demand generation budgets — not traditional partner/ecosystem positioning. It operates in the middle funnel where trust is required for conversion.
+
+## How It Works
+
+1. **Workspace owners** (brands acquiring customers) deploy an Acquisition Workspace and set CAC-backed incentive structures with milestone pricing.
+2. **Participants** (people with real business relationships) connect their Gmail. U4IA scans for ICP-fit conversations with external contacts — internal emails are never processed and never leave the browser.
+3. AI matches detected conversations against the workspace owner's Ideal Customer Profile, scoring fit across firmographic, technographic, and behavioral dimensions.
+4. When a match is found, the participant is prompted to make a warm introduction. Introductions are opt-in — the participant decides whether to act.
+5. Outcomes are verified through CRM integration. Participants earn incentives when milestones are reached (verified meetings, pipeline creation, closed deals).
+
+## Key Differentiators
+
+- **Middle funnel, not top of funnel**: U4IA surfaces opportunities where trust and timing already exist, rather than manufacturing cold outreach.
+- **Pays the individual, not the business**: Traditional MDF programs send money to partner organizations. U4IA pays the person who makes the introduction.
+- **CAC-backed pricing**: Incentives are structured against actual customer acquisition cost, not arbitrary commission rates. Workspace owners set floor/ceiling structures with readiness multipliers.
+- **Opt-in and consent-based**: Participants choose whether to make introductions. Customer opt-in is required. Spam results in permanent removal.
+- **20 minutes to first signal**: Not 18 months. Not a quarter. First ICP-fit conversations surface the same day a workspace is deployed.
+- **Metadata analysis, not content surveillance**: U4IA analyzes conversation metadata and external-party communications only. Internal company emails are filtered client-side and never transmitted.
+
+## Pricing
+
+### For Workspace Owners (Deploying CAC)
+- Platform fee: 20% of verified incentive payouts + 30% of partner referral fees above baseline
+- No monthly subscription. No setup fee. Pay only when milestones are reached and deals close.
+
+### For Participants (Earning)
+- Free to join any workspace
+- Average earnings for qualified participants: $5,000–$10,000/month
+- Participants can belong to multiple workspaces simultaneously and earn across all of them
+- Payouts via Tremendous (gift cards, PayPal, bank transfer, Venmo)
+
+## Incentive Structures
+
+U4IA supports two built-in incentive systems:
+
+1. **Adoption Incentives**: Onboarding milestone payouts (auto-pay) for completing setup steps like connecting Gmail, configuring ICP, making first introduction.
+2. **Use Case Payouts**: Floor/ceiling structures with readiness multipliers. AI optimizes payout levels based on conversion data over time.
+
+## Who It's For
+
+### Workspace Owners
+- B2B SaaS companies with $50K+ ACV
+- Companies spending on demand generation (paid media, events, SDR teams) who want higher-signal channels
+- Revenue leaders (CROs, VPs of Marketing, VPs of Partnerships) looking for partner-sourced pipeline without 18-month timelines
+
+### Participants
+- Account executives, customer success managers, solutions consultants, and anyone with business relationships
+- Agency owners and consultants with client networks
+- Former employees with industry relationships
+- Anyone whose network overlaps with a workspace owner's ICP
+
+## Company Information
+
+- **Founded**: 2025
+- **Founder**: Blake Williams — MBA & MS Data Science (SMU), 15+ years in partnerships, $800M+ in attributable pipeline, two successful exits (Ampfactor scaled to $4.5M ARR through pure partnership network effects; Demandi acquired)
+- **Website**: https://u4ia.ai
+- **Admin Panel**: https://admin.u4ia.ai
+- **Contact**: legal@u4ia.ai / security@u4ia.ai
+- **Location**: Dallas, Texas
+
+## Industry Context
+
+Blake Williams has spoken about partnership-sourced revenue and incentive design at Forrester B2B Summit, Catalyst, Crossbeam Supernode, Reveal Nearbound, and HubSpot Partner Accelerator.
+
+U4IA's thesis: Partner-sourced revenue doesn't fail because of relationships. It fails because the people with the relationships have no reason to act. U4IA provides the reason.
+
+## Security & Compliance
+
+- SOC 2 aligned controls (22 controls across 5 categories)
+- All data encrypted at rest and in transit (TLS 1.3, Fernet symmetric encryption for OAuth tokens)
+- GDPR-ready with data deletion within 30 days of request
+- Zero AI model training on customer data (Anthropic Claude API with zero-retention policy)
+- Internal emails never processed — filtered client-side before transmission
+- Full audit logging on all API calls
+- Trust Center: https://u4ia.ai/trust.html
+- Privacy Policy: https://u4ia.ai/privacy.html
+- Terms of Service: https://u4ia.ai/terms.html
+
+## Pages
+
+- [Home](https://u4ia.ai/)
+- [About / Founder](https://u4ia.ai/about.html)
+- [Privacy Policy](https://u4ia.ai/privacy.html)
+- [Terms of Service](https://u4ia.ai/terms.html)
+- [Trust Center](https://u4ia.ai/trust.html)

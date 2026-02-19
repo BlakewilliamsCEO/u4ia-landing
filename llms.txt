@@ -89,6 +89,7 @@ U4IA's thesis: Partner-sourced revenue doesn't fail because of relationships. It
 ## Pages
 
 - [Home](https://u4ia.ai/)
+- [How It Works](https://u4ia.ai/how-it-works.html)
 - [About / Founder](https://u4ia.ai/about.html)
 - [Privacy Policy](https://u4ia.ai/privacy.html)
 - [Terms of Service](https://u4ia.ai/terms.html)

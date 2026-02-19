@@ -115,6 +115,29 @@
       box-shadow: 0 10px 40px rgba(255, 107, 91, 0.3);
     }
 
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1.5px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      color: var(--text-primary);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-dark:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
     .btn-arrow {
       display: inline-flex;
     }
@@ -931,7 +954,8 @@
       <a href="/#features">Features</a>
       <a href="/#pricing">Pricing</a>
       <a href="/about.html">About</a>
-      <a href="#" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+      <a class="btn btn-secondary" href="https://www.u4ia.ai/login">Log in</a>
+      <a class="btn btn-dark" href="https://calendly.com/u4ia">Meet the Founder</a>
     </div>
   </nav>
 
@@ -1290,7 +1314,13 @@
     <div class="container">
       <h2>Ready to get started?</h2>
       <p>Total setup time: under 30 minutes. First intros can happen same day.</p>
-      <a href="#" class="btn btn-primary">Get the Chrome Extension</a>
+      <a class="btn btn-primary" href="https://www.u4ia.ai/signup">
+        Deploy an Acquisition Workspace
+        <span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a>
+      <a class="btn btn-secondary" href="https://www.u4ia.ai/join">
+        Earn as a Participant $$$
+      </a>
     </div>
   </section>
 

@@ -1,2631 +1,1203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>U4IA | Partner Activation Everywhere Partners Already Work</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #12121a;
-      --bg-card: #16161f;
-      --text-primary: #f5f5f7;
-      --text-secondary: #8a8a9a;
-      --text-muted: #5a5a6a;
-      --accent-coral: #ff6b5b;
-      --accent-coral-glow: rgba(255, 107, 91, 0.4);
-      --accent-electric: #7b6bff;
-      --accent-teal: #5bffd0;
-      --gradient-hero: linear-gradient(135deg, #ff6b5b 0%, #7b6bff 50%, #5bffd0 100%);
-      --border-subtle: rgba(255,255,255,0.06);
-      --font-display: 'Syne', sans-serif;
-      --font-serif: 'Instrument Serif', serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Lucide icon base styles */
-    .lucide {
-      width: 24px;
-      height: 24px;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .lucide-lg {
-      width: 28px;
-      height: 28px;
-    }
-
-    .lucide-xl {
-      width: 32px;
-      height: 32px;
-    }
-
-    /* Animated Background */
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      background-image: 
-        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-      background-size: 48px 48px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .bg-glow {
-      position: fixed;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.15;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .bg-glow-1 {
-      top: -200px;
-      right: -200px;
-      background: var(--accent-coral);
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .bg-glow-2 {
-      bottom: -300px;
-      left: -300px;
-      background: var(--accent-electric);
-      animation: float 25s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(50px, -30px) scale(1.1); }
-      66% { transform: translate(-30px, 50px) scale(0.95); }
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.25rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(30, 30, 35, 0.4);
-      backdrop-filter: blur(40px) saturate(180%);
-      -webkit-backdrop-filter: blur(40px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.75rem;
-      border-radius: 100px;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--accent-coral);
-      color: var(--bg-primary);
-      box-shadow: 0 0 30px var(--accent-coral-glow), 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 50px var(--accent-coral-glow), 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .btn-primary .btn-arrow {
-      display: inline-flex;
-      align-items: center;
-      vertical-align: middle;
-      margin-left: 0.25rem;
-      animation: btnArrowPulse 1.5s ease-in-out infinite;
-    }
-
-    .btn-primary .btn-arrow .lucide {
-      width: 20px;
-      height: 20px;
-      stroke-width: 2.5;
-    }
-
-    @keyframes btnArrowPulse {
-      0%, 100% { transform: translate(0, 0); opacity: 1; }
-      50% { transform: translate(3px, -3px); opacity: 0.7; }
-    }
-
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-primary);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.2);
-      border-color: rgba(255,255,255,0.4);
-    }
-
-    /* Sections */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 4rem;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 100px;
-      padding-bottom: 6rem;
-      position: relative;
-      overflow: visible;
-    }
-
-    .hero-video-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: calc(100% + 6rem);
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: calc(100% + 6rem);
-      background: linear-gradient(
-        180deg,
-        rgba(10, 10, 15, 0.35) 0%,
-        rgba(10, 10, 15, 0.55) 50%,
-        rgba(10, 10, 15, 0.75) 100%
-      );
-      z-index: -1;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-text {
-      max-width: 1000px;
-    }
-
-    .hero-visual {
-      display: none;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.25rem;
-      background: rgba(0, 0, 0, 0.85);
-      border: 1px solid rgba(255, 107, 91, 0.4);
-      border-radius: 100px;
-      font-size: 0.85rem;
-      color: var(--accent-coral);
-      margin-bottom: 2rem;
-      animation: fadeInUp 0.8s ease;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent-coral);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(3.5rem, 6vw, 5.5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 0.8s ease 0.1s both;
-      text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-description {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeInUp 0.8s ease 0.2s both;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      animation: fadeInUp 0.8s ease 0.3s both;
-    }
-
-    .hero-visual {
-      position: relative;
-      animation: fadeIn 1s ease 0.4s both;
-    }
-
-    /* Network Visualization */
-    .network-visual {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .network-node {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: nodeFloat 4s ease-in-out infinite;
-      color: var(--text-primary);
-    }
-
-    .network-node::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 18px;
-      background: var(--gradient-hero);
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 0.3s;
-    }
-
-    .network-node:hover::after {
-      opacity: 0.5;
-    }
-
-    .node-center {
-      width: 100px;
-      height: 100px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--gradient-hero);
-      border: none;
-      animation-delay: 0s;
-    }
-
-    .node-center .lucide {
-      width: 44px;
-      height: 44px;
-      stroke: white;
-    }
-
-    .node-1 { top: 10%; left: 20%; animation-delay: 0.2s; }
-    .node-2 { top: 5%; right: 25%; animation-delay: 0.4s; }
-    .node-3 { top: 35%; right: 5%; animation-delay: 0.6s; }
-    .node-4 { bottom: 25%; right: 10%; animation-delay: 0.8s; }
-    .node-5 { bottom: 10%; left: 30%; animation-delay: 1s; }
-    .node-6 { top: 40%; left: 5%; animation-delay: 1.2s; }
-
-    @keyframes nodeFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .node-center {
-      animation: nodePulse 3s ease-in-out infinite;
-    }
-
-    @keyframes nodePulse {
-      0%, 100% { 
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 0 40px var(--accent-coral-glow);
-      }
-      50% { 
-        transform: translate(-50%, -50%) scale(1.05);
-        box-shadow: 0 0 60px var(--accent-coral-glow);
-      }
-    }
-
-    /* Connection Lines SVG */
-    .network-lines {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-    }
-
-    .network-lines line {
-      stroke: url(#lineGradient);
-      stroke-width: 1;
-      opacity: 0.3;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Stats Bar */
-    .stats-bar {
-      position: relative;
-      margin-top: -4rem;
-      padding: 3rem 0;
-      background: rgba(30, 30, 35, 0.4);
-      backdrop-filter: blur(40px) saturate(180%);
-      -webkit-backdrop-filter: blur(40px) saturate(180%);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 700;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    /* Problem Section */
-    .problem-section {
-      padding: 10rem 0;
-    }
-
-    .section-label {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent-coral);
-      margin-bottom: 1.5rem;
-    }
-
-    .section-heading {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      max-width: 1000px;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 1024px) {
-      .section-heading {
-        white-space: normal;
-      }
-    }
-
-    .section-subheading {
-      font-size: 1.5rem;
-      color: var(--text-secondary);
-      margin-bottom: 2.5rem;
-      max-width: 800px;
-      line-height: 1.5;
-    }
-
-    .section-subheading .emphasis {
-      display: block;
-      color: var(--accent-coral);
-      font-weight: 500;
-      margin-top: 0.25rem;
-    }
-
-    /* Typewriter Effect */
-    .typewriter-container {
-      display: inline;
-      position: relative;
-    }
-
-    .typewriter-word {
-      display: inline;
-      color: var(--accent-coral);
-      font-style: italic;
-    }
-
-    .typewriter-cursor {
-      display: inline;
-      color: var(--accent-coral);
-      font-weight: 100;
-      animation: cursorBlink 1s step-end infinite;
-      margin-left: -0.05em;
-      margin-right: 0.04em;
-    }
-
-    @keyframes cursorBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .typewriter-word.typing {
-      animation: none;
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 4rem;
-    }
-
-    .problem-card {
-      padding: 3rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .problem-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-hero);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .problem-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,255,255,0.1);
-    }
-
-    .problem-card:hover::before {
-      opacity: 1;
-    }
-
-    .problem-icon {
-      width: 56px;
-      height: 56px;
-      background: rgba(255, 107, 91, 0.1);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      color: var(--accent-coral);
-    }
-
-    .problem-icon .lucide {
-      width: 28px;
-      height: 28px;
-    }
-
-    .problem-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .problem-card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    /* Solution Section */
-    .solution-section {
-      padding: 10rem 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .solution-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 5rem;
-    }
-
-    .solution-header .section-heading {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .solution-description {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
-    /* Integration Visual */
-    .integration-flow-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .integration-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 5rem;
-      flex-wrap: nowrap;
-    }
-
-    .integration-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1.5rem 1.25rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      min-width: 110px;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .integration-item:hover {
-      transform: scale(1.05);
-      border-color: rgba(255,255,255,0.15);
-    }
-
-    .integration-icon {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .integration-icon img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-
-    .integration-name {
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    .integration-arrow {
-      color: var(--accent-coral);
-      animation: arrowPulse 1.5s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-
-    .integration-arrow .lucide {
-      width: 24px;
-      height: 24px;
-    }
-
-    @keyframes arrowPulse {
-      0%, 100% { opacity: 0.5; transform: translateX(0); }
-      50% { opacity: 1; transform: translateX(5px); }
-    }
-
-    .integration-center {
-      background: var(--gradient-hero);
-      border: none;
-      min-width: 160px;
-      flex-shrink: 0;
-    }
-
-    .integration-center .integration-name {
-      color: var(--bg-primary);
-      font-weight: 700;
-    }
-
-    .integration-center .integration-icon {
-      color: var(--bg-primary);
-    }
-
-    /* Infrastructure Layer */
-    .infra-layer {
-      margin-top: 3rem;
-      padding-top: 2.5rem;
-      border-top: 1px dashed rgba(255,255,255,0.1);
-      position: relative;
-    }
-
-    .infra-layer::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 20px;
-      background: var(--bg-secondary);
-    }
-
-    .infra-layer::after {
-      content: '↓';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.25rem;
-      color: var(--text-muted);
-    }
-
-    .infra-label {
-      text-align: center;
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .infra-bars {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .infra-bar {
-      flex: 1;
-      max-width: 500px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.25rem 1.75rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .infra-bar::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      border-radius: 4px 0 0 4px;
-    }
-
-    .hubspot-bar::before {
-      background: #FF7A59;
-    }
-
-    .partnerstack-bar::before {
-      background: linear-gradient(180deg, #6366F1 0%, #A855F7 100%);
-    }
-
-    .infra-bar:hover {
-      border-color: rgba(255,255,255,0.12);
-      transform: translateY(-2px);
-    }
-
-    .infra-bar-content {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-shrink: 0;
-    }
-
-    .infra-bar-content img {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-
-    .infra-bar-name {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1rem;
-      white-space: nowrap;
-    }
-
-    .infra-bar-desc {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      flex: 1;
-      min-width: 0;
-    }
-
-    .sync-indicator {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      color: var(--accent-teal);
-      font-family: var(--font-display);
-      font-weight: 500;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-left: auto;
-    }
-
-    .sync-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent-teal);
-      border-radius: 50%;
-      animation: syncPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes syncPulse {
-      0%, 100% { 
-        opacity: 1;
-        box-shadow: 0 0 0 0 rgba(91, 255, 208, 0.4);
-      }
-      50% { 
-        opacity: 0.6;
-        box-shadow: 0 0 0 6px rgba(91, 255, 208, 0);
-      }
-    }
-
-    /* Features Section */
-    .features-section {
-      padding: 10rem 0;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-
-    .feature-card {
-      padding: 2.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      transition: all 0.4s ease;
-      position: relative;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.12);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    }
-
-    .feature-number {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 800;
-      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      transition: all 0.4s ease;
-    }
-
-    .feature-card:hover .feature-number {
-      background: linear-gradient(135deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 1.5rem;
-      color: var(--accent-coral);
-    }
-
-    .feature-icon .lucide {
-      width: 48px;
-      height: 48px;
-      stroke-width: 1.5;
-    }
-
-    .feature-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card p {
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .feature-highlight {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 107, 91, 0.1);
-      border-radius: 100px;
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent-coral);
-    }
-
-    /* Large Coming Soon Feature Card */
-    .feature-card-large {
-      margin-top: 3rem;
-      padding: 3rem;
-      background: linear-gradient(135deg, rgba(22, 22, 31, 0.9) 0%, rgba(30, 25, 35, 0.9) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card-large::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
-    }
-
-    .feature-card-large::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: radial-gradient(ellipse, rgba(123, 107, 255, 0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .coming-soon-badge {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      padding: 0.5rem 1rem;
-      background: rgba(123, 107, 255, 0.2);
-      border: 1px solid rgba(123, 107, 255, 0.4);
-      border-radius: 100px;
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-electric);
-    }
-
-    .feature-large-content {
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-      position: relative;
-      z-index: 1;
-    }
-
-    .feature-large-icon {
-      flex-shrink: 0;
-      width: 72px;
-      height: 72px;
-      background: linear-gradient(135deg, var(--accent-electric), var(--accent-teal));
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .feature-large-icon .lucide {
-      width: 36px;
-      height: 36px;
-      stroke: white;
-      stroke-width: 1.5;
-    }
-
-    .feature-large-text {
-      flex: 1;
-    }
-
-    .feature-large-text h3 {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .feature-large-text p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      max-width: 800px;
-    }
-
-    .feature-large-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-      width: 100%;
-    }
-
-    .feature-highlight.highlight-gold {
-      background: rgba(245, 197, 24, 0.15);
-      color: #f5c518;
-      border: 1px solid rgba(245, 197, 24, 0.3);
-    }
-
-    .feature-large-logos {
-      display: flex;
-      flex-direction: row;
-      gap: 0.75rem;
-      align-items: center;
-      margin-left: auto;
-    }
-
-    .platform-logo {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .platform-logo:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
-    }
-
-    .platform-logo img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-    }
-
-    @media (max-width: 768px) {
-      .feature-large-content {
-        flex-direction: column;
-      }
-
-      .feature-card-large {
-        padding: 2rem;
-      }
-
-      .coming-soon-badge {
-        position: relative;
-        top: 0;
-        right: 0;
-        display: inline-block;
-        margin-bottom: 1.5rem;
-      }
-
-      .feature-large-logos {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-    }
-
-    /* Modern PX Section */
-    .px-section {
-      padding: 10rem 0;
-      background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(30, 25, 40, 0.5) 50%, var(--bg-primary) 100%);
-      position: relative;
-    }
-
-    .px-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 80px;
-      background: linear-gradient(180deg, transparent, var(--accent-electric), transparent);
-    }
-
-    .px-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .px-heading {
-      white-space: normal;
-      max-width: 100%;
-    }
-
-    .emphasis-and {
-      color: var(--accent-coral);
-      font-style: italic;
-    }
-
-    .px-philosophy {
-      font-size: 1.25rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .px-tagline {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--text-primary);
-      margin-bottom: 4rem;
-    }
-
-    .px-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      text-align: left;
-    }
-
-    /* PX Comparison Slider */
-    .px-comparison {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .px-comparison-container {
-      position: relative;
-      height: 450px;
-      border-radius: 24px;
-      overflow: hidden;
-      cursor: ew-resize;
-      user-select: none;
-    }
-
-    .px-side {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
-
-    .px-traditional {
-      background: linear-gradient(135deg, rgba(40, 30, 35, 0.95) 0%, rgba(30, 25, 30, 0.95) 100%);
-      border: 1px solid rgba(255, 107, 91, 0.2);
-      border-radius: 24px;
-      z-index: 1;
-    }
-
-    .px-modern {
-      background: linear-gradient(135deg, rgba(22, 22, 31, 0.98) 0%, rgba(30, 35, 45, 0.98) 100%);
-      border: 1px solid rgba(91, 255, 208, 0.3);
-      border-radius: 24px;
-      z-index: 2;
-      clip-path: inset(0 70% 0 0);
-    }
-
-    .px-side-content {
-      padding: 3rem;
-      height: 100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .px-traditional .px-side-content {
-      text-align: center;
-    }
-
-    .px-modern .px-side-content {
-      text-align: center;
-    }
-    
-    .px-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .px-traditional .px-card-label {
-      color: rgba(255, 107, 91, 0.6);
-    }
-
-    .px-modern .px-card-label {
-      color: var(--accent-teal);
-    }
-
-    .px-traditional h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: rgba(255, 255, 255, 0.5);
-      text-align: center;
-    }
-
-    .px-modern h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-      text-align: center;
-    }
-
-    .px-card-label {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .px-traditional .px-list li {
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    .px-traditional .px-list li::before {
-      color: rgba(255, 107, 91, 0.4);
-    }
-
-    .px-modern .px-list li {
-      color: var(--text-secondary);
-    }
-
-    .px-modern .px-list li::before {
-      color: var(--accent-teal);
-    }
-
-    .px-slider-handle {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 30%;
-      width: 40px;
-      transform: translateX(-50%);
-      z-index: 10;
-      cursor: ew-resize;
-      pointer-events: auto;
-    }
-
-    .px-slider-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
-      transform: translateX(-50%);
-    }
-
-    .px-slider-grip {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 48px;
-      height: 48px;
-      background: var(--bg-primary);
-      border: 2px solid var(--accent-electric);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-electric);
-      box-shadow: 0 4px 20px rgba(123, 107, 255, 0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .px-slider-grip:hover {
-      transform: translate(-50%, -50%) scale(1.1);
-      box-shadow: 0 4px 30px rgba(123, 107, 255, 0.5);
-    }
-
-    .px-slider-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-      padding: 0 1rem;
-    }
-
-    .px-label-old {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      color: rgba(255, 107, 91, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .px-label-new {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      color: var(--accent-teal);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .px-card {
-      padding: 2.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .px-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric));
-    }
-
-    .px-card:nth-child(2)::before {
-      background: linear-gradient(90deg, var(--accent-electric), var(--accent-teal));
-    }
-
-    .px-card-label {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-coral);
-      margin-bottom: 1rem;
-    }
-
-    .px-card:nth-child(2) .px-card-label {
-      color: var(--accent-teal);
-    }
-
-    .px-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .px-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .px-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent-coral);
-    }
-
-    .px-card:nth-child(2) .px-list li::before {
-      color: var(--accent-teal);
-    }
-
-    @media (max-width: 768px) {
-      .px-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .px-section {
-        padding: 6rem 0;
-      }
-
-      .px-comparison-container {
-        height: 500px;
-      }
-
-      .px-side-content {
-        padding: 2rem;
-      }
-    }
-
-    /* Monetization Section */
-    /* Pricing Section */
-    .pricing-section {
-      padding: 10rem 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .pricing-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .pricing-heading {
-      white-space: normal;
-      max-width: 100%;
-    }
-
-    .pricing-subhead {
-      font-size: 1.35rem;
-      color: var(--text-secondary);
-      margin-top: 1rem;
-    }
-
-    .pricing-card {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 32px;
-      padding: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-coral), var(--accent-electric), var(--accent-teal));
-    }
-
-    .pricing-card-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .pricing-amount {
-      font-family: var(--font-serif);
-      font-size: 5rem;
-      font-weight: 400;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-
-    .pricing-period {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin-top: 0.5rem;
-    }
-
-    .pricing-subsection {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .pricing-subsection:last-of-type {
-      margin-bottom: 2.5rem;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .pricing-subsection-title {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-revenue-share {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .revenue-share-item {
-      text-align: center;
-      flex: 1;
-      max-width: 250px;
-    }
-
-    .revenue-share-plus {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    .revenue-percent {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--accent-teal);
-      display: block;
-    }
-
-    .revenue-label {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
-      display: block;
-    }
-
-    .pricing-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .pricing-feature {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.5rem 0;
-    }
-
-    .feature-check {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      background: rgba(91, 255, 208, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-teal);
-    }
-
-    .feature-check .lucide {
-      width: 12px;
-      height: 12px;
-      stroke-width: 3;
-    }
-
-    .pricing-feature span:last-child {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .pricing-cta {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .pricing-note {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 768px) {
-      .pricing-features {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-revenue-share {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .revenue-share-plus {
-        font-size: 1.25rem;
-      }
-
-      .pricing-card {
-        padding: 2rem;
-      }
-
-      .pricing-subsection {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-      }
-    }
-
-    /* CTA Section */
-    .cta-section {
-      padding: 10rem 0;
-      text-align: center;
-      position: relative;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, var(--accent-coral-glow) 0%, transparent 70%);
-      opacity: 0.2;
-      pointer-events: none;
-    }
-
-    .cta-heading {
-      font-family: var(--font-serif);
-      font-size: clamp(3rem, 5vw, 4.5rem);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-heading em {
-      font-style: italic;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .cta-description {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 3rem;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .btn-large {
-      padding: 1.25rem 3rem;
-      font-size: 1.1rem;
-    }
-
-    .cta-free-note {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .cta-free-note::before {
-      content: '✦ ';
-      color: var(--accent-teal);
-    }
-
-    /* Footer */
-    footer {
-      padding: 4rem 0;
-      border-top: 1px solid var(--border-subtle);
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 800;
-      background: var(--gradient-hero);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-    }
-
-    .footer-text {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .footer-links {
-      margin-top: 1rem;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-secondary);
-    }
-
-    .footer-divider {
-      color: var(--text-muted);
-      margin: 0 0.5rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .container {
-        padding: 0 2rem;
-      }
-
-      nav {
-        padding: 1rem 2rem;
-      }
-
-      .network-visual {
-        max-width: 350px;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .problem-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 2.75rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .integration-visual {
-        flex-direction: column;
-      }
-
-      .integration-arrow {
-        transform: rotate(90deg);
-      }
-
-      .infra-bars {
-        flex-direction: column;
-      }
-
-      .infra-bar {
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .infra-bar-desc {
-        display: none;
-      }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>U4IA | Outcome-Based Acquisition Infrastructure</title>
+<meta name="description" content="U4IA turns your CAC into milestone-priced incentives routed through trusted humans. Pay only on verified outcomes.">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#fafbfc;--bg-alt:#f1f5f9;--bg-subtle:#f8fafc;--surface:#ffffff;--surface-dark:#0f172a;--surface-darker:#020617;
+  --border:#e2e8f0;--border-light:#f1f5f9;--border-hover:#cbd5e1;
+  --text:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;--text-faint:#cbd5e1;
+  --primary:#0284c7;--primary-50:#f0f9ff;--primary-100:#e0f2fe;--primary-200:#bae6fd;--primary-400:#38bdf8;--primary-500:#0ea5e9;--primary-600:#0284c7;--primary-700:#0369a1;--primary-800:#075985;
+  --accent:#f59e0b;--accent-50:#fffbeb;--accent-100:#fef3c7;
+  --success:#10b981;--success-50:#ecfdf5;--success-100:#d1fae5;
+  --danger:#ef4444;
+  --anchor:#8b5cf6;--anchor-50:#f5f3ff;--anchor-100:#ede9fe;
+  --cyan:#06b6d4;--cyan-50:#ecfeff;--cyan-100:#cffafe;
+  --radius:16px;--radius-md:12px;--radius-sm:8px;--radius-xs:6px;
+  --shadow-xs:0 1px 2px rgba(0,0,0,0.04);--shadow-sm:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.06),0 2px 4px rgba(0,0,0,0.03);--shadow-lg:0 12px 32px rgba(0,0,0,0.08),0 4px 8px rgba(0,0,0,0.03);--shadow-xl:0 24px 48px rgba(0,0,0,0.1),0 8px 16px rgba(0,0,0,0.04);
+  --font:'DM Sans',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(.16,1,.3,1),transform 0.7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.8);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(226,232,240,0.6);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav-inner{width:100%;max-width:1200px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--mono);font-size:1.4rem;font-weight:700;letter-spacing:-.5px;color:var(--primary);text-decoration:none}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a:not(.btn){color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--text)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all .2s ease;white-space:nowrap;border-radius:var(--radius-md)}
+.btn-primary{background:var(--primary);color:#fff;padding:12px 24px;font-size:.875rem;box-shadow:0 1px 2px rgba(2,132,199,.3)}
+.btn-primary:hover{background:var(--primary-700);box-shadow:0 4px 16px rgba(2,132,199,.25);transform:translateY(-1px)}
+.btn-secondary{background:var(--surface);color:var(--text);padding:12px 24px;font-size:.875rem;border:1.5px solid var(--border);box-shadow:var(--shadow-xs)}
+.btn-secondary:hover{border-color:var(--border-hover);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.btn-dark{background:#000;color:#fff;padding:12px 24px;font-size:.875rem;box-shadow:0 2px 8px rgba(0,0,0,.25);letter-spacing:.01em}
+.btn-dark:hover{background:#1a1a1a;box-shadow:0 4px 16px rgba(0,0,0,.2);transform:translateY(-1px)}
+.btn-lg{padding:14px 28px;font-size:.95rem;border-radius:var(--radius)}
+.btn-xl{padding:16px 32px;font-size:1rem;border-radius:var(--radius)}
+.btn-arrow{display:inline-flex;align-items:center;transition:transform .2s}
+.btn:hover .btn-arrow{transform:translateX(3px)}
+.btn-arrow svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lucide{width:24px;height:24px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(2,132,199,.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.04) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(2,132,199,.035) 1px,transparent 0);background-size:24px 24px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 30%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 30%,transparent 100%);pointer-events:none}
+.hero-content{text-align:center;max-width:840px;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 10px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--primary);margin-bottom:1.75rem;box-shadow:var(--shadow-sm);animation:fadeInDown .6s ease}
+.hero-badge-dot{width:6px;height:6px;background:var(--success);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{opacity:.7;box-shadow:0 0 0 4px rgba(16,185,129,0)}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4.25rem);font-weight:700;line-height:1.08;letter-spacing:-1.5px;margin-bottom:1.5rem;animation:fadeInUp .7s ease .05s both}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--primary) 0%,var(--cyan) 50%,var(--primary) 100%);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero h1 em{position:relative}
+.hero h1 em::before,.hero h1 em::after{content:'✦';position:absolute;font-size:.5em;-webkit-text-fill-color:var(--primary-400);animation:sparkle 2.5s ease-in-out infinite;pointer-events:none}
+.hero h1 em::before{top:-.15em;right:-.05em;animation-delay:0s}
+.hero h1 em::after{bottom:-.05em;left:.1em;font-size:.35em;-webkit-text-fill-color:var(--cyan);animation-delay:1.2s}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(.5) rotate(0deg)}25%{opacity:1;transform:scale(1.1) rotate(15deg)}50%{opacity:.6;transform:scale(.9) rotate(-10deg)}75%{opacity:1;transform:scale(1) rotate(5deg)}}
+.hero-sub{font-size:1.15rem;color:var(--text-secondary);line-height:1.75;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;animation:fadeInUp .7s ease .15s both}
+.hero-ctas{display:flex;gap:12px;justify-content:center;animation:fadeInUp .7s ease .25s both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO MOCKUP */
+.hero-mockup{margin-top:4rem;width:100%;max-width:960px;animation:fadeInUp .8s ease .35s both;position:relative}
+.hero-mockup::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,var(--primary-200),var(--cyan-100),var(--anchor-100));border-radius:calc(var(--radius) + 2px);opacity:.5;z-index:-1;filter:blur(1px)}
+.hero-mockup-window{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-xl);overflow:hidden}
+.hero-mockup-toolbar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:var(--bg-subtle);border-bottom:1px solid var(--border)}
+.hero-mockup-dot{width:10px;height:10px;border-radius:50%}
+.hero-mockup-dot:nth-child(1){background:#ff5f57}.hero-mockup-dot:nth-child(2){background:#febc2e}.hero-mockup-dot:nth-child(3){background:#28c840}
+.hero-mockup-url{margin-left:12px;flex:1;height:28px;background:var(--surface);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;padding:0 10px;font-family:var(--mono);font-size:.7rem;color:var(--text-muted)}
+.hero-mockup-body{padding:2rem;min-height:320px;display:grid;grid-template-columns:200px 1fr;gap:1.5rem}
+.mockup-sidebar{background:var(--surface-dark);border-radius:var(--radius-sm);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
+.mockup-sidebar-logo{font-family:var(--mono);font-size:.85rem;font-weight:700;color:var(--primary-400);margin-bottom:.5rem}
+.mockup-sidebar-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;font-size:.75rem;color:rgba(255,255,255,.5)}
+.mockup-sidebar-item.active{background:rgba(2,132,199,.15);color:var(--primary-400)}
+.mockup-sidebar-item .dot{width:4px;height:4px;border-radius:50%;background:currentColor;flex-shrink:0}
+.mockup-main{display:flex;flex-direction:column;gap:1rem}
+.mockup-header{display:flex;align-items:center;justify-content:space-between}
+.mockup-title{font-weight:700;font-size:1.1rem}
+.mockup-badge{font-family:var(--mono);font-size:.65rem;padding:4px 10px;background:var(--success-50);color:var(--success);border-radius:100px;font-weight:600}
+.mockup-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.mockup-card{background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:1rem;display:flex;flex-direction:column;gap:.4rem}
+.mockup-card-label{font-size:.65rem;color:var(--text-muted);font-weight:500}
+.mockup-card-value{font-family:var(--mono);font-size:1.25rem;font-weight:700}
+.mockup-card-change{font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--success)}
+.mockup-bar-chart{flex:1;display:flex;align-items:flex-end;gap:4px;padding:1rem;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-sm)}
+.mockup-bar{flex:1;border-radius:3px 3px 0 0;transition:height .5s ease}
+
+/* TRUST BAR */
+.trust-bar{padding:3rem 0;border-bottom:1px solid var(--border);overflow:hidden;position:relative}
+.trust-bar::before,.trust-bar::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.trust-bar::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.trust-bar::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.trust-label{text-align:center;font-family:var(--mono);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:1.5rem}
+.trust-track{display:flex;gap:3.5rem;animation:scroll 35s linear infinite;width:max-content}
+.trust-track:hover{animation-play-state:paused}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.trust-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-family:var(--font);font-size:.95rem;font-weight:700;color:var(--surface-dark);white-space:nowrap;transition:opacity .3s;opacity:.7}
+.trust-logo:hover{opacity:1}
+.trust-logo svg{width:22px;height:22px;flex-shrink:0;color:var(--primary)}
+
+/* STATS */
+.stats-section{padding:5rem 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat-item{text-align:center;padding:1.5rem}
+.stat-value{font-family:var(--mono);font-size:2.75rem;font-weight:700;color:var(--primary);letter-spacing:-2px;line-height:1}
+.stat-value-infinity{font-size:3.5rem;line-height:.8}
+.stat-label{font-size:.85rem;color:var(--text-secondary);margin-top:6px;font-weight:500}
+
+/* SECTION STYLES */
+.section-label{font-family:var(--mono);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);margin-bottom:1rem}
+.section-heading{font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:700;line-height:1.15;letter-spacing:-.5px;color:var(--text);margin-bottom:.75rem}
+.section-heading-lg{font-size:clamp(2rem,4vw,3rem);letter-spacing:-1px}
+.section-sub{font-size:1.05rem;color:var(--text-secondary);line-height:1.75;max-width:560px}
+
+/* PROBLEM */
+.problem-section{padding:7rem 0 8rem}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem}
+.problem-card{padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s ease;position:relative;overflow:hidden}
+.problem-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--cyan));opacity:0;transition:opacity .3s}
+.problem-card:hover{border-color:transparent;box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.problem-card:hover::after{opacity:1}
+.problem-icon{width:44px;height:44px;background:var(--primary-100);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--primary)}
+.problem-icon .lucide{width:20px;height:20px}
+.problem-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
+.problem-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.7}
+
+/* SOLUTION */
+.solution-section{padding:8rem 0;background:var(--surface);border-top:1px solid var(--border);position:relative;overflow:hidden}
+.solution-section::before{content:'';position:absolute;top:50%;right:-300px;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.04) 0%,transparent 70%);pointer-events:none;transform:translateY(-50%)}
+.solution-header{text-align:center;max-width:640px;margin:0 auto 4rem}
+.solution-description{font-size:1.05rem;color:var(--text-secondary);line-height:1.75}
+.integration-visual{display:flex;justify-content:center;align-items:center;gap:1.25rem;margin-bottom:3rem}
+.integration-item{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.25rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);min-width:100px;transition:all .25s}
+.integration-item:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:transparent}
+.integration-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.integration-icon img{width:28px;height:28px;object-fit:contain}
+.integration-name{font-weight:600;font-size:.8rem}
+.integration-arrow{color:var(--primary);flex-shrink:0;animation:arrowSlide 1.8s ease-in-out infinite}
+.integration-arrow .lucide{width:18px;height:18px}
+@keyframes arrowSlide{0%,100%{opacity:.3;transform:translateX(0)}50%{opacity:1;transform:translateX(5px)}}
+.integration-center{background:var(--primary);border-color:var(--primary);min-width:140px}
+.integration-center .integration-name{color:#fff}
+.integration-center .integration-icon{color:#fff}
+.infra-layer{margin-top:2.5rem;padding-top:2rem;border-top:1px dashed var(--border);position:relative}
+.infra-layer::after{content:'↓';position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:1rem;color:var(--text-muted);background:var(--surface);padding:0 8px}
+.infra-label{text-align:center;font-family:var(--mono);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:1rem}
+.infra-bars{display:flex;gap:1rem;justify-content:center}
+.infra-bar{flex:1;max-width:360px;display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);transition:all .2s;position:relative}
+.infra-bar::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px}
+.hubspot-bar::before{background:#FF7A59}
+.partnerstack-bar::before{background:var(--anchor)}
+.infra-bar:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.infra-bar-content{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.infra-bar-content img{width:18px;height:18px;flex-shrink:0}
+.infra-bar-name{font-weight:700;font-size:.85rem;white-space:nowrap}
+.infra-bar-desc{font-size:.75rem;color:var(--text-secondary);flex:1}
+.sync-indicator{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:.65rem;color:var(--success);font-weight:600;white-space:nowrap;flex-shrink:0;margin-left:auto}
+.sync-dot{width:5px;height:5px;background:var(--success);border-radius:50%;animation:syncPulse 2s ease-in-out infinite}
+@keyframes syncPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{opacity:.6;box-shadow:0 0 0 4px rgba(16,185,129,0)}}
+
+/* JOURNEY */
+.journey-section{padding:8rem 0;position:relative;overflow:hidden}
+.journey-section::before{content:'';position:absolute;top:20%;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(2,132,199,.04) 0%,transparent 70%);pointer-events:none}
+.journey-header{text-align:center;max-width:640px;margin:0 auto 5rem}
+.journey-step{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem}
+.journey-step:last-child{margin-bottom:0}
+.journey-step.reverse{direction:rtl}
+.journey-step.reverse>*{direction:ltr}
+.journey-step-num{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.journey-step-num::before{content:'';width:24px;height:2px;border-radius:1px}
+.step-1 .journey-step-num{color:var(--primary)}.step-1 .journey-step-num::before{background:var(--primary)}
+.step-2 .journey-step-num{color:var(--anchor)}.step-2 .journey-step-num::before{background:var(--anchor)}
+.step-3 .journey-step-num{color:var(--accent)}.step-3 .journey-step-num::before{background:var(--accent)}
+.step-4 .journey-step-num{color:var(--cyan)}.step-4 .journey-step-num::before{background:var(--cyan)}
+.step-5 .journey-step-num{color:var(--success)}.step-5 .journey-step-num::before{background:var(--success)}
+.journey-step-title{font-size:1.5rem;font-weight:700;letter-spacing:-.3px;margin-bottom:.75rem}
+.journey-step-desc{font-size:.95rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1rem}
+.journey-step-tags{display:flex;flex-wrap:wrap;gap:6px}
+.journey-tag{font-family:var(--mono);font-size:.65rem;font-weight:600;padding:4px 10px;border-radius:100px;letter-spacing:.3px}
+.step-1 .journey-tag{background:var(--primary-100);color:var(--primary-700)}
+.step-2 .journey-tag{background:var(--anchor-100);color:var(--anchor)}
+.step-3 .journey-tag{background:var(--accent-100);color:#92400e}
+.step-4 .journey-tag{background:var(--cyan-100);color:#0e7490}
+.step-5 .journey-tag{background:var(--success-100);color:#065f46}
+
+/* JOURNEY MOCKUPS (v3 — upgraded) */
+.jm{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;position:relative}
+.jm::before{content:'';position:absolute;inset:-1px;border-radius:calc(var(--radius) + 1px);z-index:-1;opacity:.4}
+.step-1 .jm::before{background:linear-gradient(135deg,var(--primary-200),transparent 60%)}
+.step-2 .jm::before{background:linear-gradient(135deg,var(--anchor-100),transparent 60%)}
+.step-3 .jm::before{background:linear-gradient(135deg,var(--accent-100),transparent 60%)}
+.step-4 .jm::before{background:linear-gradient(135deg,var(--cyan-100),transparent 60%)}
+.step-5 .jm::before{background:linear-gradient(135deg,var(--success-100),transparent 60%)}
+.jm-bar{display:flex;align-items:center;gap:4px;padding:8px 12px;background:var(--bg-subtle);border-bottom:1px solid var(--border-light)}
+.jm-d{width:7px;height:7px;border-radius:50%}
+.jm-d:nth-child(1){background:#ff5f57}.jm-d:nth-child(2){background:#febc2e}.jm-d:nth-child(3){background:#28c840}
+.jm-bar-title{margin-left:auto;font-family:var(--mono);font-size:.6rem;color:var(--text-muted);font-weight:500}
+.jm-body{padding:1.25rem}
+
+/* Step 1: Ecosystem Graph */
+.eco-grid{display:grid;grid-template-columns:1fr 160px;gap:1rem}
+.eco-graph{position:relative;height:220px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);overflow:hidden}
+.eco-node{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:.55rem;font-weight:700;color:#fff;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .3s}
+.eco-node:hover{transform:scale(1.15)}
+.eco-center{width:48px;height:48px;background:var(--primary);top:50%;left:50%;margin:-24px 0 0 -24px;font-size:.7rem}
+.eco-n1{width:36px;height:36px;background:var(--anchor);top:18%;left:22%}
+.eco-n2{width:32px;height:32px;background:var(--cyan);top:12%;right:28%}
+.eco-n3{width:38px;height:38px;background:var(--success);top:42%;right:12%}
+.eco-n4{width:30px;height:30px;background:var(--accent);bottom:18%;right:30%}
+.eco-n5{width:34px;height:34px;background:#ec4899;bottom:22%;left:18%}
+.eco-n6{width:28px;height:28px;background:#6366f1;top:65%;left:38%}
+/* SVG lines connecting nodes */
+.eco-lines{position:absolute;inset:0;z-index:1}
+.eco-lines line{stroke:var(--primary-200);stroke-width:1;stroke-dasharray:4 3;opacity:.6}
+.eco-panel{display:flex;flex-direction:column;gap:.5rem}
+.eco-stat{padding:8px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs)}
+.eco-stat-val{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--text)}
+.eco-stat-label{font-size:.6rem;color:var(--text-muted);font-weight:500}
+.eco-stat-bar{height:3px;background:var(--border-light);border-radius:2px;margin-top:4px;overflow:hidden}
+.eco-stat-bar-fill{height:100%;border-radius:2px}
+
+/* Step 2: ICP Extraction — animated phases */
+.icp-phase{transition:opacity .4s ease}
+.icp-source-logo{display:flex;flex-direction:column;align-items:center;padding:12px 16px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-sm);transition:all .3s;cursor:default}
+.icp-source-logo:hover{border-color:var(--border-hover);box-shadow:var(--shadow-sm)}
+.icp-file-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);opacity:0;animation:slideInFile .4s ease forwards}
+.icp-file-row:nth-child(1){animation-delay:0s}.icp-file-row:nth-child(2){animation-delay:.15s}.icp-file-row:nth-child(3){animation-delay:.3s}
+@keyframes slideInFile{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+.icp-scan-dot{width:6px;height:6px;background:var(--anchor);border-radius:50%;animation:scanBounce 1.2s ease-in-out infinite}
+.icp-scan-dot:nth-child(2){animation-delay:.2s}.icp-scan-dot:nth-child(3){animation-delay:.4s}
+@keyframes scanBounce{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+.icp-animate{opacity:0;transform:translateY(8px);transition:all .35s ease}
+.icp-animate.show{opacity:1;transform:translateY(0)}
+
+/* Step 2: ICP Extraction */
+.icp-grid{display:grid;grid-template-columns:140px 1fr;gap:1rem}
+.icp-source{background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);padding:10px;display:flex;flex-direction:column;gap:6px}
+.icp-source-header{font-size:.6rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.icp-file{display:flex;align-items:center;gap:5px;padding:5px 7px;background:var(--surface);border:1px solid var(--border);border-radius:4px;font-size:.6rem;font-weight:600}
+.icp-file-icon{width:14px;height:14px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;color:#fff;flex-shrink:0}
+.icp-extracted{display:flex;flex-direction:column;gap:.5rem}
+.icp-row{display:flex;align-items:center;gap:6px;padding:8px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);transition:border-color .2s}
+.icp-row:hover{border-color:var(--border-hover)}
+.icp-row-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.6rem}
+.icp-row-text{flex:1;min-width:0}
+.icp-row-title{font-size:.72rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.icp-row-meta{font-size:.58rem;color:var(--text-muted)}
+.icp-conf{font-family:var(--mono);font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:100px;flex-shrink:0}
+.icp-bar{height:3px;background:var(--border-light);border-radius:2px;margin-top:4px}
+.icp-bar-fill{height:100%;border-radius:2px}
+
+/* Step 3: Calibration */
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;padding:8px 12px;background:var(--accent-50);border:1px solid var(--accent-100);border-radius:var(--radius-xs)}
+.cal-top-label{font-size:.65rem;font-weight:700;color:#92400e}
+.cal-top-meter{display:flex;align-items:center;gap:6px}
+.cal-meter-bar{width:80px;height:6px;background:var(--accent-100);border-radius:3px;overflow:hidden;position:relative}
+.cal-meter-fill{height:100%;background:var(--accent);border-radius:3px;transition:width 1s ease}
+.cal-meter-val{font-family:var(--mono);font-size:.7rem;font-weight:700;color:#92400e}
+.cal-samples{display:flex;flex-direction:column;gap:.5rem}
+.cal-card{display:flex;align-items:center;gap:10px;padding:10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);transition:all .2s}
+.cal-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-xs)}
+.cal-card-score{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:700;flex-shrink:0}
+.cal-card-body{flex:1;min-width:0}
+.cal-card-company{font-size:.75rem;font-weight:700}
+.cal-card-detail{font-size:.6rem;color:var(--text-muted);margin-top:1px}
+.cal-card-snippet{font-size:.58rem;color:var(--text-secondary);margin-top:3px;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal-card-actions{display:flex;gap:4px;flex-shrink:0}
+.cal-btn{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--border);background:var(--surface);font-size:.8rem;cursor:default;transition:all .2s}
+.cal-btn.accept{border-color:var(--success-100);color:var(--success);background:var(--success-50)}
+.cal-btn.reject{border-color:#fecaca;color:var(--danger);background:#fef2f2}
+
+/* Step 4: Economics */
+.econ-inputs{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.75rem}
+.econ-row{display:flex;align-items:center;gap:8px}
+.econ-label{font-size:.7rem;font-weight:600;color:var(--text-secondary);width:90px;flex-shrink:0}
+.econ-input{flex:1;height:34px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius-xs);padding:0 10px;font-family:var(--mono);font-size:.8rem;font-weight:600;display:flex;align-items:center}
+.econ-sync{font-size:.5rem;color:var(--primary);margin-left:auto;font-family:var(--mono);font-weight:600;display:flex;align-items:center;gap:3px}
+.econ-sync::before{content:'';width:4px;height:4px;background:var(--primary);border-radius:50%}
+.econ-derived{padding:12px;background:var(--primary-50);border:1px solid var(--primary-200);border-radius:var(--radius-sm)}
+.econ-derived-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.econ-derived-label{font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:.5px}
+.econ-derived-badge{font-family:var(--mono);font-size:.55rem;padding:2px 6px;background:var(--primary-100);color:var(--primary-700);border-radius:100px;font-weight:600}
+.econ-gauge{display:flex;gap:.75rem;margin-bottom:8px}
+.econ-gauge-item{flex:1;text-align:center}
+.econ-gauge-ring{width:52px;height:52px;margin:0 auto 4px;position:relative}
+.econ-gauge-ring svg{width:52px;height:52px;transform:rotate(-90deg)}
+.econ-gauge-ring circle{fill:none;stroke-width:4}
+.econ-gauge-bg{stroke:var(--primary-100)}
+.econ-gauge-fill{stroke:var(--primary);stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.econ-gauge-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--text)}
+.econ-gauge-label{font-size:.55rem;color:var(--text-muted);font-weight:500}
+.econ-rows{display:flex;flex-direction:column;gap:2px}
+.econ-detail{display:flex;justify-content:space-between;font-size:.68rem;padding:3px 0}
+.econ-detail span:first-child{color:var(--text-secondary)}
+.econ-detail span:last-child{font-family:var(--mono);font-weight:700}
+
+/* Step 5: Campaign Launch */
+.launch-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.launch-checklist{display:flex;flex-direction:column;gap:.4rem}
+.launch-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--radius-xs);font-size:.72rem;font-weight:600}
+.launch-item.done{background:var(--success-50);border:1px solid var(--success-100);color:var(--text)}
+.launch-item.active{background:var(--primary-50);border:1px solid var(--primary-200);color:var(--primary-700)}
+.launch-item.pending{background:var(--bg-subtle);border:1px solid var(--border-light);color:var(--text-muted)}
+.launch-check{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.55rem;font-weight:700}
+.launch-item.done .launch-check{background:var(--success);color:#fff}
+.launch-item.active .launch-check{background:var(--primary);color:#fff;animation:pulse 2s infinite}
+.launch-item.pending .launch-check{background:var(--border);color:var(--text-muted)}
+.launch-preview{background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:var(--radius-xs);padding:10px;display:flex;flex-direction:column;gap:6px}
+.launch-preview-label{font-family:var(--mono);font-size:.55rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
+.launch-email{padding:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xs)}
+.launch-email-to{font-size:.6rem;color:var(--text-muted);margin-bottom:4px}
+.launch-email-subject{font-size:.72rem;font-weight:700;margin-bottom:4px}
+.launch-email-body{font-size:.6rem;color:var(--text-secondary);line-height:1.5}
+.launch-email-highlight{color:var(--primary);font-weight:600}
+.launch-stats{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:auto}
+.launch-stat{padding:6px;background:var(--surface);border:1px solid var(--border-light);border-radius:4px;text-align:center}
+.launch-stat-val{font-family:var(--mono);font-size:.85rem;font-weight:700;color:var(--text)}
+.launch-stat-label{font-size:.5rem;color:var(--text-muted);font-weight:500}
+
+/* MARKET TOPOLOGY */
+.topo-container{position:relative;max-width:800px;margin:0 auto;padding:2.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);min-height:340px}
+.topo-badge{position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--primary);padding:4px 14px;background:var(--primary-50);border:1px solid var(--primary-200);border-radius:100px;white-space:nowrap;z-index:3}
+.topo-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2}
+.topo-center-circle{width:120px;height:120px;background:linear-gradient(135deg,var(--primary),var(--primary-700));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.9rem;text-align:center;line-height:1.2;box-shadow:0 4px 24px rgba(2,132,199,.25),0 0 0 8px rgba(2,132,199,.08)}
+.topo-brand{position:absolute;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);z-index:2;min-width:160px;text-align:center;transition:all .3s}
+.topo-brand:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.topo-brand-tl{top:2.5rem;left:1.5rem}
+.topo-brand-tr{top:2.5rem;right:1.5rem}
+.topo-brand-bl{bottom:2.5rem;left:1.5rem}
+.topo-brand-br{bottom:2.5rem;right:1.5rem}
+.topo-brand-label{font-size:.8rem;font-weight:700;margin-bottom:6px}
+.topo-brand-people{display:flex;justify-content:center;gap:5px;margin-top:4px}
+.topo-person{width:28px;height:28px;background:var(--primary-100);border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid var(--surface)}
+.topo-person::before{content:'';position:absolute;top:5px;width:10px;height:10px;background:var(--primary);border-radius:50%}
+.topo-person::after{content:'';position:absolute;bottom:-2px;width:20px;height:12px;background:var(--primary);border-radius:50% 50% 0 0}
+.tp-cyan{background:var(--cyan-100)}.tp-cyan::before{background:var(--cyan)}.tp-cyan::after{background:var(--cyan)}
+.tp-anchor{background:var(--anchor-100)}.tp-anchor::before{background:var(--anchor)}.tp-anchor::after{background:var(--anchor)}
+.tp-accent{background:var(--accent-100)}.tp-accent::before{background:var(--accent)}.tp-accent::after{background:var(--accent)}
+.topo-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@media(max-width:640px){
+  .topo-container{min-height:auto;padding:1.5rem 1rem;display:flex;flex-direction:column;gap:1rem;align-items:center}
+  .topo-center{position:relative;top:auto;left:auto;transform:none;margin:1rem 0}
+  .topo-brand{position:relative;top:auto;left:auto;right:auto;bottom:auto}
+  .topo-lines{display:none}
+}
+
+/* FEATURES */
+.features-section{padding:8rem 0;background:var(--surface);border-top:1px solid var(--border)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.feature-card{padding:2rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);transition:all .3s;position:relative;overflow:hidden}
+.feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--cyan));opacity:0;transition:opacity .3s}
+.feature-card:hover{border-color:transparent;box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.feature-card:hover::after{opacity:1}
+.feature-number{font-family:var(--mono);font-size:2.25rem;font-weight:700;color:var(--border);position:absolute;top:1rem;right:1.25rem;line-height:1;transition:color .3s}
+.feature-card:hover .feature-number{color:var(--primary-200)}
+.feature-icon{width:36px;height:36px;margin-bottom:1rem;color:var(--primary)}
+.feature-icon .lucide{width:36px;height:36px;stroke-width:1.5}
+.feature-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.feature-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
+.feature-tag{display:inline-block;padding:3px 10px;background:var(--primary-100);border-radius:100px;font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--primary-700);letter-spacing:.3px}
+.feature-card-large{margin-top:1.5rem;padding:2.5rem;background:var(--surface-dark);border-radius:var(--radius);position:relative;overflow:hidden;color:#fff}
+.feature-card-large::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--cyan),var(--success))}
+.coming-soon-badge{display:inline-block;padding:3px 10px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);border-radius:100px;font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;margin-bottom:1.25rem}
+.feature-large-content{display:flex;gap:2rem;align-items:flex-start}
+.feature-large-icon{width:44px;height:44px;flex-shrink:0;color:var(--primary-400)}
+.feature-large-icon .lucide{width:44px;height:44px;stroke-width:1.5}
+.feature-large-text h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.feature-large-text p{font-size:.9rem;color:#94a3b8;line-height:1.7;margin-bottom:.75rem}
+.feature-large-highlights{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.feature-large-highlights .feature-tag{background:rgba(2,132,199,.15);color:#7dd3fc}
+.highlight-gold{background:rgba(245,158,11,.15)!important;color:var(--accent)!important}
+.feature-large-logos{display:flex;gap:4px;margin-left:4px}
+.platform-logo{width:24px;height:24px;background:rgba(255,255,255,.06);border-radius:4px;display:flex;align-items:center;justify-content:center;padding:3px}
+.platform-logo svg{width:18px;height:18px}
+
+/* COMPARISON */
+.px-section{padding:8rem 0;border-top:1px solid var(--border)}
+.px-content{max-width:720px;margin:0 auto}
+.px-philosophy{font-size:1rem;color:var(--text-secondary);line-height:1.75;margin-bottom:.5rem}
+.px-tagline{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--primary);margin-bottom:3rem}
+.px-comparison{position:relative;max-width:680px;margin:0 auto}
+.px-comparison-container{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;box-shadow:var(--shadow-xl);cursor:col-resize}
+.px-side{position:absolute;inset:0}
+.px-traditional{background:#fef2f2;z-index:1}
+.px-modern{background:var(--primary-50);z-index:2;clip-path:inset(0 50% 0 0)}
+.px-side-content{padding:2.5rem;height:100%;display:flex;flex-direction:column;justify-content:center}
+.px-card-label{font-family:var(--mono);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.6rem}
+.px-traditional .px-card-label{color:var(--danger)}
+.px-modern .px-card-label{color:var(--primary)}
+.px-side h3{font-size:1.4rem;font-weight:700;margin-bottom:1rem}
+.px-traditional h3{color:#991b1b}
+.px-modern h3{color:var(--primary-800)}
+.px-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.px-list li{font-size:.85rem;line-height:1.5;padding-left:1.5rem;position:relative}
+.px-traditional .px-list li{color:#7f1d1d}
+.px-traditional .px-list li::before{content:'✕';position:absolute;left:0;color:var(--danger);font-weight:700;font-size:.75rem}
+.px-modern .px-list li{color:var(--primary-700)}
+.px-modern .px-list li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;font-size:.75rem}
+.px-slider-handle{position:absolute;top:0;bottom:0;left:50%;z-index:10;width:3px;transform:translateX(-50%);cursor:col-resize}
+.px-slider-line{position:absolute;inset:0;background:var(--primary)}
+.px-slider-grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(2,132,199,.4)}
+.px-slider-grip svg{width:16px;height:16px}
+.px-slider-labels{display:flex;justify-content:space-between;margin-top:.75rem;font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--text-muted)}
+
+/* PRICING */
+.pricing-section{padding:8rem 0;background:var(--surface);border-top:1px solid var(--border)}
+.pricing-header{text-align:center;max-width:640px;margin:0 auto 3rem}
+.pricing-subhead{font-size:1rem;color:var(--text-secondary);line-height:1.7}
+.pricing-two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:960px;margin:0 auto}
+.pricing-card-v2{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.pricing-card-v2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pricing-card-v2:first-child::before{background:linear-gradient(90deg,var(--primary),var(--cyan))}
+.pricing-card-v2:last-child::before{background:linear-gradient(90deg,var(--success),#34d399)}
+.pricing-card-v2-header{text-align:center;padding:2rem 2rem 0}
+.pricing-card-v2-title{font-family:var(--mono);font-size:2rem;font-weight:700;letter-spacing:-1px}
+.pricing-card-v2-role{font-size:.85rem;color:var(--text-secondary);font-weight:500;margin-top:2px}
+.pricing-card-v2-body{padding:1.5rem 2rem;flex:1;display:flex;flex-direction:column;gap:.75rem}
+.pricing-card-v2-subtitle{font-size:.9rem;font-weight:700;text-align:center}
+.pricing-v2-features{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.25rem}
+.pricing-v2-feature{display:flex;align-items:flex-start;gap:.5rem}
+.pricing-v2-feature span:last-child{font-size:.8rem;color:var(--text-secondary);line-height:1.5}
+.pricing-v2-fee-box{padding:1rem;background:var(--primary-50);border:1px solid var(--primary-200);border-radius:var(--radius-sm)}
+.pricing-v2-fee-title{font-family:var(--mono);font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--primary);text-align:center;margin-bottom:.75rem}
+.pricing-v2-fee-row{display:flex;align-items:flex-start;justify-content:center;gap:1rem}
+.pricing-v2-fee-item{text-align:center}
+.feature-check{flex-shrink:0;width:18px;height:18px;background:var(--success-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--success)}
+.feature-check .lucide{width:10px;height:10px;stroke-width:3}
+.revenue-percent{font-family:var(--mono);font-size:2.25rem;font-weight:700;color:var(--primary);display:block;letter-spacing:-1px}
+.revenue-label{font-size:.8rem;color:var(--text-secondary)}
+.revenue-share-plus{font-size:1.5rem;color:var(--text-muted);font-weight:300}
+.pricing-v2-callout{padding:.875rem 1rem;background:var(--primary-50);border:1px solid var(--primary-100);border-radius:var(--radius-xs);font-size:.8rem;color:var(--text-secondary);line-height:1.6}
+.pricing-v2-cta{padding:1.25rem 2rem 2rem;display:flex;flex-direction:column;align-items:center;gap:6px;border-top:1px solid var(--border-light)}
+.pricing-v2-cta-note{font-size:.75rem;color:var(--text-muted);font-weight:500}
+.pricing-bottom-line{text-align:center;font-size:1.05rem;font-weight:700;color:var(--text);margin-top:2.5rem}
+
+/* SECURITY */
+.security-section{padding:8rem 0;background:var(--bg-alt);border-top:1px solid var(--border)}
+.security-badges{display:flex;justify-content:center;gap:1.5rem;margin-top:3rem;flex-wrap:wrap}
+.security-badge{width:120px;height:120px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:1rem;transition:all .3s;box-shadow:var(--shadow-sm)}
+.security-badge:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.security-badge-icon{position:relative;display:flex;align-items:center;justify-content:center}
+.security-badge-stars{position:absolute;font-size:5px;color:var(--primary-700);letter-spacing:2px;line-height:1.1;text-align:center;opacity:.6}
+.security-badge-label{font-family:var(--mono);font-size:.7rem;font-weight:700;text-align:center;color:var(--text);line-height:1.2;letter-spacing:.3px}
+.security-badge-label small{font-weight:500;color:var(--text-secondary);font-size:.6rem}
+
+/* FOOTER */
+footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
+.footer-top{display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:1rem;flex-wrap:wrap}
+.footer-compliance{display:flex;gap:1rem;align-items:center}
+.compliance-badge{display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;background:var(--bg-alt);border-radius:4px;border:1px solid var(--border-light)}
+.footer-logo{font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--primary)}
+.footer-text{font-size:.8rem;color:var(--text-muted);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:.5rem;align-items:center}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .2s}
+.footer-links a:hover{color:var(--text-secondary)}
+.footer-divider{color:var(--text-faint);font-size:.6rem}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-mockup-body{grid-template-columns:1fr}.mockup-sidebar{display:none}
+  .journey-step{grid-template-columns:1fr;gap:2rem}.journey-step.reverse{direction:ltr}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .problem-grid{grid-template-columns:1fr}
+  .eco-grid{grid-template-columns:1fr}
+  .icp-grid{grid-template-columns:1fr}
+  .launch-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hero h1{font-size:2.25rem}
+  .hero-mockup-body{display:none}
+  .stats-grid{grid-template-columns:1fr;gap:1rem}
+  .integration-visual{flex-direction:column}
+  .integration-arrow{transform:rotate(90deg)}
+  .infra-bars{flex-direction:column}
+  .features-grid{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .pricing-two-col{grid-template-columns:1fr}
+  .pricing-v2-features{grid-template-columns:1fr}
+  .px-comparison-container{aspect-ratio:3/4}
+  .feature-large-content{flex-direction:column}
+  .footer-top{flex-direction:column;gap:1rem}
+  .footer-compliance{flex-wrap:wrap;justify-content:center}
+}
+</style>
 </head>
 <body>
-  <div class="bg-grid"></div>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
 
-  <!-- SVG Defs -->
-  <svg style="display: none;">
-    <defs>
-      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#ff6b5b"/>
-        <stop offset="100%" style="stop-color:#7b6bff"/>
-      </linearGradient>
-    </defs>
-  </svg>
+<nav id="nav"><div class="nav-inner">
+  <a class="nav-logo" href="/">U4IA</a>
+  <div class="nav-links">
+    <a href="#features">Resources</a><a href="#pricing">Pricing</a>
+    <a class="btn btn-secondary" href="https://www.u4ia.ai/login" style="padding:10px 18px;font-size:.825rem">Log in</a>
+    <a class="btn btn-dark" href="https://calendly.com/u4ia">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Meet the Founder<span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+  </div>
+</div></nav>
 
-  <nav>
-    <a href="/" class="logo">U4IA</a>
-    <div class="nav-links">
-      <a href="#problem">The Inertia Problem</a>
-      <a href="/how-it-works.html">30 Min Setup</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="/about.html">About</a>
-      <a href="#cta" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Middle Funnel Incentives Infrastructure</div>
+    <h1>Turn customer acquisition<br><em>into a programmable rail.</em></h1>
+    <p class="hero-sub">U4IA detects ICP-fit conversations inside real networks, prices the next step with CAC-backed incentives, and verifies outcomes through your CRM.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary btn-xl" href="https://www.u4ia.ai/signup">Deploy an Acquisition Workspace<span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+      <a class="btn btn-secondary btn-xl" href="https://www.u4ia.ai/join">Earn as a Participant $$$</a>
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <!-- Background Video -->
-    <video class="hero-video-bg" autoplay muted loop playsinline>
-      <source src="./hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-eyebrow">The Partner Activation Platform</div>
-          <h1>Partner enablement, incentives, and activation — <em>everywhere your partners already work.</em></h1>
-          <p class="hero-description">U4IA drives partner activation into Gmail, Slack, and LinkedIn 10X — so your partnerships always drive revenue.</p>
-          <div class="hero-ctas">
-            <a href="#cta" class="btn btn-primary">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
-            <a href="#solution" class="btn btn-ghost">See How It Works</a>
-          </div>
+  </div>
+  <div class="hero-mockup">
+    <div class="hero-mockup-window">
+      <div class="hero-mockup-toolbar"><span class="hero-mockup-dot"></span><span class="hero-mockup-dot"></span><span class="hero-mockup-dot"></span><div class="hero-mockup-url">app.u4ia.ai/dashboard</div></div>
+      <div class="hero-mockup-body">
+        <div class="mockup-sidebar"><div class="mockup-sidebar-logo">U4IA</div><div class="mockup-sidebar-item active"><span class="dot"></span>Dashboard</div><div class="mockup-sidebar-item"><span class="dot"></span>Ecosystem</div><div class="mockup-sidebar-item"><span class="dot"></span>ICP Config</div><div class="mockup-sidebar-item"><span class="dot"></span>Calibration</div><div class="mockup-sidebar-item"><span class="dot"></span>Campaigns</div><div class="mockup-sidebar-item"><span class="dot"></span>Incentives</div></div>
+        <div class="mockup-main">
+          <div class="mockup-header"><span class="mockup-title">Acquisition Workspace</span><span class="mockup-badge">● Live</span></div>
+          <div class="mockup-cards"><div class="mockup-card"><span class="mockup-card-label">Pipeline Surfaced</span><span class="mockup-card-value">$412K</span><span class="mockup-card-change">↑ 24% vs last month</span></div><div class="mockup-card"><span class="mockup-card-label">Verified Meetings</span><span class="mockup-card-value">47</span><span class="mockup-card-change">↑ 18 this week</span></div><div class="mockup-card"><span class="mockup-card-label">Effective ROAS</span><span class="mockup-card-value">14.2×</span><span class="mockup-card-change">↑ vs 8.1× target</span></div></div>
+          <div class="mockup-bar-chart" id="heroChart"></div>
         </div>
-        <div class="hero-visual">
-          <div class="network-visual">
-            <svg class="network-lines" viewBox="0 0 500 500">
-              <line x1="250" y1="250" x2="120" y2="70" />
-              <line x1="250" y1="250" x2="380" y2="50" />
-              <line x1="250" y1="250" x2="450" y2="200" />
-              <line x1="250" y1="250" x2="420" y2="380" />
-              <line x1="250" y1="250" x2="180" y2="430" />
-              <line x1="250" y1="250" x2="50" y2="220" />
-            </svg>
-            <div class="network-node node-center">
-              <!-- Lucide: link -->
-              <svg class="lucide" viewBox="0 0 24 24">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="trust-label">Built for the teams that close revenue</div>
+  <div class="trust-track" id="trustTrack">
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>CROs &amp; Revenue Leaders</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>VP Partnerships</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M10 2l8 6v10H2V8z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>CMOs &amp; Demand Gen</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><polygon points="10,2 18,18 2,18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Agency Partners</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M2 10h16M10 2v16" stroke="currentColor" stroke-width="1.5"/></svg>SaaS &amp; B2B Tech</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Enterprise Sales Teams</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>CROs &amp; Revenue Leaders</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>VP Partnerships</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M10 2l8 6v10H2V8z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>CMOs &amp; Demand Gen</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><polygon points="10,2 18,18 2,18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Agency Partners</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M2 10h16M10 2v16" stroke="currentColor" stroke-width="1.5"/></svg>SaaS &amp; B2B Tech</span>
+    <span class="trust-logo"><svg viewBox="0 0 20 20" width="22" height="22"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>Enterprise Sales Teams</span>
+  </div>
+</section>
+
+<!-- STATS (reordered) -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-value" data-target="5.2" data-suffix="×" data-decimal="1">0×</div><div class="stat-label">Higher close rate vs cold</div></div>
+      <div class="stat-item reveal reveal-d1"><div class="stat-value" data-target="63" data-suffix="%">0%</div><div class="stat-label">More efficient use of ad spend</div></div>
+      <div class="stat-item reveal reveal-d2"><div class="stat-value" data-target="20" data-suffix=" min">0 min</div><div class="stat-label">From signup to live campaign</div></div>
+      <div class="stat-item reveal reveal-d3"><div class="stat-value stat-value-infinity">∞</div><div class="stat-label">Acquisition rail</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section" id="problem">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The CAC Waste Problem</div>
+      <h2 class="section-heading section-heading-lg">Warm closes. Cold scales.<br><span style="color:var(--primary)">Nothing does both.</span></h2>
+      <p class="section-sub">Ads buy impressions, not intent. Outbound manufactures outreach, not timing. Referrals are powerful — but informal and unaccountable. Until now.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal reveal-d1"><div class="problem-icon"><svg class="lucide" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>CAC keeps rising</h3><p>Paid media gets noisier every quarter. You pay for impressions, clicks, and guesses — then hope it turns into pipeline.</p></div>
+      <div class="problem-card reveal reveal-d2"><div class="problem-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><h3>Warm wins — but it's informal</h3><p>Introductions close because they're trusted. But they live in conversation threads — not in a system you can scale.</p></div>
+      <div class="problem-card reveal reveal-d3"><div class="problem-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div><h3>Trust has no routing layer</h3><p>You can't see who should connect you, when the timing is right, or what the next step should be. So warm revenue stays accidental.</p></div>
+      <div class="problem-card reveal reveal-d4"><div class="problem-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg></div><h3>Attribution is broken</h3><p>Most referral programs pay on volume or vibes. Without milestone verification and enforcement, incentives invite spam and trust collapses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution-section" id="solution">
+  <div class="container">
+    <div class="solution-header reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-heading section-heading-lg">One intelligence layer.<br>One acquisition rail.</h2>
+      <p class="solution-description">U4IA maps your conversation surface area, qualifies opportunities (ICP, persona, use case, timing, readiness), then prices the next best action with CAC-backed incentives — verified through your CRM.</p>
+    </div>
+    <div class="integration-visual reveal">
+      <div class="integration-item"><div class="integration-icon"><img alt="Gmail" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"/></div><div class="integration-name">Gmail</div></div>
+      <div class="integration-item"><div class="integration-icon"><img alt="Slack" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg"/></div><div class="integration-name">Slack</div></div>
+      <div class="integration-item"><div class="integration-icon"><img alt="Calendar" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg"/></div><div class="integration-name">Calendar</div></div>
+      <span class="integration-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <div class="integration-item integration-center"><div class="integration-icon"><svg class="lucide" style="width:28px;height:28px" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div><div class="integration-name">U4IA Intelligence</div></div>
+      <span class="integration-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <div class="integration-item"><div class="integration-icon"><svg class="lucide" style="width:28px;height:28px;color:var(--success)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></div><div class="integration-name">Revenue</div></div>
+    </div>
+    <div class="infra-layer reveal">
+      <div class="infra-label">Synced in real-time across your entire flow</div>
+      <div class="infra-bars">
+        <div class="infra-bar hubspot-bar"><div class="infra-bar-content"><img alt="HubSpot" src="https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png"/><span class="infra-bar-name">HubSpot</span></div><span class="infra-bar-desc">CRM &amp; contact sync</span><div class="sync-indicator"><span class="sync-dot"></span><span>Live sync</span></div></div>
+        <div class="infra-bar partnerstack-bar"><div class="infra-bar-content"><svg fill="none" height="18" viewBox="0 0 24 24" width="18"><rect fill="#6366F1" height="8" rx="1" width="5" x="3" y="14"/><rect fill="#8B5CF6" height="13" rx="1" width="5" x="9.5" y="9"/><rect fill="#A855F7" height="18" rx="1" width="5" x="16" y="4"/></svg><span class="infra-bar-name">PartnerStack</span></div><span class="infra-bar-desc">Partner attribution &amp; payouts</span><div class="sync-indicator"><span class="sync-dot"></span><span>Live sync</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey-section" id="journey">
+  <div class="container">
+    <div class="journey-header reveal">
+      <div class="section-label">From signup to live campaign</div>
+      <h2 class="section-heading section-heading-lg">Activate in five steps.<br>Deploy in fifteen minutes.</h2>
+      <p class="section-sub" style="margin:0 auto">Connect Google, map your conversation surface area, define your ICP, calibrate scoring, and launch — all in one sitting.</p>
+    </div>
+
+    <!-- Step 1: Ecosystem Graph -->
+    <div class="journey-step step-1 reveal">
+      <div class="journey-step-text">
+        <div class="journey-step-num">Step 01</div>
+        <div class="journey-step-title">Find Your Ecosystem</div>
+        <div class="journey-step-desc">Connect Google and U4IA maps your conversation surface area to surface who's already making introductions. Add competitors, and we map their partner ecosystems to build your network — no manual list-building.</div>
+        <div class="journey-step-tags"><span class="journey-tag">Inner circle</span><span class="journey-tag">Ecosystem mapping</span><span class="journey-tag">Cohort selection</span></div>
+      </div>
+      <div class="jm">
+        <div class="jm-bar"><span class="jm-d"></span><span class="jm-d"></span><span class="jm-d"></span><span class="jm-bar-title">Ecosystem · 4,218 people mapped</span></div>
+        <div class="jm-body">
+          <div class="eco-grid">
+            <div class="eco-graph">
+              <svg class="eco-lines" viewBox="0 0 300 220">
+                <!-- Lines from ICP center to connectors -->
+                <line x1="150" y1="110" x2="58" y2="50"/>
+                <line x1="150" y1="110" x2="230" y2="40"/>
+                <line x1="150" y1="110" x2="255" y2="115"/>
+                <line x1="150" y1="110" x2="210" y2="175"/>
+                <line x1="150" y1="110" x2="55" y2="160"/>
+                <line x1="150" y1="110" x2="110" y2="170"/>
+                <!-- Lines from You to connectors (You connects to people) -->
+                <line x1="58" y1="50" x2="110" y2="170" style="stroke:var(--primary-400);opacity:.5"/>
+                <line x1="58" y1="50" x2="230" y2="40"/>
+                <line x1="110" y1="170" x2="55" y2="160"/>
+                <line x1="255" y1="115" x2="210" y2="175"/>
+                <line x1="230" y1="40" x2="255" y2="115"/>
               </svg>
+              <div class="eco-node eco-center" style="width:54px;height:54px;margin:-27px 0 0 -27px;background:linear-gradient(135deg,var(--primary),var(--cyan));font-size:.5rem;letter-spacing:.3px;text-transform:uppercase;line-height:1.1;text-align:center;padding:4px">Your<br>Customer</div>
+              <div class="eco-node eco-n1" title="You" style="background:var(--primary);font-size:.55rem;width:38px;height:38px">You</div>
+              <div class="eco-node eco-n2" title="Sarah Kim">SK</div>
+              <div class="eco-node eco-n3" title="Mike Ruiz">MR</div>
+              <div class="eco-node eco-n4" title="Jenny Liu">JL</div>
+              <div class="eco-node eco-n5" title="Dave Park">DP</div>
+              <div class="eco-node eco-n6" title="Ana Torres">AT</div>
             </div>
-            <div class="network-node node-1">
-              <!-- Lucide: mail -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #EA4335;">
-                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-              </svg>
+            <div class="eco-panel">
+              <div class="eco-stat"><div class="eco-stat-val">4,218</div><div class="eco-stat-label">People mapped</div><div class="eco-stat-bar"><div class="eco-stat-bar-fill" style="width:100%;background:var(--primary)"></div></div></div>
+              <div class="eco-stat"><div class="eco-stat-val">847</div><div class="eco-stat-label">Active intro senders</div><div class="eco-stat-bar"><div class="eco-stat-bar-fill" style="width:72%;background:var(--success)"></div></div></div>
+              <div class="eco-stat"><div class="eco-stat-val">23</div><div class="eco-stat-label">Competitor ecosystems</div><div class="eco-stat-bar"><div class="eco-stat-bar-fill" style="width:45%;background:var(--anchor)"></div></div></div>
+              <div class="eco-stat"><div class="eco-stat-val">3</div><div class="eco-stat-label">Cohorts selected</div><div class="eco-stat-bar"><div class="eco-stat-bar-fill" style="width:25%;background:var(--accent)"></div></div></div>
             </div>
-            <div class="network-node node-2">
-              <!-- Lucide: message-square -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #7b6bff;">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
+          </div>
+          <!-- Data sources row -->
+          <div style="display:flex;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border-light);align-items:center;justify-content:center">
+            <span style="font-family:var(--mono);font-size:.55rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Sources</span>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:6px">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" style="width:16px;height:16px"/>
+              <span style="font-size:.65rem;font-weight:600;color:var(--text-secondary)">Gmail</span>
             </div>
-            <div class="network-node node-3">
-              <!-- Lucide: calendar -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #4285F4;">
-                <path d="M8 2v4"/>
-                <path d="M16 2v4"/>
-                <rect width="18" height="18" x="3" y="4" rx="2"/>
-                <path d="M3 10h18"/>
-              </svg>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:6px">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack" style="width:16px;height:16px"/>
+              <span style="font-size:.65rem;font-weight:600;color:var(--text-secondary)">Slack</span>
             </div>
-            <div class="network-node node-4">
-              <!-- Lucide: handshake -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #5bffd0;">
-                <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
-                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
-                <path d="m21 3 1 11h-2"/>
-                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
-                <path d="M3 4h8"/>
-              </svg>
-            </div>
-            <div class="network-node node-5">
-              <!-- Lucide: dollar-sign -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #f5c518;">
-                <line x1="12" x2="12" y1="2" y2="22"/>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div class="network-node node-6">
-              <!-- Lucide: target -->
-              <svg class="lucide lucide-lg" viewBox="0 0 24 24" style="color: #ff6b5b;">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--bg-subtle);border:1px solid var(--border-light);border-radius:6px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#FF6B3D"/><path d="M8 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" fill="#fff"/><circle cx="15.5" cy="8.5" r="2.5" fill="#fff"/></svg>
+              <span style="font-size:.65rem;font-weight:600;color:var(--text-secondary)">Crossbeam</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Stats Bar -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-value">73%</div>
-          <div class="stat-label">Of deals start with warm intros</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">5.2×</div>
-          <div class="stat-label">Higher close rate vs cold</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">$375</div>
-          <div class="stat-label">Max payout per intro</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">2 min</div>
-          <div class="stat-label">Average time to match</div>
+    <!-- Step 2: ICP Extraction -->
+    <div class="journey-step step-2 reverse reveal">
+      <div class="journey-step-text">
+        <div class="journey-step-num">Step 02</div>
+        <div class="journey-step-title">Describe Your Customer</div>
+        <div class="journey-step-desc">Upload docs, paste links, or connect Google Drive. Claude extracts your ICP — use cases, personas, signals, pain points — and maps coverage gaps so you know exactly what's defined and what's missing.</div>
+        <div class="journey-step-tags"><span class="journey-tag">Five input methods</span><span class="journey-tag">AI extraction</span><span class="journey-tag">Gap analysis</span></div>
+      </div>
+      <div class="jm">
+        <div class="jm-bar"><span class="jm-d"></span><span class="jm-d"></span><span class="jm-d"></span><span class="jm-bar-title">ICP Config · Extracting...</span></div>
+        <div class="jm-body">
+          <!-- Phase 1: Connect sources -->
+          <div class="icp-phase" id="icpPhase1">
+            <div style="text-align:center;padding:1.5rem 0">
+              <div style="font-size:.7rem;font-weight:600;color:var(--text-muted);margin-bottom:1rem">Connect your sources</div>
+              <div style="display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem">
+                <div class="icp-source-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Drive" style="width:32px;height:32px"/><span style="font-size:.65rem;font-weight:600;color:var(--text-secondary);margin-top:4px;display:block">Google Drive</span></div>
+                <div class="icp-source-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" style="width:32px;height:32px"/><span style="font-size:.65rem;font-weight:600;color:var(--text-secondary);margin-top:4px;display:block">Notion</span></div>
+                <div class="icp-source-logo" style="opacity:.4"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg><span style="font-size:.65rem;font-weight:600;color:var(--text-muted);margin-top:4px;display:block">Paste URL</span></div>
+              </div>
+              <div style="display:flex;justify-content:center;gap:4px" class="icp-scanning-dots"><span class="icp-scan-dot"></span><span class="icp-scan-dot"></span><span class="icp-scan-dot"></span></div>
+            </div>
+          </div>
+          <!-- Phase 2: Sources found -->
+          <div class="icp-phase" id="icpPhase2" style="display:none">
+            <div style="font-size:.6rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Sources found</div>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:12px">
+              <div class="icp-file-row"><span class="icp-file-icon" style="background:#4285F4">G</span><span style="font-size:.7rem;font-weight:600">ICP_2025_Q1.gdoc</span><span style="margin-left:auto;font-family:var(--mono);font-size:.55rem;color:var(--success);font-weight:600">Found</span></div>
+              <div class="icp-file-row"><span class="icp-file-icon" style="background:var(--danger)">P</span><span style="font-size:.7rem;font-weight:600">Sales_Battlecard.pdf</span><span style="margin-left:auto;font-family:var(--mono);font-size:.55rem;color:var(--success);font-weight:600">Found</span></div>
+              <div class="icp-file-row"><span class="icp-file-icon" style="background:#000">N</span><span style="font-size:.7rem;font-weight:600">Competitive Intel DB</span><span style="margin-left:auto;font-family:var(--mono);font-size:.55rem;color:var(--success);font-weight:600">Found</span></div>
+            </div>
+            <div style="text-align:center;padding:6px;background:var(--anchor-50);border:1px solid var(--anchor-100);border-radius:6px"><span style="font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--anchor)">Claude extracting ICP…</span></div>
+          </div>
+          <!-- Phase 3: ICPs extracted -->
+          <div class="icp-phase" id="icpPhase3" style="display:none">
+            <div class="icp-extracted">
+              <div class="icp-row icp-animate"><div class="icp-row-icon" style="background:var(--success-100);color:var(--success)">✓</div><div class="icp-row-text"><div class="icp-row-title">Revenue Operations Modernization</div><div class="icp-row-meta"><span class="icp-count" data-target="3">0</span> personas · <span class="icp-count" data-target="8">0</span> signals · <span class="icp-count" data-target="5">0</span> pain points</div></div><span class="icp-conf" style="background:var(--success-100);color:var(--success)">94%</span></div>
+              <div class="icp-row icp-animate"><div class="icp-row-icon" style="background:var(--success-100);color:var(--success)">✓</div><div class="icp-row-text"><div class="icp-row-title">Partner-Led Growth Activation</div><div class="icp-row-meta"><span class="icp-count" data-target="2">0</span> personas · <span class="icp-count" data-target="6">0</span> signals · <span class="icp-count" data-target="4">0</span> pain points</div></div><span class="icp-conf" style="background:var(--success-100);color:var(--success)">87%</span></div>
+              <div class="icp-row icp-animate"><div class="icp-row-icon" style="background:var(--accent-100);color:#92400e">!</div><div class="icp-row-text"><div class="icp-row-title">Outbound Efficiency Overhaul</div><div class="icp-row-meta"><span class="icp-count" data-target="2">0</span> personas · <span class="icp-count" data-target="4">0</span> signals · <span class="icp-count" data-target="2">0</span> pain points</div><div class="icp-bar"><div class="icp-bar-fill" style="width:72%;background:var(--accent)"></div></div></div><span class="icp-conf" style="background:var(--accent-100);color:#92400e">72%</span></div>
+              <div class="icp-row icp-animate"><div class="icp-row-icon" style="background:var(--anchor-100);color:var(--anchor)">?</div><div class="icp-row-text"><div class="icp-row-title">Customer Expansion Intelligence</div><div class="icp-row-meta"><span class="icp-count" data-target="1">0</span> persona · <span class="icp-count" data-target="2">0</span> signals · gaps detected</div><div class="icp-bar"><div class="icp-bar-fill" style="width:58%;background:var(--anchor)"></div></div></div><span class="icp-conf" style="background:var(--anchor-100);color:var(--anchor)">58%</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Problem Section -->
-  <section class="problem-section" id="problem">
-    <div class="container">
-      <div class="section-label">The Partner Inertia Problem</div>
-      <h2 class="section-heading">Your partner network <span class="typewriter-container"><span class="typewriter-word" id="rotating-word">is</span><span class="typewriter-cursor">|</span></span>worth millions more.</h2>
-      <p class="section-subheading">Your partners want to help. <span class="emphasis">They just can't.</span></p>
-      
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-icon">
-            <!-- Lucide: target -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="6"/>
-              <circle cx="12" cy="12" r="2"/>
-            </svg>
+    <!-- Step 3: Calibration -->
+    <div class="journey-step step-3 reveal">
+      <div class="journey-step-text">
+        <div class="journey-step-num">Step 03</div>
+        <div class="journey-step-title">Validate What Great Intros Look Like</div>
+        <div class="journey-step-desc">Review ten AI-generated sample conversations. Accept or reject each one. When your judgment aligns with the system at 80%+, scoring is locked and a versioned config publishes — powering every downstream filter.</div>
+        <div class="journey-step-tags"><span class="journey-tag">Sample scoring</span><span class="journey-tag">Agreement check</span><span class="journey-tag">Config publishing</span></div>
+      </div>
+      <div class="jm">
+        <div class="jm-bar"><span class="jm-d"></span><span class="jm-d"></span><span class="jm-d"></span><span class="jm-bar-title">Calibration · 10 of 10 reviewed</span></div>
+        <div class="jm-body" style="position:relative;overflow:hidden">
+          <!-- Confetti canvas -->
+          <canvas id="confettiCanvas" style="position:absolute;inset:0;z-index:10;pointer-events:none;width:100%;height:100%"></canvas>
+          <div class="cal-top" id="calTop" style="background:var(--success-50);border-color:var(--success-100)"><span class="cal-top-label" style="color:var(--success)">Agreement Score</span><div class="cal-top-meter"><div class="cal-meter-bar" style="background:var(--success-100)"><div class="cal-meter-fill" id="calFill" style="width:0%;background:var(--success)"></div></div><span class="cal-meter-val" id="calVal" style="color:var(--success)">0%</span></div></div>
+          <div class="cal-samples">
+            <div class="cal-card"><div class="cal-card-score" style="background:var(--success-100);color:var(--success)">92</div><div class="cal-card-body"><div class="cal-card-company">Datadog · Series D · $2.1B</div><div class="cal-card-detail">VP Engineering → RevOps modernization</div><div class="cal-card-snippet">"…we need to consolidate five dashboards before Q3 board review…"</div></div><div class="cal-card-actions"><span class="cal-btn accept">✓</span><span class="cal-btn">✕</span></div></div>
+            <div class="cal-card"><div class="cal-card-score" style="background:var(--accent-100);color:#92400e">64</div><div class="cal-card-body"><div class="cal-card-company">Notion · Growth Stage · $340M</div><div class="cal-card-detail">Head of CS → Expansion play</div><div class="cal-card-snippet">"…exploring whether templates reduce churn in enterprise…"</div></div><div class="cal-card-actions"><span class="cal-btn">✓</span><span class="cal-btn reject">✕</span></div></div>
+            <div class="cal-card"><div class="cal-card-score" style="background:#fef2f2;color:var(--danger)">31</div><div class="cal-card-body"><div class="cal-card-company">Linear · Seed · $18M</div><div class="cal-card-detail">Founder → General tool evaluation</div><div class="cal-card-snippet">"…just comparing options, no timeline yet…"</div></div><div class="cal-card-actions"><span class="cal-btn">✓</span><span class="cal-btn reject">✕</span></div></div>
           </div>
-          <h3>Your Partners Have Quotas Too</h3>
-          <p>Sellers, CS leaders, and execs at partner companies are measured on their numbers—not yours. Asking them to learn your product and carve out time for referrals means asking them to deprioritize what they're actually paid to do.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">
-            <!-- Lucide: graduation-cap -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
-              <path d="M22 10v6"/>
-              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
-            </svg>
+          <!-- Config published badge (hidden initially) -->
+          <div id="calPublished" style="display:none;margin-top:8px;padding:8px 12px;background:var(--success-50);border:1px solid var(--success-100);border-radius:var(--radius-xs);text-align:center">
+            <span style="font-family:var(--mono);font-size:.65rem;font-weight:700;color:var(--success)">✓ Config v1.0 published · Scoring locked</span>
           </div>
-          <h3>The Learning Curve Is a Non-Starter</h3>
-          <p>You can't expect people at another company to become experts in your value prop, handle objections, and spot ideal use cases. That's a full-time job—and they already have one.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">
-            <!-- Lucide: eye-off -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
-              <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
-              <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
-              <line x1="2" x2="22" y1="2" y2="22"/>
-            </svg>
-          </div>
-          <h3>They Can't See Which Customers Fit</h3>
-          <p>Even your most willing partners have no idea which of their accounts are perfect for you. Without real-time signal on pain points and fit, they're guessing—or just not trying.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">
-            <!-- Lucide: heart-handshake -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-              <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/>
-              <path d="m18 15-2-2"/>
-              <path d="m15 18-2-2"/>
-            </svg>
-          </div>
-          <h3>Good Intentions Don't Close Deals</h3>
-          <p>Partners want to help customers solve more problems. But wanting to help and actually making the intro are miles apart when there's no clear signal, no easy path, and no reward for the effort.</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Solution Section -->
-  <section class="solution-section" id="solution">
-    <div class="container">
-      <div class="solution-header">
-        <div class="section-label">How It Works</div>
-        <h2 class="section-heading">One intelligence layer across everything.</h2>
-        <p class="solution-description">U4IA connects to your existing tools and builds a living map of your relationships—then surfaces the exact introductions that matter, the moment they matter.</p>
+    <!-- Step 4: Economics -->
+    <div class="journey-step step-4 reverse reveal">
+      <div class="journey-step-text">
+        <div class="journey-step-num">Step 04</div>
+        <div class="journey-step-title">Set Deal Economics</div>
+        <div class="journey-step-desc">Enter three numbers: your CAC target, average deal value, and deployment budget. U4IA derives ROAS targets, guardrails, and bidding power — or syncs deal value directly from HubSpot.</div>
+        <div class="journey-step-tags"><span class="journey-tag">CAC</span><span class="journey-tag">Deal value</span><span class="journey-tag">ROAS + guardrails</span></div>
       </div>
-
-      <div class="integration-flow-wrapper">
-        <div class="integration-visual">
-          <div class="integration-item">
-            <div class="integration-icon">
-              <!-- Gmail Logo -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail">
-            </div>
-            <div class="integration-name">Gmail</div>
+      <div class="jm">
+        <div class="jm-bar"><span class="jm-d"></span><span class="jm-d"></span><span class="jm-d"></span><span class="jm-bar-title">Deal Economics · Doug ready</span></div>
+        <div class="jm-body">
+          <div class="econ-inputs">
+            <div class="econ-row"><span class="econ-label">CAC Target</span><div class="econ-input">$2,400</div></div>
+            <div class="econ-row"><span class="econ-label">Avg Deal Value</span><div class="econ-input">$50,000<span class="econ-sync">HubSpot</span></div></div>
+            <div class="econ-row"><span class="econ-label">Deploy Budget</span><div class="econ-input">$3,000</div></div>
           </div>
-          <div class="integration-item">
-            <div class="integration-icon">
-              <!-- Slack Logo -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack">
+          <div class="econ-derived">
+            <div class="econ-derived-header"><span class="econ-derived-label">Derived by Doug</span><span class="econ-derived-badge">Auto-calculated</span></div>
+            <div class="econ-gauge" id="econGauge">
+              <div class="econ-gauge-item"><div class="econ-gauge-ring"><svg viewBox="0 0 52 52"><circle class="econ-gauge-bg" cx="26" cy="26" r="22"/><circle class="econ-gauge-fill" cx="26" cy="26" r="22" stroke-dasharray="138" stroke-dashoffset="138" data-target="28"/></svg><div class="econ-gauge-val">20.8×</div></div><div class="econ-gauge-label">ROAS Target</div></div>
+              <div class="econ-gauge-item"><div class="econ-gauge-ring"><svg viewBox="0 0 52 52"><circle class="econ-gauge-bg" cx="26" cy="26" r="22"/><circle class="econ-gauge-fill" cx="26" cy="26" r="22" stroke-dasharray="138" stroke-dashoffset="138" data-target="69"/></svg><div class="econ-gauge-val">10.4×</div></div><div class="econ-gauge-label">Guardrail</div></div>
+              <div class="econ-gauge-item"><div class="econ-gauge-ring"><svg viewBox="0 0 52 52"><circle class="econ-gauge-bg" cx="26" cy="26" r="22"/><circle class="econ-gauge-fill" cx="26" cy="26" r="22" stroke-dasharray="138" stroke-dashoffset="138" data-target="48"/></svg><div class="econ-gauge-val">$2.5K</div></div><div class="econ-gauge-label">Bid Power</div></div>
             </div>
-            <div class="integration-name">Slack</div>
-          </div>
-          <div class="integration-item">
-            <div class="integration-icon">
-              <!-- Google Calendar Logo -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar">
+            <div class="econ-rows">
+              <div class="econ-detail"><span>Max intro payout</span><span>$375</span></div>
+              <div class="econ-detail"><span>Max meeting SPIFF</span><span>$150</span></div>
+              <div class="econ-detail"><span>Budget runway</span><span>~8 intros</span></div>
             </div>
-            <div class="integration-name">Calendar</div>
-          </div>
-          <span class="integration-arrow">
-            <!-- Lucide: arrow-right -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M5 12h14"/>
-              <path d="m12 5 7 7-7 7"/>
-            </svg>
-          </span>
-          <div class="integration-item integration-center">
-            <div class="integration-icon">
-              <!-- Lucide: zap -->
-              <svg class="lucide" viewBox="0 0 24 24" style="width: 36px; height: 36px;">
-                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
-              </svg>
-            </div>
-            <div class="integration-name">U4IA Intelligence</div>
-          </div>
-          <span class="integration-arrow">
-            <!-- Lucide: arrow-right -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M5 12h14"/>
-              <path d="m12 5 7 7-7 7"/>
-            </svg>
-          </span>
-          <div class="integration-item">
-            <div class="integration-icon">
-              <!-- Lucide: circle-dollar-sign -->
-              <svg class="lucide" viewBox="0 0 24 24" style="width: 36px; height: 36px; color: #22c55e;">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
-                <path d="M12 18V6"/>
-              </svg>
-            </div>
-            <div class="integration-name">Revenue</div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Infrastructure Layer -->
-        <div class="infra-layer">
-          <div class="infra-label">Synced in real-time across your entire flow</div>
-          <div class="infra-bars">
-            <div class="infra-bar hubspot-bar">
-              <div class="infra-bar-content">
-                <!-- HubSpot Logo -->
-                <img src="https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png" alt="HubSpot">
-                <span class="infra-bar-name">HubSpot</span>
-              </div>
-              <span class="infra-bar-desc">CRM & contact sync</span>
-              <div class="sync-indicator">
-                <span class="sync-dot"></span>
-                <span>Live sync</span>
-              </div>
+    <!-- Step 5: Launch -->
+    <div class="journey-step step-5 reveal">
+      <div class="journey-step-text">
+        <div class="journey-step-num">Step 05</div>
+        <div class="journey-step-title">Activate Your Ecosystem</div>
+        <div class="journey-step-desc">Select contacts from your detected intros, review AI-generated email sequences, set your schedule, add a card, and launch. Campaign goes live — emails sending, Doug bidding, pipeline generating.</div>
+        <div class="journey-step-tags"><span class="journey-tag">Lead selection</span><span class="journey-tag">Email generation</span><span class="journey-tag">Stripe</span><span class="journey-tag">Launch</span></div>
+      </div>
+      <div class="jm">
+        <div class="jm-bar"><span class="jm-d"></span><span class="jm-d"></span><span class="jm-d"></span><span class="jm-bar-title">Campaign · Ready to launch</span></div>
+        <div class="jm-body">
+          <div class="launch-grid">
+            <div class="launch-checklist">
+              <div class="launch-item done"><span class="launch-check">✓</span>Select 47 contacts from ecosystem</div>
+              <div class="launch-item done"><span class="launch-check">✓</span>Review 3-step email sequence</div>
+              <div class="launch-item done"><span class="launch-check">✓</span>Configure schedule &amp; daily limits</div>
+              <div class="launch-item done"><span class="launch-check">✓</span>Payment method added</div>
+              <div class="launch-item active"><span class="launch-check">→</span>Launch campaign</div>
             </div>
-            <div class="infra-bar partnerstack-bar">
-              <div class="infra-bar-content">
-                <!-- PartnerStack Logo (simple bar chart representation) -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="14" width="5" height="8" rx="1" fill="#6366F1"/>
-                  <rect x="9.5" y="9" width="5" height="13" rx="1" fill="#8B5CF6"/>
-                  <rect x="16" y="4" width="5" height="18" rx="1" fill="#A855F7"/>
-                </svg>
-                <span class="infra-bar-name">PartnerStack</span>
+            <div class="launch-preview">
+              <div class="launch-preview-label">Email Preview · Step 1 of 3</div>
+              <div class="launch-email">
+                <div class="launch-email-to">To: sarah.kim@acme.co</div>
+                <div class="launch-email-subject">Quick question about your Datadog stack</div>
+                <div class="launch-email-body">Hi Sarah, noticed you've been <span class="launch-email-highlight">connecting RevOps teams</span> in the monitoring space. We help teams like yours consolidate dashboards — would a 15-min walkthrough be useful?</div>
               </div>
-              <span class="infra-bar-desc">Partner attribution & payouts</span>
-              <div class="sync-indicator">
-                <span class="sync-dot"></span>
-                <span>Live sync</span>
+              <div class="launch-stats">
+                <div class="launch-stat"><div class="launch-stat-val">47</div><div class="launch-stat-label">Contacts</div></div>
+                <div class="launch-stat"><div class="launch-stat-val">3</div><div class="launch-stat-label">Email steps</div></div>
+                <div class="launch-stat"><div class="launch-stat-val">$3K</div><div class="launch-stat-label">Budget</div></div>
+                <div class="launch-stat"><div class="launch-stat-val">14d</div><div class="launch-stat-label">Duration</div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Features Section -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-label">Platform Features</div>
-      <h2 class="section-heading">U4IA works while your partners work.</h2>
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="reveal"><div class="section-label">Infrastructure</div><h2 class="section-heading section-heading-lg">A programmable channel for warm acquisition.</h2><p class="section-sub" style="margin-bottom:0">U4IA detects the moment, qualifies the fit, and prices the next step — without manufacturing outreach.</p></div>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-number">01</span>
-          <div class="feature-icon">
-            <!-- Lucide: crosshair -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="22" x2="18" y1="12" y2="12"/>
-              <line x1="6" x2="2" y1="12" y2="12"/>
-              <line x1="12" x2="12" y1="6" y2="2"/>
-              <line x1="12" x2="12" y1="22" y2="18"/>
-            </svg>
-          </div>
-          <h3>Precise ICP Matching</h3>
-          <p>Multi-dimensional qualification across industry, tech stack, company size, and buying signals. Every contact scored and tiered—perfect fit, okay fit, or avoid—so partners only see opportunities worth pursuing.</p>
-          <span class="feature-highlight">Signal over noise</span>
+    <!-- Market Topology Diagram -->
+    <div class="topology reveal" style="margin:3rem 0">
+      <div class="topo-container">
+        <div class="topo-badge">U4IA routes &amp; prices</div>
+        <!-- Center: Target Customer -->
+        <div class="topo-center">
+          <div class="topo-center-circle">Target<br>Customer</div>
         </div>
-
-        <div class="feature-card">
-          <span class="feature-number">02</span>
-          <div class="feature-icon">
-            <!-- Lucide: users -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3>Persona Matching</h3>
-          <p>Company fit isn't enough. U4IA identifies the VP of Sales, the CRO, the founder—whoever actually holds budget and makes decisions. Intros go to people who can say yes.</p>
-          <span class="feature-highlight">Right person, right account</span>
+        <!-- Brand boxes -->
+        <div class="topo-brand topo-brand-tl">
+          <div class="topo-brand-label">Adjacent Brand A</div>
+          <div class="topo-brand-people"><span class="topo-person"></span><span class="topo-person tp-cyan"></span><span class="topo-person tp-anchor"></span></div>
         </div>
-
-        <div class="feature-card">
-          <span class="feature-number">03</span>
-          <div class="feature-icon">
-            <!-- Lucide: map-pin -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <h3>Pain Point Mapping</h3>
-          <p>Every opportunity surfaces with the specific problem it solves, why your product is the answer, and the exact language to use. Partners sound like experts without studying a single deck.</p>
-          <span class="feature-highlight">Context without the learning curve</span>
+        <div class="topo-brand topo-brand-tr">
+          <div class="topo-brand-label">Adjacent Brand B</div>
+          <div class="topo-brand-people"><span class="topo-person tp-anchor"></span><span class="topo-person"></span><span class="topo-person tp-cyan"></span></div>
         </div>
-
-        <div class="feature-card">
-          <span class="feature-number">04</span>
-          <div class="feature-icon">
-            <!-- Lucide: zap -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
-            </svg>
-          </div>
-          <h3>Instant Intent & Intro Drafts</h3>
-          <p>The moment a buying signal fires, partners get a ready-to-send intro with the right context, the right ask, and the right demo assets attached. One click. Warm handoff complete.</p>
-          <span class="feature-highlight">Speed to value</span>
+        <div class="topo-brand topo-brand-bl">
+          <div class="topo-brand-label">Adjacent Brand C</div>
+          <div class="topo-brand-people"><span class="topo-person tp-cyan"></span><span class="topo-person tp-accent"></span><span class="topo-person"></span></div>
         </div>
-
-        <div class="feature-card">
-          <span class="feature-number">05</span>
-          <div class="feature-icon">
-            <!-- Lucide: message-square-text -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              <path d="M13 8H7"/>
-              <path d="M17 12H7"/>
-            </svg>
-          </div>
-          <h3>Natural Language Attribution</h3>
-          <p>Forget UTM links and portal logins. U4IA reads real conversations to understand who influenced what. Revenue gets attributed to the relationships that actually drove it—automatically.</p>
-          <span class="feature-highlight">True attribution</span>
+        <div class="topo-brand topo-brand-br">
+          <div class="topo-brand-label">Adjacent Brand D</div>
+          <div class="topo-brand-people"><span class="topo-person"></span><span class="topo-person tp-accent"></span><span class="topo-person tp-anchor"></span></div>
         </div>
-
-        <div class="feature-card">
-          <span class="feature-number">06</span>
-          <div class="feature-icon">
-            <!-- Lucide: graduation-cap -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
-              <path d="M22 10v6"/>
-              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
-            </svg>
-          </div>
-          <h3>Personalized Enablement</h3>
-          <p>Interactive demos, call recordings, battle cards—delivered at the exact moment they're useful, for the exact opportunity at hand. Not a portal to explore. Just what partners need, when they need it.</p>
-          <span class="feature-highlight">Enablement that sticks</span>
-        </div>
+        <!-- SVG connector lines -->
+        <svg class="topo-lines" viewBox="0 0 800 340" preserveAspectRatio="xMidYMid meet">
+          <path d="M200 85 Q350 120 400 170" fill="none" stroke="var(--primary-200)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <path d="M600 85 Q450 120 400 170" fill="none" stroke="var(--primary-200)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <path d="M200 255 Q350 220 400 170" fill="none" stroke="var(--primary-200)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <path d="M600 255 Q450 220 400 170" fill="none" stroke="var(--primary-200)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        </svg>
       </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><span class="feature-number">01</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg></div><h3>ICP + persona + use-case gating</h3><p>Every surfaced opportunity clears company fit, persona fit, use-case relevance, detection phrases, timing, and readiness — before anyone can act.</p><span class="feature-tag">Only qualified inventory</span></div>
+      <div class="feature-card reveal reveal-d1"><span class="feature-number">02</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Intro graph inference</h3><p>We map who actually connects people — from metadata patterns across your conversation surface area — then route opportunities through the right human.</p><span class="feature-tag">Trust routed, not guessed</span></div>
+      <div class="feature-card reveal reveal-d2"><span class="feature-number">03</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Readiness + intent detection</h3><p>Signals from real conversations power scoring: what's happening, why now, and what step is natural — without manufacturing outreach.</p><span class="feature-tag">Right moment, right move</span></div>
+      <div class="feature-card reveal"><span class="feature-number">04</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div><h3>Milestone pricing (Doug)</h3><p>Workspaces deploy CAC guardrails. Doug prices each opportunity and each step (validate intent → opt-in → meeting show → close) based on warmth and effort.</p><span class="feature-tag">CAC deployed intelligently</span></div>
+      <div class="feature-card reveal reveal-d1"><span class="feature-number">05</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H7"/><path d="M17 12H7"/></svg></div><h3>Outcome verification</h3><p>CRM integrations tie actions to verifiable milestones. You pay for meetings that happen and revenue that closes — not for 'intros sent.'</p><span class="feature-tag">Pay on outcomes</span></div>
+      <div class="feature-card reveal reveal-d2"><span class="feature-number">06</span><div class="feature-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><h3>Reputation + enforcement + payouts</h3><p>Participants earn across a breadcrumb trail and build a portable reputation score. Spam triggers permanent removal. Payouts land instantly via trusted rails.</p><span class="feature-tag">Integrity at scale</span></div>
+    </div>
+    <div class="feature-card-large reveal">
+      <div class="coming-soon-badge">Coming Soon</div>
+      <div class="feature-large-content">
+        <div class="feature-large-icon"><svg class="lucide" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></div>
+        <div class="feature-large-text"><h3>Live Call Intelligence</h3><p>U4IA joins your partners' sales calls — delivering real-time questions, battle cards, and enablement materials directly in the chat while the conversation happens. After the call, full context gets processed to surface opportunities the customer didn't even articulate yet.</p>
+        <div class="feature-large-highlights"><span class="feature-tag">Real-time AI co-pilot</span><span class="feature-tag highlight-gold">2× partner referral fees</span><div class="feature-large-logos"><div class="platform-logo" title="Zoom"><svg height="18" viewBox="0 0 24 24" width="18"><path d="M4 6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2l4 3V7l-4 3V8a2 2 0 0 0-2-2H4z" fill="#2D8CFF"/></svg></div><div class="platform-logo" title="Teams"><svg height="18" viewBox="0 0 24 24" width="18"><path d="M16.5 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" fill="#5059C9"/><path d="M12 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="#7B83EB"/><path d="M14.5 10H6a1 1 0 0 0-1 1v8a2.5 2.5 0 0 0 2.5 2.5h5a2.5 2.5 0 0 0 2.5-2.5v-8a1 1 0 0 0-1-1z" fill="#7B83EB"/></svg></div><div class="platform-logo" title="Meet"><svg height="18" viewBox="0 0 24 24" width="18"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h6A2.5 2.5 0 0 1 15 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 4 16.5v-9z" fill="#0066da"/><path d="M15 9.5l5-3.5v12l-5-3.5v-5z" fill="#e94235"/></svg></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Coming Soon Feature Card -->
-      <div class="feature-card-large">
-        <div class="coming-soon-badge">Coming Soon</div>
-        <div class="feature-large-content">
-          <div class="feature-large-icon">
-            <!-- Lucide: headphones -->
-            <svg class="lucide" viewBox="0 0 24 24">
-              <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
-            </svg>
+<!-- COMPARISON -->
+<section class="px-section" id="trust">
+  <div class="container"><div class="px-content reveal">
+    <div class="section-label">Ads vs Outcome-Based Distribution</div>
+    <h2 class="section-heading">Replace impressions with verified customer access.</h2>
+    <p class="px-philosophy">Paid media sells you reach. U4IA sells you verified access — routed through trusted humans, priced by CAC, and gated by opt-in, qualification, and enforcement.</p>
+    <p class="px-tagline">Same budget. Higher signal. Cleaner attribution.</p>
+    <div class="px-comparison"><div class="px-comparison-container">
+      <div class="px-side px-traditional"><div class="px-side-content"><div class="px-card-label">Traditional Paid Acquisition</div><h3>Pay for noise</h3><ul class="px-list"><li>Pay for impressions, clicks, and guesswork</li><li>Rising CAC as channels saturate</li><li>Targeting drifts and attribution lies</li><li>Volume incentives create spam and burnout</li><li>Results depend on timing you can't see</li><li>Customer trust is never part of the system</li></ul></div></div>
+      <div class="px-side px-modern"><div class="px-side-content"><div class="px-card-label">U4IA Acquisition Rail</div><h3>Pay for outcomes</h3><ul class="px-list"><li>Only surface pre-qualified opportunities</li><li>Customer opt-in required before intros</li><li>Milestone pricing aligned to CAC</li><li>Verified meetings and CRM attribution</li><li>Reputation scores unlock better workspaces</li><li>Spam = permanent removal</li></ul></div></div>
+      <div class="px-slider-handle"><div class="px-slider-line"></div><div class="px-slider-grip"><svg height="20" viewBox="0 0 24 24" width="20"><path d="M8 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></div></div>
+    </div><div class="px-slider-labels"><span>← Old way</span><span>New way →</span></div></div>
+  </div></div>
+</section>
+
+<!-- SECURITY -->
+<section class="security-section" id="security">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <div class="section-label">Security by Design</div>
+      <h2 class="section-heading section-heading-lg">Real networks deserve<br>real protection.</h2>
+      <p class="section-sub">U4IA is built privacy-first. You control your data, encryption comes standard, customer opt-in is required, and your data is never sold or used to train models.</p>
+    </div>
+    <div class="security-badges reveal">
+      <div class="security-badge">
+        <div class="security-badge-icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:var(--primary-700);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="security-badge-stars">✦ ✦ ✦<br>✦ ✦ ✦<br>✦ ✦ ✦</span></div>
+        <span class="security-badge-label">GDPR</span>
+      </div>
+      <div class="security-badge">
+        <div class="security-badge-icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:var(--primary-700);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <span class="security-badge-label">SOC 2<br><small>Aligned</small></span>
+      </div>
+      <div class="security-badge">
+        <div class="security-badge-icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:var(--primary-700);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg></div>
+        <span class="security-badge-label">Encrypted<br><small>At Rest &amp; Transit</small></span>
+      </div>
+      <div class="security-badge">
+        <div class="security-badge-icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:var(--primary-700);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <span class="security-badge-label">Zero AI<br><small>Training</small></span>
+      </div>
+    </div>
+    <div class="security-link reveal" style="text-align:center;margin-top:2rem">
+      <a href="/trust.html" class="btn btn-secondary">Visit Trust Center<span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal"><div class="section-label">Pricing</div><h2 class="section-heading section-heading-lg">Infrastructure economics.<br>Not SaaS pricing.</h2><p class="pricing-subhead">U4IA does not charge per seat. It does not charge for volume. It participates in verified acquisition.</p></div>
+    <div class="pricing-two-col reveal">
+      <!-- Deploy CAC card -->
+      <div class="pricing-card-v2">
+        <div class="pricing-card-v2-header">
+          <div class="pricing-card-v2-title" style="color:var(--primary)">Deploy CAC</div>
+          <div class="pricing-card-v2-role">Workspace owners</div>
+        </div>
+        <div class="pricing-card-v2-body">
+          <h4 class="pricing-card-v2-subtitle">Acquisition capital, with guardrails</h4>
+          <div class="pricing-v2-features">
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Fund an incentive pool (any amount)</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Set CAC floor/ceiling and readiness multipliers</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Doug prices each milestone step (intent → opt-in → show → close)</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Pay only when milestones verify in your CRM</span></div>
           </div>
-          <div class="feature-large-text">
-            <h3>Live Call Intelligence</h3>
-            <p>U4IA joins your partners' sales calls—delivering real-time questions, battle cards, and enablement materials directly in the chat while the conversation happens. After the call, full context gets processed to surface opportunities the customer didn't even articulate yet.</p>
-            <div class="feature-large-highlights">
-              <span class="feature-highlight">Real-time AI co-pilot</span>
-              <span class="feature-highlight highlight-gold">2× partner referral fees</span>
-              <div class="feature-large-logos">
-                <div class="platform-logo" title="Zoom">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#2D8CFF" d="M4 6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2l4 3V7l-4 3V8a2 2 0 0 0-2-2H4z"/>
-                  </svg>
-                </div>
-                <div class="platform-logo" title="Microsoft Teams">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#5059C9" d="M16.5 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
-                    <path fill="#7B83EB" d="M12 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
-                    <path fill="#7B83EB" d="M18 9h3a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-1V10a1 1 0 0 1 1-1h-1z"/>
-                    <path fill="#5059C9" d="M18 18h-1v-8h2a1 1 0 0 1 1 1v4a3 3 0 0 1-3 3h1z"/>
-                    <path fill="#7B83EB" d="M14.5 10H6a1 1 0 0 0-1 1v8a2.5 2.5 0 0 0 2.5 2.5h5a2.5 2.5 0 0 0 2.5-2.5v-8a1 1 0 0 0-1-1z"/>
-                    <path fill="#fff" d="M12 13H8.5v1H11v3H8.5v1H12a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5z"/>
-                    <path fill="#fff" d="M8 13h-.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5H8v-5z"/>
-                  </svg>
-                </div>
-                <div class="platform-logo" title="Google Meet">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#00832d" d="M12.5 11.5v-4l5.5 4-5.5 4v-4z"/>
-                    <path fill="#0066da" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h6A2.5 2.5 0 0 1 15 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 4 16.5v-9z"/>
-                    <path fill="#e94235" d="M15 9.5l5-3.5v12l-5-3.5v-5z"/>
-                    <path fill="#2684fc" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h6A2.5 2.5 0 0 1 15 7.5v2l-11-2v-.5z"/>
-                    <path fill="#00ac47" d="M4 16.5v-2l11 2v.5a2.5 2.5 0 0 1-2.5 2.5h-6A2.5 2.5 0 0 1 4 16.5z"/>
-                    <path fill="#ffba00" d="M15 14.5v-5l5-3.5v12l-5-3.5z"/>
-                  </svg>
-                </div>
-              </div>
+          <div class="pricing-v2-fee-box">
+            <div class="pricing-v2-fee-title">Platform fee (only on verified payouts)</div>
+            <div class="pricing-v2-fee-row">
+              <div class="pricing-v2-fee-item"><span class="revenue-percent" style="font-size:1.75rem">20%</span><span class="revenue-label" style="font-size:.75rem">of verified incentives</span></div>
+              <span class="revenue-share-plus" style="font-size:1.25rem">+</span>
+              <div class="pricing-v2-fee-item"><span class="revenue-percent" style="font-size:1.75rem">30%</span><span class="revenue-label" style="font-size:.75rem">of partner referral fees<br><small style="font-size:.65rem;color:var(--text-muted)">(above baseline)</small></span></div>
             </div>
           </div>
+          <div class="pricing-v2-callout"><strong>U4IA earns a platform percentage of verified payouts.</strong> No retainers. No software tax. No paying for "pipeline created."</div>
+        </div>
+        <div class="pricing-v2-cta">
+          <a class="btn btn-primary btn-lg" href="https://www.u4ia.ai/signup">Deploy an Acquisition Workspace<span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <span class="pricing-v2-cta-note">Deploy capital. Pay on outcomes.</span>
+        </div>
+      </div>
+      <!-- Join Free card -->
+      <div class="pricing-card-v2">
+        <div class="pricing-card-v2-header">
+          <div class="pricing-card-v2-title" style="color:var(--success)">Join Free</div>
+          <div class="pricing-card-v2-role">Participants</div>
+        </div>
+        <div class="pricing-card-v2-body">
+          <h4 class="pricing-card-v2-subtitle">Earn across verified milestones</h4>
+          <div class="pricing-v2-features">
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Connect your conversation surface (read-only metadata)</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>See priced opportunities immediately when bids are live</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Earn via breadcrumb payouts (validate → opt-in → show → close)</span></div>
+            <div class="pricing-v2-feature"><span class="feature-check"><svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span>Build a portable reputation score across workspaces</span></div>
+          </div>
+          <div class="pricing-v2-fee-box" style="background:var(--success-50);border-color:var(--success-100)">
+            <div class="pricing-v2-fee-title" style="color:var(--success)">Earning potential</div>
+            <div style="text-align:center;margin-bottom:6px"><span style="font-family:var(--mono);font-size:1.75rem;font-weight:700;color:var(--success);letter-spacing:-1px">$5K – $10K</span><span style="font-size:.8rem;color:var(--text-secondary);margin-left:4px">/ month</span></div>
+            <p style="font-size:.75rem;color:var(--text-secondary);text-align:center;line-height:1.5">Average for qualified participants. Belong to any workspace in your customer's ecosystem — earn across all of them simultaneously.</p>
+          </div>
+          <div class="pricing-v2-callout" style="background:var(--success-50);border-color:var(--success-100)"><strong>Integrity is enforced.</strong> Customer opt-in required. Spam triggers permanent removal.</div>
+        </div>
+        <div class="pricing-v2-cta">
+          <a class="btn btn-secondary btn-lg" href="https://www.u4ia.ai/join">Earn as a Participant $$$</a>
+          <span class="pricing-v2-cta-note">Monetize proximity. Not volume.</span>
         </div>
       </div>
     </div>
-  </section>
+    <p class="pricing-bottom-line reveal">We get paid when milestones are reached and deals close.</p>
+  </div>
+</section>
 
-  <!-- Modern PX Section -->
-  <section class="px-section" id="px">
-    <div class="container">
-      <div class="px-content">
-        <div class="section-label">Modern Partner Experience</div>
-        <h2 class="section-heading px-heading">For partners — <span class="emphasis-and">and</span> the people inside them.</h2>
-        <p class="px-philosophy">High-performing partnerships are built on getting value to the customer, partner, and your business — fast. Then we learn to trust. Then we scale. Your partner experience should hold the same standard for the people doing the work.</p>
-        <p class="px-tagline">U4IA just makes you the easiest and best partner to work with.</p>
-        
-        <div class="px-comparison">
-          <div class="px-comparison-container">
-            <!-- Traditional PX (Left/Background) -->
-            <div class="px-side px-traditional">
-              <div class="px-side-content">
-                <div class="px-card-label">Traditional Partner Experience</div>
-                <h3>Hope they figure it out</h3>
-                <ul class="px-list">
-                  <li>Months of onboarding and certification</li>
-                  <li>Portal dashboards nobody checks</li>
-                  <li>Revenue share... eventually... maybe</li>
-                  <li>Train partners to sell for you</li>
-                  <li>Enablement scales with headcount</li>
-                  <li>Partners need to learn your business</li>
-                </ul>
-              </div>
-            </div>
-            
-            <!-- Modern PX (Right/Foreground) -->
-            <div class="px-side px-modern">
-              <div class="px-side-content">
-                <div class="px-card-label">Modern Partner Experience</div>
-                <h3>Make it impossible to fail</h3>
-                <ul class="px-list">
-                  <li>Install extension, connect CRM, done</li>
-                  <li>Real-time payout notifications</li>
-                  <li>Cash now, not company upside later</li>
-                  <li>Recruit partners to install</li>
-                  <li>Enablement scales with software</li>
-                  <li>Partners just need to show up</li>
-                </ul>
-              </div>
-            </div>
-            
-            <!-- Slider Handle -->
-            <div class="px-slider-handle">
-              <div class="px-slider-line"></div>
-              <div class="px-slider-grip">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                  <path d="M8 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                  <path d="M16 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="px-slider-labels">
-            <span class="px-label-old">← Old way</span>
-            <span class="px-label-new">New way →</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer><div class="container">
+  <div class="footer-top"><div class="footer-logo">U4IA</div><div class="footer-compliance"><span class="compliance-badge">🔒 SOC 2 Aligned</span><span class="compliance-badge">🔐 Encrypted at Rest</span><span class="compliance-badge">📋 GDPR Ready</span></div></div>
+  <p class="footer-text">© 2026 U4IA. Outcome-based acquisition infrastructure.</p>
+  <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><span class="footer-divider">·</span><a href="/terms.html">Terms of Service</a><span class="footer-divider">·</span><a href="/trust.html">Trust Center</a></div>
+</div></footer>
 
-  <!-- Monetization Section -->
-  <section class="pricing-section" id="pricing">
-    <div class="container">
-      <div class="pricing-header">
-        <div class="section-label">Pricing</div>
-        <h2 class="section-heading pricing-heading">We don't get paid until you get to qualified pipeline.</h2>
-        <p class="pricing-subhead">Free for everyone in your entire ecosystem. Completely aligned incentives.</p>
-      </div>
-      
-      <div class="pricing-card">
-        <div class="pricing-card-header">
-          <div class="pricing-amount">$0</div>
-          <div class="pricing-period">until you see results</div>
-        </div>
-        
-        <div class="pricing-subsection">
-          <h3 class="pricing-subsection-title">Everything you can do before you pay</h3>
-          <div class="pricing-features">
-            <div class="pricing-features-col">
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Onboard unlimited partners</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Activate 1000s of people in partner orgs</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Enrich unlimited domains</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Qualify unlimited ICP + personas</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Personalize unlimited email drafts</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Add unlimited enablement resources</span>
-              </div>
-            </div>
-            <div class="pricing-features-col">
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Bi-directional HubSpot integration</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Deep custom ICP configuration</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Ecosystem-wide partner leaderboards</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Custom attribution modeling</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Slack & email notifications</span>
-              </div>
-              <div class="pricing-feature">
-                <span class="feature-check">
-                  <svg class="lucide" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
-                <span>Personalized onboarding experience</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pricing-subsection">
-          <h3 class="pricing-subsection-title">How we get paid</h3>
-          <div class="pricing-revenue-share">
-            <div class="revenue-share-item">
-              <span class="revenue-percent">10%</span>
-              <span class="revenue-label">of intent & intro SPIFFs</span>
-            </div>
-            <span class="revenue-share-plus">+</span>
-            <div class="revenue-share-item">
-              <span class="revenue-percent">10%</span>
-              <span class="revenue-label">of partner referral fees</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pricing-cta">
-          <a href="#" class="btn btn-primary btn-large">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
-        </div>
-        
-        <p class="pricing-note">No credit card required. No contract. Cancel anytime.</p>
-      </div>
-    </div>
-  </section>
+<script>
+// Scroll reveals
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  <!-- CTA Section -->
-  <section class="cta-section" id="cta">
-    <div class="container">
-      <h2 class="cta-heading">Your partners want to help. <em>Now they can.</em></h2>
-      <p class="cta-description">Give your future customers a serendipitous experience. Give your partners the easiest way possible to make great referrals. Give your team the absolute clearest path to partner-sourced pipeline — <em>Fast.</em></p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary btn-large">Get the Chrome Extension <span class="btn-arrow"><svg class="lucide" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span></a>
-      </div>
-    </div>
-  </section>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo">U4IA</div>
-      <p class="footer-text">© 2025 U4IA. Relationship intelligence for revenue teams.</p>
-      <div class="footer-links">
-        <a href="/privacy.html">Privacy Policy</a>
-        <span class="footer-divider">·</span>
-        <a href="/terms.html">Terms of Service</a>
-        <span class="footer-divider">·</span>
-        <a href="/trust.html">Trust Center</a>
-      </div>
-    </div>
-  </footer>
+// Stats count-up
+const sObs=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const t=parseFloat(el.dataset.target);if(!t){sObs.unobserve(el);return}const sf=el.dataset.suffix||'',pf=el.dataset.prefix||'',dc=parseInt(el.dataset.decimal)||0,dur=1500,st=performance.now();
+function up(n){const p=Math.min((n-st)/dur,1),ea=1-Math.pow(1-p,3),v=(t*ea).toFixed(dc);el.textContent=pf+v+sf;if(p<1)requestAnimationFrame(up)}requestAnimationFrame(up);sObs.unobserve(el)})},{threshold:.5});
+document.querySelectorAll('.stat-value[data-target]').forEach(el=>sObs.observe(el));
 
-  <script>
-    // Typewriter rotation effect
-    const words = [
-      'is',
-      'could be',
-      'should be', 
-      'oughta be',
-      'will be',
-      'has to be',
-      'is about to be'
-    ];
-    
-    let currentIndex = 0;
-    const wordElement = document.getElementById('rotating-word');
-    
-    async function typeWord(word) {
-      // Type out the word
-      for (let i = 0; i <= word.length; i++) {
-        wordElement.textContent = word.substring(0, i);
-        await sleep(80);
+// Hero bar chart
+const ch=document.getElementById('heroChart');
+if(ch){const h=[35,50,45,65,55,80,70,90,75,95,85,100],c=['var(--primary-200)','var(--primary-200)','var(--primary-200)','var(--primary-200)','var(--primary-400)','var(--primary-400)','var(--primary-400)','var(--primary-400)','var(--primary)','var(--primary)','var(--primary)','var(--primary)'];
+h.forEach((v,i)=>{const b=document.createElement('div');b.className='mockup-bar';b.style.background=c[i];b.style.height='0%';ch.appendChild(b);setTimeout(()=>{b.style.height=v+'%'},500+i*80)})}
+
+// Gauge rings animation
+const gObs=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;x.target.querySelectorAll('.econ-gauge-fill').forEach(c=>{const t=parseInt(c.dataset.target)||0;c.style.strokeDashoffset=t});gObs.unobserve(x.target)})},{threshold:.3});
+const eg=document.getElementById('econGauge');if(eg)gObs.observe(eg);
+
+// Comparison slider
+document.addEventListener('DOMContentLoaded',()=>{const c=document.querySelector('.px-comparison-container'),m=document.querySelector('.px-modern'),h=document.querySelector('.px-slider-handle');
+if(c&&m&&h){let d=false;const u=x=>{const r=c.getBoundingClientRect();let p=((x-r.left)/r.width)*100;p=Math.max(5,Math.min(95,p));m.style.clipPath=`inset(0 ${100-p}% 0 0)`;h.style.left=p+'%'};
+h.addEventListener('mousedown',e=>{d=true;e.preventDefault()});document.addEventListener('mousemove',e=>{if(d)u(e.clientX)});document.addEventListener('mouseup',()=>{d=false});
+h.addEventListener('touchstart',()=>{d=true});document.addEventListener('touchmove',e=>{if(d)u(e.touches[0].clientX)});document.addEventListener('touchend',()=>{d=false});
+c.addEventListener('click',e=>{if(e.target===h||e.target.closest('.px-slider-handle'))return;u(e.clientX)})}});
+// ICP extraction animation (phase 1 → 2 → 3)
+const icpObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const p1 = document.getElementById('icpPhase1');
+    const p2 = document.getElementById('icpPhase2');
+    const p3 = document.getElementById('icpPhase3');
+    if (!p1) return;
+    // Phase 1 visible initially, transition after 2s
+    setTimeout(() => {
+      p1.style.display = 'none';
+      p2.style.display = 'block';
+      // Update toolbar
+      const bar = p2.closest('.jm').querySelector('.jm-bar-title');
+      if (bar) bar.textContent = 'ICP Config · 3 sources found';
+    }, 2000);
+    // Phase 2 → 3 after 4s
+    setTimeout(() => {
+      p2.style.display = 'none';
+      p3.style.display = 'block';
+      const bar = p3.closest('.jm').querySelector('.jm-bar-title');
+      if (bar) bar.textContent = 'ICP Config · 4 use cases extracted';
+      // Stagger ICP rows appearing
+      const rows = p3.querySelectorAll('.icp-animate');
+      rows.forEach((r, i) => {
+        setTimeout(() => {
+          r.classList.add('show');
+          // Count up the numbers in that row
+          r.querySelectorAll('.icp-count').forEach(c => {
+            const target = parseInt(c.dataset.target);
+            let current = 0;
+            const interval = setInterval(() => {
+              current++;
+              c.textContent = current;
+              if (current >= target) clearInterval(interval);
+            }, 120);
+          });
+        }, i * 350);
+      });
+    }, 4500);
+    icpObs.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+const icpEl = document.getElementById('icpPhase1');
+if (icpEl) icpObs.observe(icpEl.closest('.jm'));
+
+// Calibration: animate to 100% + confetti
+const calObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const fill = document.getElementById('calFill');
+    const val = document.getElementById('calVal');
+    const pub = document.getElementById('calPublished');
+    const canvas = document.getElementById('confettiCanvas');
+    if (!fill || !val) return;
+    // Animate from 0 to 100
+    const dur = 2500;
+    const start = performance.now();
+    function animate(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 4);
+      const v = Math.round(100 * eased);
+      fill.style.width = v + '%';
+      val.textContent = v + '%';
+      if (p < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        // Hit 100% — show published badge and fire confetti
+        if (pub) pub.style.display = 'block';
+        fireConfetti(canvas);
       }
     }
-    
-    async function deleteWord(word) {
-      // Delete the word
-      for (let i = word.length; i >= 0; i--) {
-        wordElement.textContent = word.substring(0, i);
-        await sleep(50);
-      }
-    }
-    
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    
-    async function rotateWords() {
-      while (true) {
-        const currentWord = words[currentIndex];
-        
-        // Type the word
-        await typeWord(currentWord);
-        
-        // Pause on the complete word
-        await sleep(2000);
-        
-        // Delete the word
-        await deleteWord(currentWord);
-        
-        // Small pause before next word
-        await sleep(300);
-        
-        // Move to next word
-        currentIndex = (currentIndex + 1) % words.length;
-      }
-    }
-    
-    // Start the animation when the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-      // Small delay before starting
-      setTimeout(rotateWords, 1000);
+    setTimeout(() => requestAnimationFrame(animate), 600);
+    calObs.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+const calEl = document.getElementById('calTop');
+if (calEl) calObs.observe(calEl.closest('.jm'));
 
-      // PX Comparison Slider
-      const container = document.querySelector('.px-comparison-container');
-      const modernSide = document.querySelector('.px-modern');
-      const sliderHandle = document.querySelector('.px-slider-handle');
-      
-      if (container && modernSide && sliderHandle) {
-        let isDragging = false;
-        
-        const updateSlider = (clientX) => {
-          const rect = container.getBoundingClientRect();
-          let percentage = ((clientX - rect.left) / rect.width) * 100;
-          percentage = Math.max(5, Math.min(95, percentage));
-          
-          // Clip from RIGHT - drag right to reveal more of modern side
-          modernSide.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-          sliderHandle.style.left = `${percentage}%`;
-        };
-        
-        // Mouse events
-        sliderHandle.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          e.preventDefault();
-        });
-        
-        document.addEventListener('mousemove', (e) => {
-          if (!isDragging) return;
-          updateSlider(e.clientX);
-        });
-        
-        document.addEventListener('mouseup', () => {
-          isDragging = false;
-        });
-        
-        // Touch events
-        sliderHandle.addEventListener('touchstart', (e) => {
-          isDragging = true;
-        });
-        
-        document.addEventListener('touchmove', (e) => {
-          if (!isDragging) return;
-          updateSlider(e.touches[0].clientX);
-        });
-        
-        document.addEventListener('touchend', () => {
-          isDragging = false;
-        });
-        
-        // Click anywhere on container to move slider
-        container.addEventListener('click', (e) => {
-          if (e.target === sliderHandle || e.target.closest('.px-slider-handle')) return;
-          updateSlider(e.clientX);
-        });
-      }
+// Mini confetti
+function fireConfetti(canvas) {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  const particles = [];
+  const colors = ['#0284c7','#f59e0b','#10b981','#8b5cf6','#06b6d4','#ec4899','#f97316'];
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: canvas.width * 0.5 + (Math.random() - 0.5) * 60,
+      y: 20,
+      vx: (Math.random() - 0.5) * 8,
+      vy: Math.random() * -6 - 2,
+      size: Math.random() * 4 + 2,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      life: 1,
+      decay: Math.random() * 0.015 + 0.008,
+      shape: Math.random() > 0.5 ? 'rect' : 'circle',
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.2
     });
-  </script>
-
+  }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    particles.forEach(p => {
+      if (p.life <= 0) return;
+      alive = true;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.15;
+      p.vx *= 0.99;
+      p.life -= p.decay;
+      p.rotation += p.rotSpeed;
+      ctx.globalAlpha = Math.max(0, p.life);
+      ctx.fillStyle = p.color;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      if (p.shape === 'rect') {
+        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size * 0.6);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size/2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+    ctx.globalAlpha = 1;
+    if (alive) requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  // Second burst
+  setTimeout(() => {
+    for (let i = 0; i < 30; i++) {
+      particles.push({
+        x: canvas.width * 0.5 + (Math.random() - 0.5) * 80,
+        y: 20,
+        vx: (Math.random() - 0.5) * 6,
+        vy: Math.random() * -4 - 1,
+        size: Math.random() * 3 + 1.5,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: 1,
+        decay: Math.random() * 0.02 + 0.01,
+        shape: Math.random() > 0.5 ? 'rect' : 'circle',
+        rotation: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.15
+      });
+    }
+  }, 300);
+}
+</script>
 </body>
 </html>

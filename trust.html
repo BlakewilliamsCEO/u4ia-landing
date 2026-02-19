@@ -1,1146 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>U4IA's Trust Center</title>
-  <meta name="description" content="U4IA's security practices, compliance status, and data protection measures.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f9fafb;
-      --bg-card: #ffffff;
-      --text-primary: #111827;
-      --text-secondary: #6b7280;
-      --text-muted: #9ca3af;
-      --accent-primary: #ff6b5b;
-      --accent-green: #22c55e;
-      --accent-blue: #3b82f6;
-      --border-color: #e5e7eb;
-      --border-light: #f3f4f6;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* Header */
-    .trust-header {
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .trust-header-logo {
-      width: 32px;
-      height: 32px;
-      background: linear-gradient(135deg, #ff6b5b, #7b6bff);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.875rem;
-      color: white;
-    }
-
-    .trust-header-divider {
-      width: 1px;
-      height: 24px;
-      background: var(--border-color);
-    }
-
-    .trust-header-title {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-
-    /* Main Container */
-    .trust-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Company Hero */
-    .company-hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .company-name {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .company-description {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .company-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .company-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--accent-blue);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    .company-link:hover {
-      text-decoration: underline;
-    }
-
-    .company-link svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Tab Navigation */
-    .tab-nav {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--border-color);
-      margin-top: 2rem;
-    }
-
-    .tab-link {
-      padding: 0.875rem 0;
-      margin-right: 2rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: all 0.15s ease;
-    }
-
-    .tab-link:hover {
-      color: var(--text-primary);
-    }
-
-    .tab-link.active {
-      color: var(--text-primary);
-      border-bottom-color: var(--text-primary);
-    }
-
-    /* Tab Content */
-    .tab-content {
-      display: none;
-      padding: 2.5rem 0;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* Overview Tab - Two Column Layout */
-    .overview-grid {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 3rem;
-    }
-
-    /* Resources Section */
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .section-link {
-      font-size: 0.875rem;
-      color: var(--accent-blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .section-link:hover {
-      text-decoration: underline;
-    }
-
-    .resource-card {
-      display: block;
-      padding: 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--accent-blue);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: all 0.15s ease;
-      margin-bottom: 0.75rem;
-    }
-
-    .resource-card:hover {
-      border-color: var(--accent-blue);
-      background: var(--bg-secondary);
-    }
-
-    /* Controls Section */
-    .controls-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .controls-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-    }
-
-    .updated-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      color: var(--accent-green);
-      font-weight: 500;
-    }
-
-    .updated-badge svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    /* Control Category Card */
-    .control-category-card {
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.25rem;
-      background: var(--bg-card);
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .control-category-card:hover {
-      border-color: #d1d5db;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    .category-name {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .category-arrow {
-      color: var(--text-muted);
-    }
-
-    .category-arrow svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .control-preview-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.625rem;
-    }
-
-    .control-preview-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-    }
-
-    .control-check {
-      color: var(--accent-green);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .control-check svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .control-preview-text {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .view-more-link {
-      display: block;
-      margin-top: 1rem;
-      font-size: 0.8125rem;
-      color: var(--accent-blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .view-more-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Controls Tab - List View */
-    .controls-page-layout {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 2rem;
-    }
-
-    .controls-sidebar {
-      border-right: 1px solid var(--border-color);
-      padding-right: 1.5rem;
-    }
-
-    .sidebar-nav-item {
-      display: block;
-      padding: 0.5rem 0;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.15s ease;
-    }
-
-    .sidebar-nav-item:hover,
-    .sidebar-nav-item.active {
-      color: var(--text-primary);
-    }
-
-    .controls-main {
-      min-width: 0;
-    }
-
-    .controls-main-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-    }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.75rem;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      background: var(--bg-primary);
-      width: 250px;
-    }
-
-    .search-box svg {
-      width: 16px;
-      height: 16px;
-      color: var(--text-muted);
-    }
-
-    .search-box input {
-      border: none;
-      outline: none;
-      font-size: 0.875rem;
-      color: var(--text-primary);
-      width: 100%;
-      background: transparent;
-    }
-
-    .search-box input::placeholder {
-      color: var(--text-muted);
-    }
-
-    .control-category-section {
-      margin-bottom: 2.5rem;
-    }
-
-    .control-category-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .controls-table {
-      width: 100%;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .controls-table-header {
-      display: grid;
-      grid-template-columns: 1fr 80px;
-      padding: 0.75rem 1rem;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: var(--text-muted);
-    }
-
-    .control-row {
-      display: grid;
-      grid-template-columns: 1fr 80px;
-      padding: 1rem;
-      border-bottom: 1px solid var(--border-color);
-      align-items: center;
-    }
-
-    .control-row:last-child {
-      border-bottom: none;
-    }
-
-    .control-row:hover {
-      background: var(--bg-secondary);
-    }
-
-    .control-info h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .control-info p {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .control-info ul {
-      margin-top: 0.5rem;
-      margin-left: 1.25rem;
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-    }
-
-    .control-info ul li {
-      margin-bottom: 0.25rem;
-    }
-
-    .control-status {
-      display: flex;
-      justify-content: center;
-    }
-
-    .status-check {
-      color: var(--accent-green);
-    }
-
-    .status-check svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* Resources Tab */
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .resource-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.15s ease;
-    }
-
-    .resource-item:hover {
-      border-color: var(--accent-blue);
-      background: var(--bg-secondary);
-    }
-
-    .resource-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: #f0f9ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-blue);
-    }
-
-    .resource-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .resource-info h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .resource-info p {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 900px) {
-      .overview-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .controls-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .controls-page-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .controls-sidebar {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding-right: 0;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .sidebar-nav-item {
-        padding: 0.5rem 1rem;
-        background: var(--bg-secondary);
-        border-radius: 100px;
-      }
-
-      .resources-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .trust-container {
-        padding: 0 1rem;
-      }
-
-      .company-hero {
-        padding: 2.5rem 0 2rem;
-      }
-
-      .company-name {
-        font-size: 1.5rem;
-      }
-
-      .company-links {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .tab-link {
-        margin-right: 1.25rem;
-        font-size: 0.8125rem;
-      }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trust Center | U4IA</title>
+<meta name="description" content="U4IA Trust Center — security controls, compliance, and data protection practices.">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fafbfc;--bg-alt:#f1f5f9;--surface:#ffffff;--surface-dark:#0f172a;--border:#e2e8f0;--border-light:#f1f5f9;--border-hover:#cbd5e1;--text:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;--text-faint:#cbd5e1;--primary:#0284c7;--primary-50:#f0f9ff;--primary-100:#e0f2fe;--primary-200:#bae6fd;--primary-700:#0369a1;--success:#10b981;--success-50:#ecfdf5;--success-100:#d1fae5;--anchor:#8b5cf6;--anchor-50:#f5f3ff;--anchor-100:#ede9fe;--font:'DM Sans',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace;--radius:16px;--radius-md:12px;--radius-sm:8px;--shadow-sm:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.06),0 2px 4px rgba(0,0,0,0.03)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.8);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(226,232,240,0.6);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav-inner{width:100%;max-width:1200px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--mono);font-size:1.4rem;font-weight:700;letter-spacing:-.5px;color:var(--primary);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all .2s ease;white-space:nowrap;border-radius:var(--radius-md)}
+.btn-secondary{background:var(--surface);color:var(--text);padding:10px 18px;font-size:.825rem;border:1.5px solid var(--border);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.btn-secondary:hover{border-color:var(--border-hover);box-shadow:var(--shadow-sm)}
+.btn-dark{background:#000;color:#fff;padding:12px 24px;font-size:.875rem;box-shadow:0 2px 8px rgba(0,0,0,.25);letter-spacing:.01em}
+.btn-dark:hover{background:#1a1a1a;box-shadow:0 4px 16px rgba(0,0,0,.2);transform:translateY(-1px)}
+.btn-arrow{display:inline-flex;align-items:center;transition:transform .2s}
+.btn:hover .btn-arrow{transform:translateX(3px)}
+.btn-arrow svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.container{max-width:960px;margin:0 auto;padding:0 2rem}
+
+/* TRUST HERO */
+.trust-hero{padding:8rem 0 3rem;text-align:center}
+.trust-hero h1{font-size:clamp(2rem,4vw,2.75rem);font-weight:700;letter-spacing:-.5px;margin-bottom:1rem}
+.trust-hero p{font-size:1.05rem;color:var(--text-secondary);max-width:640px;margin:0 auto 2rem;line-height:1.7}
+.trust-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:.8rem;font-weight:600;color:var(--text);box-shadow:var(--shadow-sm)}
+.trust-badge-icon{width:20px;height:20px;display:flex;align-items:center;justify-content:center}
+
+/* RESOURCES */
+.trust-section{padding:3rem 0;border-top:1px solid var(--border)}
+.trust-section-label{font-family:var(--mono);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);margin-bottom:.5rem}
+.trust-section h2{font-size:1.5rem;font-weight:700;margin-bottom:.5rem}
+.trust-section-desc{font-size:.95rem;color:var(--text-secondary);margin-bottom:2rem;line-height:1.7}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.resource-card{padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text);transition:all .2s}
+.resource-card:hover{border-color:var(--primary-200);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.resource-card-icon{width:36px;height:36px;background:var(--primary-50);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;color:var(--primary)}
+.resource-card-icon svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.resource-card h4{font-size:.85rem;font-weight:700;margin-bottom:4px}
+.resource-card p{font-size:.75rem;color:var(--text-muted);line-height:1.5}
+
+/* CONTROLS */
+.controls-nav{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
+.controls-nav-btn{padding:8px 16px;border-radius:100px;font-size:.8rem;font-weight:600;background:var(--bg-alt);border:1px solid var(--border-light);color:var(--text-secondary);cursor:pointer;transition:all .2s;font-family:var(--font)}
+.controls-nav-btn:hover{border-color:var(--border-hover);color:var(--text)}
+.controls-nav-btn.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.controls-category{display:none}
+.controls-category.active{display:block}
+.control-item{padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:.5rem;transition:all .2s}
+.control-item:hover{border-color:var(--primary-200)}
+.control-header{display:flex;align-items:flex-start;gap:.75rem}
+.control-check{width:22px;height:22px;flex-shrink:0;background:var(--success-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--success);margin-top:1px}
+.control-check svg{width:12px;height:12px;stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.control-text h4{font-size:.875rem;font-weight:700;margin-bottom:2px}
+.control-text p{font-size:.8rem;color:var(--text-secondary);line-height:1.6}
+.controls-count{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);margin-top:1.5rem}
+
+/* FOOTER */
+footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center;margin-top:3rem}
+.footer-logo{font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--primary);margin-bottom:.5rem}
+.footer-text{font-size:.8rem;color:var(--text-muted);margin-bottom:.5rem}
+.footer-links{display:flex;justify-content:center;gap:.5rem;align-items:center}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:.75rem;transition:color .2s}
+.footer-links a:hover{color:var(--text-secondary)}
+.footer-divider{color:var(--text-faint);font-size:.6rem}
+@media(max-width:768px){.nav-links{display:none}.resources-grid{grid-template-columns:1fr}.controls-nav{gap:4px}.controls-nav-btn{padding:6px 12px;font-size:.75rem}}
+</style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="trust-header">
-    <a href="/" class="trust-header-logo">U</a>
-    <div class="trust-header-divider"></div>
-    <span class="trust-header-title">U4IA's Trust Center</span>
-  </header>
-
-  <div class="trust-container">
-    <!-- Company Hero -->
-    <section class="company-hero">
-      <h1 class="company-name">U4IA</h1>
-      <p class="company-description">
-        U4IA is the relationship intelligence platform for revenue teams. We monitor your Gmail and Slack conversations to identify warm referral opportunities, calculate commissions, and generate personalized intro drafts—turning your network into revenue.
-      </p>
-      <div class="company-links">
-        <a href="mailto:support@u4ia.ai" class="company-link">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          support@u4ia.ai
-        </a>
-        <a href="/privacy.html" class="company-link">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-          Privacy Policy
-        </a>
-      </div>
-    </section>
-
-    <!-- Tab Navigation -->
-    <nav class="tab-nav">
-      <a href="#overview" class="tab-link active" data-tab="overview">Overview</a>
-      <a href="#resources" class="tab-link" data-tab="resources">Resources</a>
-      <a href="#controls" class="tab-link" data-tab="controls">Controls</a>
-    </nav>
-
-    <!-- Overview Tab -->
-    <section id="overview" class="tab-content active">
-      <div class="overview-grid">
-        <!-- Resources Column -->
-        <div class="resources-column">
-          <div class="section-header">
-            <h2 class="section-title">Resources</h2>
-            <a href="#resources" class="section-link" onclick="switchTab('resources')">View all resources</a>
-          </div>
-          <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Information%20Security%20Policy" class="resource-card">Information Security Policy</a>
-          <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Data%20Processing%20Agreement" class="resource-card">Data Processing Agreement</a>
-          <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Penetration%20Test%20Report" class="resource-card">Penetration Test Summary</a>
-        </div>
-
-        <!-- Controls Column -->
-        <div class="controls-column">
-          <div class="controls-header">
-            <h2 class="controls-title">Controls</h2>
-            <span class="updated-badge">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              Updated today
-            </span>
-            <a href="#controls" class="section-link" style="margin-left: auto;" onclick="switchTab('controls')">View all controls</a>
-          </div>
-
-          <div class="controls-grid">
-            <!-- Infrastructure Security -->
-            <div class="control-category-card" onclick="switchTab('controls', 'infrastructure')">
-              <div class="category-header">
-                <span class="category-name">Infrastructure security</span>
-                <span class="category-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-              </div>
-              <div class="control-preview-list">
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Production database authentication enforced</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Encryption key access restricted</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Unique account authentication enforced</span>
-                </div>
-              </div>
-              <a href="#controls" class="view-more-link" onclick="event.stopPropagation(); switchTab('controls', 'infrastructure')">View 12 more Infrastructure security controls</a>
-            </div>
-
-            <!-- Organizational Security -->
-            <div class="control-category-card" onclick="switchTab('controls', 'organizational')">
-              <div class="category-header">
-                <span class="category-name">Organizational security</span>
-                <span class="category-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-              </div>
-              <div class="control-preview-list">
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Security policies established</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Code of conduct acknowledged by employees</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Security awareness training completed</span>
-                </div>
-              </div>
-              <a href="#controls" class="view-more-link" onclick="event.stopPropagation(); switchTab('controls', 'organizational')">View 5 more Organizational security controls</a>
-            </div>
-
-            <!-- Product Security -->
-            <div class="control-category-card" onclick="switchTab('controls', 'product')">
-              <div class="category-header">
-                <span class="category-name">Product security</span>
-                <span class="category-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-              </div>
-              <div class="control-preview-list">
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Data transmission encrypted</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Vulnerability scanning performed</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Penetration testing conducted</span>
-                </div>
-              </div>
-              <a href="#controls" class="view-more-link" onclick="event.stopPropagation(); switchTab('controls', 'product')">View 4 more Product security controls</a>
-            </div>
-
-            <!-- Internal Security Procedures -->
-            <div class="control-category-card" onclick="switchTab('controls', 'internal')">
-              <div class="category-header">
-                <span class="category-name">Internal security procedures</span>
-                <span class="category-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-              </div>
-              <div class="control-preview-list">
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Business continuity plan established</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Incident response plan documented</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Change management process implemented</span>
-                </div>
-              </div>
-              <a href="#controls" class="view-more-link" onclick="event.stopPropagation(); switchTab('controls', 'internal')">View 6 more Internal security procedures controls</a>
-            </div>
-
-            <!-- Data and Privacy -->
-            <div class="control-category-card" onclick="switchTab('controls', 'data')">
-              <div class="category-header">
-                <span class="category-name">Data and privacy</span>
-                <span class="category-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-              </div>
-              <div class="control-preview-list">
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Data retention procedures established</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Data classification policy established</span>
-                </div>
-                <div class="control-preview-item">
-                  <span class="control-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
-                  <span class="control-preview-text">Customer data deleted upon request</span>
-                </div>
-              </div>
-              <a href="#controls" class="view-more-link" onclick="event.stopPropagation(); switchTab('controls', 'data')">View 5 more Data and privacy controls</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resources Tab -->
-    <section id="resources" class="tab-content">
-      <h2 class="section-title" style="margin-bottom: 1.5rem;">Security Documents</h2>
-      <p style="color: var(--text-secondary); margin-bottom: 2rem;">Request access to our security documentation. Documents are available to customers and prospects under NDA.</p>
-
-      <div class="resources-grid">
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Information%20Security%20Policy" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Information Security Policy</h4>
-            <p>Core security controls and governance</p>
-          </div>
-        </a>
-
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Access%20Control%20Policy" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Access Control Policy</h4>
-            <p>Authentication and authorization</p>
-          </div>
-        </a>
-
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Incident%20Response%20Plan" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Incident Response Plan</h4>
-            <p>Security incident handling</p>
-          </div>
-        </a>
-
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Data%20Processing%20Agreement" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Data Processing Agreement</h4>
-            <p>GDPR-compliant DPA</p>
-          </div>
-        </a>
-
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Business%20Continuity%20Plan" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Business Continuity Plan</h4>
-            <p>Disaster recovery procedures</p>
-          </div>
-        </a>
-
-        <a href="mailto:security@u4ia.ai?subject=Security%20Document%20Request%20-%20Penetration%20Test%20Summary" class="resource-item">
-          <div class="resource-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div class="resource-info">
-            <h4>Penetration Test Summary</h4>
-            <p>Third-party security assessment</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Controls Tab -->
-    <section id="controls" class="tab-content">
-      <div class="controls-page-layout">
-        <!-- Sidebar -->
-        <div class="controls-sidebar">
-          <a class="sidebar-nav-item active" data-category="infrastructure">Infrastructure security</a>
-          <a class="sidebar-nav-item" data-category="organizational">Organizational security</a>
-          <a class="sidebar-nav-item" data-category="product">Product security</a>
-          <a class="sidebar-nav-item" data-category="internal">Internal security procedures</a>
-          <a class="sidebar-nav-item" data-category="data">Data and privacy</a>
-        </div>
-
-        <!-- Main Content -->
-        <div class="controls-main">
-          <div class="controls-main-header">
-            <h2 class="section-title">Controls</h2>
-            <div class="search-box">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              <input type="text" placeholder="Search controls" id="controlSearch">
-            </div>
-          </div>
-
-          <!-- Infrastructure Security -->
-          <div class="control-category-section" data-section="infrastructure">
-            <h3 class="control-category-title">Infrastructure security</h3>
-            <div class="controls-table">
-              <div class="controls-table-header">
-                <span>Control</span>
-                <span>Status</span>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Unique production database authentication enforced</h4>
-                  <p>U4IA requires authentication to production datastores using authorized secure mechanisms.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Encryption key access restricted</h4>
-                  <p>U4IA restricts privileged access to encryption keys to authorized users with a business need.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Unique account authentication enforced</h4>
-                  <p>U4IA requires authentication to systems and applications using unique credentials or authorized SSO.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Production application access restricted</h4>
-                  <p>System access restricted to authorized access only via Railway's infrastructure controls.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Production database access restricted</h4>
-                  <p>U4IA restricts privileged access to databases to authorized users with a business need.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Network firewalls utilized</h4>
-                  <p>U4IA uses Cloudflare firewalls and configures them to prevent unauthorized access.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Organizational Security -->
-          <div class="control-category-section" data-section="organizational">
-            <h3 class="control-category-title">Organizational security</h3>
-            <div class="controls-table">
-              <div class="controls-table-header">
-                <span>Control</span>
-                <span>Status</span>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Security policies established</h4>
-                  <p>U4IA has established information security policies covering access control, data classification, and incident response.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Code of conduct acknowledged</h4>
-                  <p>U4IA employees acknowledge and agree to the company's code of conduct and acceptable use policies.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Access revoked upon termination</h4>
-                  <p>U4IA completes termination checklists to ensure that access is revoked for terminated employees within SLAs.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product Security -->
-          <div class="control-category-section" data-section="product">
-            <h3 class="control-category-title">Product security</h3>
-            <div class="controls-table">
-              <div class="controls-table-header">
-                <span>Control</span>
-                <span>Status</span>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Data transmission encrypted</h4>
-                  <p>All data transmission uses TLS 1.3. API endpoints are HTTPS-only.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Data at rest encrypted</h4>
-                  <p>All OAuth tokens encrypted with Fernet symmetric encryption. Database encrypted via PostgreSQL native encryption.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Vulnerability scanning performed</h4>
-                  <p>U4IA performs regular vulnerability scanning of application dependencies and infrastructure.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Penetration testing conducted</h4>
-                  <p>U4IA conducts penetration testing by qualified security professionals.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Internal Security Procedures -->
-          <div class="control-category-section" data-section="internal">
-            <h3 class="control-category-title">Internal security procedures</h3>
-            <div class="controls-table">
-              <div class="controls-table-header">
-                <span>Control</span>
-                <span>Status</span>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Business continuity plan established</h4>
-                  <p>U4IA has established a business continuity plan that is reviewed and tested periodically.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Incident response plan documented</h4>
-                  <p>U4IA maintains an incident response plan with defined roles, procedures, and communication protocols.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Change management process implemented</h4>
-                  <p>U4IA has implemented a formal change management process for production systems.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Audit logging implemented</h4>
-                  <p>Every API call logged with timestamps, user, IP address, and outcome. Full audit trail for compliance.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Data and Privacy -->
-          <div class="control-category-section" data-section="data">
-            <h3 class="control-category-title">Data and privacy</h3>
-            <div class="controls-table">
-              <div class="controls-table-header">
-                <span>Control</span>
-                <span>Status</span>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Data retention procedures established</h4>
-                  <p>U4IA has established data retention procedures. Email snippets retained for 90 days maximum.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Data classification policy established</h4>
-                  <p>U4IA has established a data classification policy that defines sensitivity levels and handling requirements.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Customer data deleted upon request</h4>
-                  <p>U4IA deletes customer data upon request within 30 days and confirms completion.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>Internal emails never processed</h4>
-                  <p>Only conversations with external parties are analyzed. Internal emails filtered client-side before transmission.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-              <div class="control-row">
-                <div class="control-info">
-                  <h4>No AI model training on customer data</h4>
-                  <p>U4IA uses Anthropic's Claude API with zero-retention policy. Customer data is never used for AI training.</p>
-                </div>
-                <div class="control-status"><span class="status-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+<nav><div class="nav-inner">
+  <a class="nav-logo" href="/">U4IA</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a class="btn btn-secondary" href="https://www.u4ia.ai/login" style="padding:10px 18px;font-size:.825rem">Log in</a>
+    <a class="btn btn-dark" href="https://calendly.com/u4ia">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Meet the Founder<span class="btn-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
   </div>
+</div></nav>
 
-  <script>
-    // Tab switching
-    function switchTab(tabName, category = null) {
-      // Update tab links
-      document.querySelectorAll('.tab-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.tab === tabName) {
-          link.classList.add('active');
-        }
-      });
+<!-- HERO -->
+<section class="trust-hero">
+  <div class="container">
+    <h1>Trust Center</h1>
+    <p>U4IA is outcome-based acquisition infrastructure. We analyze conversation metadata to surface warm introductions, price the next step, and verify outcomes — all with enterprise-grade security.</p>
+    <div class="trust-badges">
+      <div class="trust-badge"><span class="trust-badge-icon">🔒</span> SOC 2 Aligned</div>
+      <div class="trust-badge"><span class="trust-badge-icon">🔐</span> Encrypted at Rest &amp; Transit</div>
+      <div class="trust-badge"><span class="trust-badge-icon">📋</span> GDPR Ready</div>
+      <div class="trust-badge"><span class="trust-badge-icon">🚫</span> Zero AI Training on Customer Data</div>
+    </div>
+  </div>
+</section>
 
-      // Update tab content
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-      });
-      document.getElementById(tabName).classList.add('active');
+<!-- RESOURCES -->
+<section class="trust-section">
+  <div class="container">
+    <div class="trust-section-label">Security Documents</div>
+    <h2>Resources</h2>
+    <p class="trust-section-desc">Security documentation available to customers and prospects. Contact <a href="mailto:security@u4ia.ai">security@u4ia.ai</a> for access.</p>
+    <div class="resources-grid">
+      <a href="mailto:security@u4ia.ai?subject=Request: Information Security Policy" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h4>Information Security Policy</h4>
+        <p>Core security controls and governance</p>
+      </a>
+      <a href="mailto:security@u4ia.ai?subject=Request: Access Control Policy" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg></div>
+        <h4>Access Control Policy</h4>
+        <p>Authentication and authorization</p>
+      </a>
+      <a href="mailto:security@u4ia.ai?subject=Request: Incident Response Plan" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M5.07 19H19a2 2 0 001.75-2.95L13.74 4.36a2 2 0 00-3.5 0L3.32 16.05A2 2 0 005.07 19z"/></svg></div>
+        <h4>Incident Response Plan</h4>
+        <p>Security incident handling</p>
+      </a>
+      <a href="mailto:security@u4ia.ai?subject=Request: Data Processing Agreement" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h4>Data Processing Agreement</h4>
+        <p>GDPR-compliant DPA</p>
+      </a>
+      <a href="mailto:security@u4ia.ai?subject=Request: Business Continuity Plan" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h4>Business Continuity Plan</h4>
+        <p>Disaster recovery procedures</p>
+      </a>
+      <a href="mailto:security@u4ia.ai?subject=Request: Penetration Test Summary" class="resource-card">
+        <div class="resource-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Penetration Test Summary</h4>
+        <p>Third-party security assessment</p>
+      </a>
+    </div>
+  </div>
+</section>
 
-      // If category specified, scroll to it and update sidebar
-      if (category && tabName === 'controls') {
-        setTimeout(() => {
-          // Update sidebar
-          document.querySelectorAll('.sidebar-nav-item').forEach(item => {
-            item.classList.remove('active');
-            if (item.dataset.category === category) {
-              item.classList.add('active');
-            }
-          });
+<!-- CONTROLS -->
+<section class="trust-section" id="controls">
+  <div class="container">
+    <div class="trust-section-label">22 Controls Monitored</div>
+    <h2>Security Controls</h2>
+    <p class="trust-section-desc">Active security controls across infrastructure, organization, product, operations, and data privacy.</p>
 
-          // Scroll to section
-          const section = document.querySelector(`[data-section="${category}"]`);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 100);
-      }
-    }
+    <div class="controls-nav">
+      <button class="controls-nav-btn active" data-cat="infrastructure">Infrastructure (6)</button>
+      <button class="controls-nav-btn" data-cat="organizational">Organizational (3)</button>
+      <button class="controls-nav-btn" data-cat="product">Product (4)</button>
+      <button class="controls-nav-btn" data-cat="internal">Internal Procedures (4)</button>
+      <button class="controls-nav-btn" data-cat="data">Data &amp; Privacy (5)</button>
+    </div>
 
-    // Tab link clicks
-    document.querySelectorAll('.tab-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        switchTab(link.dataset.tab);
-      });
-    });
+    <!-- Infrastructure -->
+    <div class="controls-category active" id="cat-infrastructure">
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Unique production database authentication enforced</h4><p>U4IA requires authentication to production datastores using authorized secure mechanisms.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Encryption key access restricted</h4><p>Privileged access to encryption keys restricted to authorized users with a business need.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Unique account authentication enforced</h4><p>Authentication to systems and applications using unique credentials or authorized SSO.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Production application access restricted</h4><p>System access restricted to authorized access only via Railway's infrastructure controls.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Production database access restricted</h4><p>Privileged access to databases restricted to authorized users with a business need.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Network firewalls utilized</h4><p>Cloudflare firewalls configured to prevent unauthorized access.</p></div></div></div>
+    </div>
 
-    // Sidebar navigation
-    document.querySelectorAll('.sidebar-nav-item').forEach(item => {
-      item.addEventListener('click', () => {
-        document.querySelectorAll('.sidebar-nav-item').forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
+    <!-- Organizational -->
+    <div class="controls-category" id="cat-organizational">
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Security policies established</h4><p>Information security policies covering access control, data classification, and incident response.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Code of conduct acknowledged</h4><p>Employees acknowledge and agree to the company's code of conduct and acceptable use policies.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Access revoked upon termination</h4><p>Termination checklists ensure access is revoked for terminated employees within SLAs.</p></div></div></div>
+    </div>
 
-        const section = document.querySelector(`[data-section="${item.dataset.category}"]`);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+    <!-- Product -->
+    <div class="controls-category" id="cat-product">
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Data transmission encrypted</h4><p>All data transmission uses TLS 1.3. API endpoints are HTTPS-only.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Data at rest encrypted</h4><p>All OAuth tokens encrypted with Fernet symmetric encryption. Database encrypted via PostgreSQL native encryption.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Vulnerability scanning performed</h4><p>Regular vulnerability scanning of application dependencies and infrastructure.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Penetration testing conducted</h4><p>Penetration testing by qualified security professionals.</p></div></div></div>
+    </div>
 
-    // Search functionality
-    document.getElementById('controlSearch').addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      document.querySelectorAll('.control-row').forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(query) ? '' : 'none';
-      });
-    });
-  </script>
+    <!-- Internal Procedures -->
+    <div class="controls-category" id="cat-internal">
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Business continuity plan established</h4><p>Business continuity plan reviewed and tested periodically.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Incident response plan documented</h4><p>Incident response plan with defined roles, procedures, and communication protocols.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Change management process implemented</h4><p>Formal change management process for production systems.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Audit logging implemented</h4><p>Every API call logged with timestamps, user, IP address, and outcome. Full audit trail for compliance.</p></div></div></div>
+    </div>
 
+    <!-- Data & Privacy -->
+    <div class="controls-category" id="cat-data">
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Data retention procedures established</h4><p>Email snippets retained for 90 days maximum. Clear retention policies across all data types.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Data classification policy established</h4><p>Data classification policy defines sensitivity levels and handling requirements.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Customer data deleted upon request</h4><p>Customer data deleted within 30 days of request with confirmation.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>Internal emails never processed</h4><p>Only conversations with external parties are analyzed. Internal emails filtered client-side before transmission.</p></div></div></div>
+      <div class="control-item"><div class="control-header"><div class="control-check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="control-text"><h4>No AI model training on customer data</h4><p>Anthropic's Claude API with zero-retention policy. Customer data is never used for AI training.</p></div></div></div>
+    </div>
+
+    <p class="controls-count">22 controls across 5 categories · Last reviewed February 2026</p>
+  </div>
+</section>
+
+<footer><div class="container" style="max-width:960px">
+  <div class="footer-logo">U4IA</div>
+  <p class="footer-text">&copy; 2026 U4IA. Outcome-based acquisition infrastructure.</p>
+  <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><span class="footer-divider">&middot;</span><a href="/terms.html">Terms of Service</a><span class="footer-divider">&middot;</span><a href="/trust.html">Trust Center</a></div>
+</div></footer>
+
+<script>
+// Controls tab navigation
+document.querySelectorAll('.controls-nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.controls-nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.controls-category').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('cat-' + btn.dataset.cat).classList.add('active');
+  });
+});
+</script>
 </body>
 </html>

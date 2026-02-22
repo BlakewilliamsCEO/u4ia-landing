@@ -97,7 +97,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
       <p>U4IA ("we," "our," or "us") provides a Chrome extension and platform that helps professionals identify and act on referral opportunities within their existing business relationships. This Privacy Policy explains how we collect, use, and protect your information when you use the U4IA PartnerOS Chrome extension and related services.</p>
 
       <div class="highlight-box">
-        <p><strong>The key principle:</strong> We only analyze conversations with external parties. Internal company emails never leave your browser and are never sent to our servers.</p>
+        <p><strong>The key principle:</strong> We only analyze conversations with external parties. All analysis happens server-side through the U4IA web application. Internal company emails are never analyzed or sent to our servers.</p>
       </div>
 
       <h2>Information We Collect</h2>
@@ -111,11 +111,12 @@ footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
       </ul>
 
       <h3>Email and Calendar Data</h3>
-      <p>With your permission, our Chrome extension accesses:</p>
+      <p>With your permission, our web application (<a href="https://u4ia.ai">u4ia.ai</a>) accesses:</p>
       <ul>
         <li><strong>Gmail messages</strong> — To identify conversations with external business contacts that may represent referral opportunities</li>
         <li><strong>Google Calendar events</strong> — To identify meetings with external parties and understand relationship context</li>
       </ul>
+      <p>The Chrome extension does not access Gmail or Calendar data. All email and calendar analysis happens server-side through the U4IA web application.</p>
 
       <div class="highlight-box">
         <p><strong>What we DO NOT access:</strong></p>
@@ -135,7 +136,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
         <li><strong>Direct message history</strong> — DMs and group DMs, for the same purpose</li>
         <li><strong>User information</strong> — Names and email addresses of Slack workspace members, to distinguish internal from external participants</li>
       </ul>
-      <p>Slack access is entirely optional. The extension functions fully with Gmail alone. You can disconnect Slack at any time from the extension settings.</p>
+      <p>Slack access is entirely optional. The web application functions fully with Gmail alone. You can disconnect Slack at any time from the web application settings.</p>
 
       <h3>How We Determine "External" vs "Internal"</h3>
       <p>When you sign up, you specify your company's email domain(s). Any email conversation involving only people at your company domain is considered "internal" and is <strong>never sent to our servers</strong>. Only conversations with participants from external domains are analyzed.</p>
@@ -191,7 +192,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
         </tr>
         <tr>
           <td>PostHog</td>
-          <td>Product analytics and error tracking</td>
+          <td>Product analytics and error tracking (web application only — not used in the Chrome extension)</td>
           <td>Email address, company name, organization domains, feature usage events, scan result summaries (opportunity counts and fit categories — no email content), onboarding progress, error details</td>
         </tr>
       </table>
@@ -249,13 +250,11 @@ footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
         </tr>
         <tr>
           <td>sidePanel</td>
-          <td>To display opportunities alongside Gmail</td>
-        </tr>
-        <tr>
-          <td>mail.google.com</td>
-          <td>To read email content and inject opportunity badges</td>
+          <td>To display your opportunity dashboard in a Chrome side panel</td>
         </tr>
       </table>
+
+      <p>The Chrome extension only communicates with <strong>https://api.u4ia.ai</strong>. It does not access Gmail, Calendar, Slack, or any other website content.</p>
 
       <h2>Children's Privacy</h2>
       <p>U4IA is designed for business professionals. We do not knowingly collect information from anyone under the age of 18. If you believe we have inadvertently collected such information, please contact us immediately.</p>

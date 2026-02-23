@@ -15,7 +15,7 @@
         '<div class="nav-links">' +
           '<a href="/#personas">Resources</a>' +
           '<a href="/#pricing">Pricing</a>' +
-          '<a href="/blog/top-tools-activating-b2b-saas-partners">Blog</a>' +
+          '<a href="/blog">Blog</a>' +
           '<a class="btn btn-secondary" href="https://www.u4ia.ai/login" style="padding:10px 18px;font-size:.825rem">Log in</a>' +
           '<a class="btn btn-dark" href="https://cal.com/blake-williams-uzi88i/reverse-demo" data-cal-link="blake-williams-uzi88i/reverse-demo" data-cal-config=\'{"layout":"month_view"}\'>' +
             '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
@@ -56,7 +56,7 @@
           '<span class="footer-divider">\u00B7</span>' +
           '<a href="/support.html">Support</a>' +
           '<span class="footer-divider">\u00B7</span>' +
-          '<a href="/blog/top-tools-activating-b2b-saas-partners">Blog</a>' +
+          '<a href="/blog">Blog</a>' +
         '</div>' +
       '</div>';
   }

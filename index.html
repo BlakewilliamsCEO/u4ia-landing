@@ -575,6 +575,138 @@ body.wt-locked .wt-scroll-hint{display:flex}
   .faq-answer-inner{padding:0 20px 20px;font-size:14px}
   .faq-tabs{flex-wrap:wrap}
 }
+
+/* ATTRIBUTION SECTION (Dark) */
+.attr-wrapper{
+  --dark-950:#020617;--dark-900:#0f172a;--dark-850:#131c2e;--dark-800:#1e293b;--dark-700:#334155;--dark-600:#475569;--dark-500:#64748b;--dark-400:#94a3b8;--dark-300:#cbd5e1;--dark-200:#e2e8f0;--dark-100:#f1f5f9;
+  --teal-400:#22d3ee;--teal-500:#0ea5e9;--teal-600:#0284c7;--teal-glow:rgba(14,165,233,0.15);--teal-glow-strong:rgba(14,165,233,0.25);
+  --green-400:#4ade80;--green-500:#22c55e;--green-glow:rgba(34,197,94,0.15);
+  --amber-400:#fbbf24;--amber-500:#f59e0b;--amber-glow:rgba(245,158,11,0.2);--amber-glow-strong:rgba(245,158,11,0.35);
+  --purple-400:#a78bfa;--purple-500:#8b5cf6;--purple-glow:rgba(139,92,246,0.15);
+  --blue-400:#60a5fa;--blue-500:#3b82f6;--blue-glow:rgba(59,130,246,0.15);
+  --orange-400:#fb923c;--orange-500:#f97316;--orange-glow:rgba(249,115,22,0.15);
+  position:relative;background:var(--dark-950);overflow:hidden;
+}
+.attr-transition-top{position:absolute;top:0;left:0;right:0;height:20px;background:linear-gradient(180deg,var(--bg) 0%,var(--dark-950) 100%);z-index:2;pointer-events:none}
+.attr-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.attr-bg-dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--dark-700) 1px,transparent 1px);background-size:32px 32px;opacity:0.3}
+.attr-bg-glow-teal{position:absolute;top:-10%;left:20%;width:600px;height:600px;background:radial-gradient(circle,var(--teal-glow) 0%,transparent 70%);border-radius:50%;filter:blur(60px)}
+.attr-bg-glow-amber{position:absolute;bottom:-5%;right:15%;width:400px;height:400px;background:radial-gradient(circle,var(--amber-glow) 0%,transparent 70%);border-radius:50%;filter:blur(60px)}
+.attr-content{position:relative;z-index:1}
+.attribution-section{position:relative;padding:120px 24px;max-width:1120px;margin:0 auto;overflow:hidden}
+.attr-header{text-align:center;margin-bottom:40px}
+.attr-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal-400);margin-bottom:20px}
+.attr-label::before,.attr-label::after{content:'';width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--teal-500),transparent)}
+.attr-title{font-size:44px;font-weight:800;letter-spacing:-0.035em;line-height:1.1;color:var(--dark-100);margin-bottom:16px}
+.attr-title-accent{background:linear-gradient(135deg,var(--teal-400),var(--teal-500));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.attr-subtitle{font-size:17px;color:var(--dark-400);line-height:1.65;max-width:600px;margin:0 auto}
+.attr-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--dark-700);border-radius:14px;overflow:hidden;margin-bottom:48px;box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+.attr-stat{background:var(--dark-850);padding:24px 20px;text-align:center}
+.attr-stat-value{font-family:var(--mono);font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
+.attr-stat-value.teal{color:var(--teal-400);text-shadow:0 0 16px var(--teal-glow)}
+.attr-stat-value.amber{color:var(--amber-400);text-shadow:0 0 16px var(--amber-glow)}
+.attr-stat-value.green{color:var(--green-400);text-shadow:0 0 16px var(--green-glow)}
+.attr-stat-value.white{color:var(--dark-100)}
+.attr-stat-label{font-size:13px;font-weight:600;color:var(--dark-300)}
+.attr-stat-sub{font-size:11px;color:var(--dark-500);margin-top:3px}
+.attr-panels{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.attr-panel{background:var(--dark-850);border:1px solid var(--dark-700);border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,0.03),0 4px 24px rgba(0,0,0,0.4),0 1px 2px rgba(0,0,0,0.3)}
+.panel-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--dark-700);background:linear-gradient(180deg,rgba(255,255,255,0.02) 0%,transparent 100%)}
+.panel-header-left{display:flex;align-items:center;gap:10px}
+.panel-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.panel-icon svg{width:20px;height:20px;stroke-width:1.5;fill:none;stroke:currentColor}
+.panel-icon.teal{background:rgba(14,165,233,0.1);color:var(--teal-400);box-shadow:0 0 12px var(--teal-glow)}
+.panel-icon.orange{background:rgba(249,115,22,0.1);color:var(--orange-400);box-shadow:0 0 12px var(--orange-glow)}
+.panel-title{font-size:15px;font-weight:700;color:var(--dark-100)}
+.panel-badge{font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;letter-spacing:0.3px}
+.panel-badge.teal{background:rgba(14,165,233,0.1);color:var(--teal-400);border:1px solid rgba(14,165,233,0.2)}
+.panel-badge.orange{background:rgba(249,115,22,0.1);color:var(--orange-400);border:1px solid rgba(249,115,22,0.2)}
+.panel-body{padding:24px}
+.opp-timeline{display:flex;flex-direction:column}
+.opp-step{display:flex;align-items:flex-start;gap:14px;position:relative;z-index:1}
+.opp-node{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:2;border:2px solid;position:relative}
+.opp-node svg{width:14px;height:14px;stroke-width:2;fill:none}
+.opp-node.detect{background:rgba(14,165,233,0.15);border-color:var(--teal-500);color:var(--teal-400);box-shadow:0 0 8px rgba(14,165,233,0.2),0 0 2px rgba(14,165,233,0.3)}
+.opp-node.outreach{background:rgba(139,92,246,0.15);border-color:var(--purple-500);color:var(--purple-400);box-shadow:0 0 8px rgba(139,92,246,0.2),0 0 2px rgba(139,92,246,0.3)}
+.opp-node.qualify{background:rgba(245,158,11,0.15);border-color:var(--amber-500);color:var(--amber-400);box-shadow:0 0 8px rgba(245,158,11,0.2),0 0 2px rgba(245,158,11,0.3)}
+.opp-node.intro{background:rgba(59,130,246,0.15);border-color:var(--blue-500);color:var(--blue-400);box-shadow:0 0 8px rgba(59,130,246,0.2),0 0 2px rgba(59,130,246,0.3)}
+.opp-node.meeting{background:rgba(34,197,94,0.15);border-color:var(--green-500);color:var(--green-400);box-shadow:0 0 8px rgba(34,197,94,0.2),0 0 2px rgba(34,197,94,0.3)}
+.opp-content{flex:1;min-width:0}
+.opp-step-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.opp-step-title{font-size:13px;font-weight:700;color:var(--dark-100)}
+.opp-step-time{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--dark-500);flex-shrink:0}
+.opp-step-desc{font-size:12px;color:var(--dark-400);line-height:1.5;margin-top:2px}
+.opp-step-meta{display:flex;align-items:center;gap:6px;margin-top:5px;flex-wrap:wrap}
+.opp-tag{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 7px;border-radius:5px;border:1px solid transparent}
+.opp-tag.verified{background:rgba(34,197,94,0.1);color:var(--green-400);border-color:rgba(34,197,94,0.2)}
+.opp-tag.crm{background:rgba(14,165,233,0.1);color:var(--teal-400);border-color:rgba(14,165,233,0.2)}
+.opp-tag.auto{background:rgba(139,92,246,0.1);color:var(--purple-400);border-color:rgba(139,92,246,0.2)}
+.opp-tag.human{background:rgba(59,130,246,0.1);color:var(--blue-400);border-color:rgba(59,130,246,0.2)}
+.opp-segment{display:flex;align-items:stretch;padding-left:15px;height:12px}
+.opp-segment-line{width:1px;height:100%;position:relative}
+.opp-segment-line.teal-to-purple{background:linear-gradient(to bottom,rgba(14,165,233,0.35),rgba(139,92,246,0.35))}
+.opp-segment-line.purple-to-amber{background:linear-gradient(to bottom,rgba(139,92,246,0.35),rgba(245,158,11,0.35))}
+.opp-segment-line.amber-to-amber{background:rgba(245,158,11,0.25)}
+.opp-segment-line.amber-to-blue{background:linear-gradient(to bottom,rgba(245,158,11,0.35),rgba(59,130,246,0.35))}
+.opp-segment-line.blue-to-blue{background:rgba(59,130,246,0.25)}
+.opp-segment-line.blue-to-green{background:linear-gradient(to bottom,rgba(59,130,246,0.35),rgba(34,197,94,0.35))}
+.opp-segment-line.green-to-green{background:rgba(34,197,94,0.25)}
+.opp-segment-line::after{content:'';position:absolute;left:-3px;top:0;width:7px;height:100%;filter:blur(3px);opacity:0.5;border-radius:2px}
+.opp-segment-line.teal-to-purple::after{background:linear-gradient(to bottom,rgba(14,165,233,0.08),rgba(139,92,246,0.08))}
+.opp-segment-line.purple-to-amber::after{background:linear-gradient(to bottom,rgba(139,92,246,0.08),rgba(245,158,11,0.08))}
+.opp-segment-line.amber-to-amber::after{background:rgba(245,158,11,0.06)}
+.opp-segment-line.amber-to-blue::after{background:linear-gradient(to bottom,rgba(245,158,11,0.08),rgba(59,130,246,0.08))}
+.opp-segment-line.blue-to-blue::after{background:rgba(59,130,246,0.06)}
+.opp-segment-line.blue-to-green::after{background:linear-gradient(to bottom,rgba(59,130,246,0.08),rgba(34,197,94,0.08))}
+.opp-segment-line.green-to-green::after{background:rgba(34,197,94,0.06)}
+.payout-divider{display:flex;align-items:center;margin:2px 0 2px 46px;gap:10px;position:relative;z-index:1}
+.payout-divider-line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--amber-500) 0px,var(--amber-500) 4px,transparent 4px,transparent 8px);opacity:0.5}
+.payout-divider-label{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--amber-400);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;text-shadow:0 0 12px var(--amber-glow-strong);padding:2px 8px;background:rgba(245,158,11,0.08);border-radius:4px;border:1px solid rgba(245,158,11,0.15)}
+.crm-updates{display:flex;flex-direction:column;gap:6px}
+.crm-legend{display:flex;align-items:center;justify-content:center;gap:24px;padding:0 0 16px;margin-bottom:12px;border-bottom:1px solid var(--dark-700)}
+.crm-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--dark-400)}
+.crm-legend-arrow{width:16px;height:16px;stroke-width:2;fill:none}
+.crm-update{border:1px solid var(--dark-700);border-radius:10px;overflow:hidden;transition:all 0.25s ease;background:var(--dark-900)}
+.crm-update:hover{border-color:var(--dark-600);box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.crm-flow-bar{height:28px;display:flex;align-items:center;padding:0 14px;gap:8px;position:relative;overflow:hidden}
+.crm-flow-bar.to-crm{background:rgba(249,115,22,0.05);border-bottom:1px solid rgba(249,115,22,0.1)}
+.crm-flow-bar.from-crm{background:rgba(14,165,233,0.05);border-bottom:1px solid rgba(14,165,233,0.1)}
+.crm-flow-bar.bidirectional{background:rgba(139,92,246,0.05);border-bottom:1px solid rgba(139,92,246,0.1)}
+.crm-flow-label{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0}
+.crm-flow-bar.to-crm .crm-flow-label{color:var(--orange-400)}
+.crm-flow-bar.from-crm .crm-flow-label{color:var(--teal-400)}
+.crm-flow-bar.bidirectional .crm-flow-label{color:var(--purple-400)}
+.crm-flow-track{flex:1;height:1px;position:relative}
+.crm-flow-bar.to-crm .crm-flow-track{background:linear-gradient(90deg,rgba(249,115,22,0.3),rgba(249,115,22,0.1))}
+.crm-flow-bar.from-crm .crm-flow-track{background:linear-gradient(90deg,rgba(14,165,233,0.1),rgba(14,165,233,0.3))}
+.crm-flow-bar.bidirectional .crm-flow-track{background:rgba(139,92,246,0.2)}
+.crm-flow-track::after{content:'';position:absolute;width:5px;height:5px;border-radius:50%;top:-2px;animation-duration:2.5s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.crm-flow-bar.to-crm .crm-flow-track::after{background:var(--orange-400);box-shadow:0 0 6px rgba(249,115,22,0.4);animation-name:flowRight}
+.crm-flow-bar.from-crm .crm-flow-track::after{background:var(--teal-400);box-shadow:0 0 6px rgba(14,165,233,0.4);animation-name:flowLeft}
+.crm-flow-bar.bidirectional .crm-flow-track::after{background:var(--purple-400);box-shadow:0 0 6px rgba(139,92,246,0.4);animation-name:flowHorizontalBoth}
+@keyframes flowRight{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:calc(100% - 5px);opacity:0}}
+@keyframes flowLeft{0%{left:calc(100% - 5px);opacity:0}8%{opacity:1}92%{opacity:1}100%{left:0;opacity:0}}
+@keyframes flowHorizontalBoth{0%{left:0;opacity:0}8%{opacity:1}45%{left:calc(100% - 5px);opacity:1}50%{opacity:0}55%{left:calc(100% - 5px);opacity:1}92%{opacity:1}100%{left:0;opacity:0}}
+.crm-flow-arrow{width:14px;height:14px;stroke-width:2;fill:none;flex-shrink:0}
+.crm-flow-bar.to-crm .crm-flow-arrow{stroke:var(--orange-400)}
+.crm-flow-bar.from-crm .crm-flow-arrow{stroke:var(--teal-400)}
+.crm-flow-bar.bidirectional .crm-flow-arrow{stroke:var(--purple-400)}
+.crm-flow-endpoint{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0}
+.crm-flow-bar.to-crm .crm-flow-endpoint{color:rgba(249,115,22,0.5)}
+.crm-flow-bar.from-crm .crm-flow-endpoint{color:rgba(14,165,233,0.5)}
+.crm-flow-bar.bidirectional .crm-flow-endpoint{color:rgba(139,92,246,0.5)}
+.crm-update-body{padding:12px 16px;display:flex;flex-direction:column;gap:5px}
+.crm-update-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.crm-update-title{font-size:13px;font-weight:700;color:var(--dark-100)}
+.crm-update-when{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--dark-500);flex-shrink:0}
+.crm-update-detail{font-size:12px;color:var(--dark-400);line-height:1.5}
+.crm-fields{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.crm-field{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;border:1px solid transparent}
+.crm-field.write{background:rgba(249,115,22,0.1);color:var(--orange-400);border-color:rgba(249,115,22,0.15)}
+.crm-field.read{background:rgba(14,165,233,0.1);color:var(--teal-400);border-color:rgba(14,165,233,0.15)}
+.crm-field.check{background:rgba(34,197,94,0.1);color:var(--green-400);border-color:rgba(34,197,94,0.15)}
+@media(max-width:900px){.attr-panels{grid-template-columns:1fr}}
+@media(max-width:640px){.attribution-section{padding:80px 16px}.attr-title{font-size:28px}.panel-body{padding:16px}.attr-bg-glow-teal,.attr-bg-glow-amber{display:none}.attr-stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1051,6 +1183,320 @@ body.wt-locked .wt-scroll-hint{display:flex}
         </div>
       </div>
     </div>
+</div>
+
+<!-- ATTRIBUTION -->
+<div class="attr-wrapper">
+  <div class="attr-transition-top"></div>
+  <div class="attr-bg">
+    <div class="attr-bg-dots"></div>
+    <div class="attr-bg-glow-teal"></div>
+    <div class="attr-bg-glow-amber"></div>
+  </div>
+  <section class="attribution-section" id="attribution">
+    <div class="attr-content">
+
+      <div class="attr-header">
+        <div class="attr-label">Attribution</div>
+        <h2 class="attr-title">Every dollar traced.<br><span class="attr-title-accent">Every intro proven.</span></h2>
+        <p class="attr-subtitle">Twelve tracked steps with three payout gates. Every CRM write, read, and verification check — visible. Nothing estimated.</p>
+      </div>
+
+      <div class="attr-stats">
+        <div class="attr-stat"><div class="attr-stat-value teal">12</div><div class="attr-stat-label">Tracked steps</div><div class="attr-stat-sub">Signal → Close</div></div>
+        <div class="attr-stat"><div class="attr-stat-value amber">3</div><div class="attr-stat-label">Payout gates</div><div class="attr-stat-sub">CRM-verified triggers</div></div>
+        <div class="attr-stat"><div class="attr-stat-value white">7</div><div class="attr-stat-label">CRM sync points</div><div class="attr-stat-sub">Reads, writes & checks</div></div>
+        <div class="attr-stat"><div class="attr-stat-value green">0</div><div class="attr-stat-label">Estimated metrics</div><div class="attr-stat-sub">Everything verified</div></div>
+      </div>
+
+      <div class="attr-panels">
+
+        <!-- LEFT: OPPORTUNITY ATTRIBUTION -->
+        <div class="attr-panel">
+          <div class="panel-header">
+            <div class="panel-header-left">
+              <div class="panel-icon teal"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <span class="panel-title">Opportunity Attribution</span>
+            </div>
+            <span class="panel-badge teal">12 steps · 3 payouts</span>
+          </div>
+          <div class="panel-body">
+            <div class="opp-timeline">
+
+              <!-- Step 1 -->
+              <div class="opp-step">
+                <div class="opp-node detect"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">ICP Account Detected</span><span class="opp-step-time">Day 0</span></div>
+                  <div class="opp-step-desc">Metadata scan surfaces warm path. Account + persona match ICP config.</div>
+                  <div class="opp-step-meta"><span class="opp-tag crm">ICP: 92</span><span class="opp-tag auto">Auto-detected</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line teal-to-purple"></div></div>
+
+              <!-- Step 2 -->
+              <div class="opp-step">
+                <div class="opp-node outreach"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Intent Email Sent</span><span class="opp-step-time">Day 1</span></div>
+                  <div class="opp-step-desc">AI-generated outreach sent to surface intent and validate timing.</div>
+                  <div class="opp-step-meta"><span class="opp-tag auto">AI-generated</span></div>
+                </div>
+              </div>
+
+              <div class="payout-divider"><div class="payout-divider-line"></div><span class="payout-divider-label">Payout 1 · $75</span><div class="payout-divider-line"></div></div>
+              <div class="opp-segment"><div class="opp-segment-line purple-to-amber"></div></div>
+
+              <!-- Step 3 -->
+              <div class="opp-step">
+                <div class="opp-node qualify"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Use Case Articulated</span><span class="opp-step-time">Day 3</span></div>
+                  <div class="opp-step-desc">Customer responds with specific use case matching ICP config.</div>
+                  <div class="opp-step-meta"><span class="opp-tag human">Customer signal</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line amber-to-amber"></div></div>
+
+              <!-- Step 4 -->
+              <div class="opp-step">
+                <div class="opp-node qualify"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Timing & Readiness Verified</span><span class="opp-step-time">Day 3</span></div>
+                  <div class="opp-step-desc">Budget cycle, decision timeline, and authority confirmed.</div>
+                  <div class="opp-step-meta"><span class="opp-tag auto">Readiness check</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line amber-to-amber"></div></div>
+
+              <!-- Step 5 -->
+              <div class="opp-step">
+                <div class="opp-node qualify"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Fully Qualified</span><span class="opp-step-time">Day 4</span></div>
+                  <div class="opp-step-desc">All criteria passed — ICP, persona, use case, timing, readiness.</div>
+                  <div class="opp-step-meta"><span class="opp-tag verified">✓ All criteria met</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line amber-to-blue"></div></div>
+
+              <!-- Step 6 -->
+              <div class="opp-step">
+                <div class="opp-node intro"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Intro Opt-In Received</span><span class="opp-step-time">Day 5</span></div>
+                  <div class="opp-step-desc">Customer explicitly opts in. Unlocks the introduction step.</div>
+                  <div class="opp-step-meta"><span class="opp-tag human">Customer consent</span><span class="opp-tag verified">✓ Unlocks intro</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line blue-to-blue"></div></div>
+
+              <!-- Step 7 -->
+              <div class="opp-step">
+                <div class="opp-node intro"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Intro Email Generated</span><span class="opp-step-time">Day 5</span></div>
+                  <div class="opp-step-desc">AI drafts double opt-in introduction for participant review.</div>
+                  <div class="opp-step-meta"><span class="opp-tag auto">AI-drafted</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line blue-to-blue"></div></div>
+
+              <!-- Step 8 -->
+              <div class="opp-step">
+                <div class="opp-node intro"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Intro Sent</span><span class="opp-step-time">Day 5</span></div>
+                  <div class="opp-step-desc">Participant sends intro. Both parties connected.</div>
+                  <div class="opp-step-meta"><span class="opp-tag human">Participant action</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line blue-to-green"></div></div>
+
+              <!-- Step 9 -->
+              <div class="opp-step">
+                <div class="opp-node meeting"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Customer Accepted</span><span class="opp-step-time">Day 6</span></div>
+                  <div class="opp-step-desc">Customer accepts intro, agrees to meeting.</div>
+                  <div class="opp-step-meta"><span class="opp-tag verified">✓ Accepted</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line green-to-green"></div></div>
+
+              <!-- Step 10 -->
+              <div class="opp-step">
+                <div class="opp-node meeting"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Customer Showed</span><span class="opp-step-time">Day 9</span></div>
+                  <div class="opp-step-desc">Meeting confirmed via calendar + CRM verification.</div>
+                  <div class="opp-step-meta"><span class="opp-tag verified">✓ CRM verified</span></div>
+                </div>
+              </div>
+
+              <div class="payout-divider"><div class="payout-divider-line"></div><span class="payout-divider-label">Payout 2 · $875</span><div class="payout-divider-line"></div></div>
+              <div class="opp-segment"><div class="opp-segment-line green-to-green"></div></div>
+
+              <!-- Step 11 -->
+              <div class="opp-step">
+                <div class="opp-node meeting"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">CRM Opportunity Created</span><span class="opp-step-time">Day 10</span></div>
+                  <div class="opp-step-desc">Deal in HubSpot. $50K value. Stage: Qualified. Attribution tagged.</div>
+                  <div class="opp-step-meta"><span class="opp-tag crm">HubSpot synced</span></div>
+                </div>
+              </div>
+              <div class="opp-segment"><div class="opp-segment-line green-to-green"></div></div>
+
+              <!-- Step 12 -->
+              <div class="opp-step">
+                <div class="opp-node meeting"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div class="opp-content">
+                  <div class="opp-step-header"><span class="opp-step-title">Deal Closed-Won</span><span class="opp-step-time">Day 34</span></div>
+                  <div class="opp-step-desc">$50K closed. Full attribution chain preserved. Final milestone fires.</div>
+                  <div class="opp-step-meta"><span class="opp-tag verified">✓ Revenue verified</span></div>
+                </div>
+              </div>
+
+              <div class="payout-divider"><div class="payout-divider-line"></div><span class="payout-divider-label">Payout 3 · $375</span><div class="payout-divider-line"></div></div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: CRM DATA FLOW -->
+        <div class="attr-panel">
+          <div class="panel-header">
+            <div class="panel-header-left">
+              <div class="panel-icon orange"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+              <span class="panel-title">CRM Data Flow</span>
+            </div>
+            <span class="panel-badge orange">HubSpot</span>
+          </div>
+          <div class="panel-body">
+
+            <!-- Legend -->
+            <div class="crm-legend">
+              <div class="crm-legend-item"><svg class="crm-legend-arrow" viewBox="0 0 24 24" stroke="var(--orange-400)" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>U4IA → CRM</div>
+              <div class="crm-legend-item"><svg class="crm-legend-arrow" viewBox="0 0 24 24" stroke="var(--teal-400)" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>CRM → U4IA</div>
+              <div class="crm-legend-item"><svg class="crm-legend-arrow" viewBox="0 0 24 24" stroke="var(--purple-400)" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="8 8 5 12 8 16"/><polyline points="16 8 19 12 16 16"/></svg>Bidirectional</div>
+            </div>
+
+            <div class="crm-updates">
+
+              <!-- 1: Contact Created -->
+              <div class="crm-update">
+                <div class="crm-flow-bar to-crm">
+                  <span class="crm-flow-label">U4IA</span>
+                  <div class="crm-flow-track"></div>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <span class="crm-flow-endpoint">CRM</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Contact Created</span><span class="crm-update-when">On detect</span></div>
+                  <div class="crm-update-detail">New contact with ICP score, source attribution, and participant link.</div>
+                  <div class="crm-fields"><span class="crm-field write">contact.source</span><span class="crm-field write">contact.icp_score</span><span class="crm-field write">contact.participant_id</span></div>
+                </div>
+              </div>
+
+              <!-- 2: Deal Value Synced -->
+              <div class="crm-update">
+                <div class="crm-flow-bar from-crm">
+                  <span class="crm-flow-endpoint">CRM</span>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+                  <div class="crm-flow-track"></div>
+                  <span class="crm-flow-label">U4IA</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Deal Value Synced</span><span class="crm-update-when">On create</span></div>
+                  <div class="crm-update-detail">Pulls deal amount to set bid ceiling and ROAS target.</div>
+                  <div class="crm-fields"><span class="crm-field read">deal.amount</span><span class="crm-field read">deal.pipeline</span></div>
+                </div>
+              </div>
+
+              <!-- 3: Meeting Verified -->
+              <div class="crm-update">
+                <div class="crm-flow-bar from-crm">
+                  <span class="crm-flow-endpoint">CRM</span>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+                  <div class="crm-flow-track"></div>
+                  <span class="crm-flow-label">U4IA</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Meeting Verified</span><span class="crm-update-when">On show</span></div>
+                  <div class="crm-update-detail">Cross-references calendar event with CRM meeting activity.</div>
+                  <div class="crm-fields"><span class="crm-field check">✓ meeting.occurred</span><span class="crm-field check">✓ calendar.match</span><span class="crm-field check">✓ attendee.match</span></div>
+                </div>
+              </div>
+
+              <!-- 4: Payout Logged -->
+              <div class="crm-update">
+                <div class="crm-flow-bar to-crm">
+                  <span class="crm-flow-label">U4IA</span>
+                  <div class="crm-flow-track"></div>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <span class="crm-flow-endpoint">CRM</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Payout Logged</span><span class="crm-update-when">On verify</span></div>
+                  <div class="crm-update-detail">Writes payout amount, participant, and milestone type to deal record.</div>
+                  <div class="crm-fields"><span class="crm-field write">deal.payout_amount</span><span class="crm-field write">deal.milestone_type</span><span class="crm-field write">deal.payout_status</span></div>
+                </div>
+              </div>
+
+              <!-- 5: Stage Progression -->
+              <div class="crm-update">
+                <div class="crm-flow-bar bidirectional">
+                  <span class="crm-flow-label">U4IA</span>
+                  <div class="crm-flow-track"></div>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="8 8 5 12 8 16"/><polyline points="16 8 19 12 16 16"/></svg>
+                  <span class="crm-flow-endpoint">CRM</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Stage Progression</span><span class="crm-update-when">Continuous</span></div>
+                  <div class="crm-update-detail">Monitors deal stage changes. Triggers next milestone check on advance.</div>
+                  <div class="crm-fields"><span class="crm-field read">deal.stage</span><span class="crm-field check">✓ stage.advanced</span><span class="crm-field write">deal.u4ia_status</span></div>
+                </div>
+              </div>
+
+              <!-- 6: Attribution Chain Written -->
+              <div class="crm-update">
+                <div class="crm-flow-bar to-crm">
+                  <span class="crm-flow-label">U4IA</span>
+                  <div class="crm-flow-track"></div>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <span class="crm-flow-endpoint">CRM</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Attribution Chain Written</span><span class="crm-update-when">On close</span></div>
+                  <div class="crm-update-detail">Full record: signal → participant → intro → meeting → close. Permanent.</div>
+                  <div class="crm-fields"><span class="crm-field write">deal.attribution_source</span><span class="crm-field write">deal.participant_chain</span><span class="crm-field write">deal.total_payout</span><span class="crm-field write">deal.roas</span></div>
+                </div>
+              </div>
+
+              <!-- 7: Closed-Won Verification -->
+              <div class="crm-update">
+                <div class="crm-flow-bar from-crm">
+                  <span class="crm-flow-endpoint">CRM</span>
+                  <svg class="crm-flow-arrow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+                  <div class="crm-flow-track"></div>
+                  <span class="crm-flow-label">U4IA</span>
+                </div>
+                <div class="crm-update-body">
+                  <div class="crm-update-header"><span class="crm-update-title">Closed-Won Verification</span><span class="crm-update-when">On close</span></div>
+                  <div class="crm-update-detail">Confirms Closed Won stage and final amount. Triggers final payout.</div>
+                  <div class="crm-fields"><span class="crm-field check">✓ deal.is_won</span><span class="crm-field read">deal.final_amount</span><span class="crm-field check">✓ amount.matches</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 </div>
 
 <!-- TRUST / SECURITY -->

@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared-nav-footer.css"/>
   <style>
     :root {
       --bg-primary: #0d0d12;
@@ -55,53 +56,6 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.25rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(30, 30, 35, 0.4);
-      backdrop-filter: blur(40px) saturate(180%);
-      -webkit-backdrop-filter: blur(40px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #ff6b5b, #7b6bff, #5bffd0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-primary);
     }
 
     .btn {
@@ -614,14 +568,6 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        padding: 1rem 2rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
       .floating-icons {
         display: none;
       }
@@ -733,13 +679,6 @@
         font-size: 0.6rem;
         padding: 0.2rem 0.4rem;
       }
-    }
-
-    /* Footer */
-    footer {
-      padding: 4rem 0;
-      border-top: 1px solid var(--border-subtle);
-      text-align: center;
     }
 
     /* Golden completion animation */
@@ -854,38 +793,6 @@
       z-index: 9999;
     }
 
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .footer-text {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    .footer-links {
-      margin-top: 1rem;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-secondary);
-    }
-
-    .footer-divider {
-      color: var(--text-muted);
-      margin: 0 0.5rem;
-    }
-
     /* CTA Section */
     .cta-section {
       padding: 6rem 0;
@@ -924,10 +831,6 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
       .floating-icons {
         display: none;
       }
@@ -959,18 +862,7 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/" class="logo">U4IA</a>
-    <div class="nav-links">
-      <a href="/#problem">The Inertia Problem</a>
-      <a href="/how-it-works.html">30 Min Setup</a>
-      <a href="/#features">Features</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/about.html">About</a>
-      <a class="btn btn-secondary" href="https://www.u4ia.ai/login">Log in</a>
-      <a class="btn btn-dark" href="https://calendly.com/u4ia">Meet the Founder</a>
-    </div>
-  </nav>
+  <nav id="site-nav"></nav>
 
   <section class="hero">
     <div class="container">
@@ -1337,21 +1229,7 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-logo">U4IA</div>
-      <p class="footer-text">© 2025 U4IA. Relationship intelligence for revenue teams.</p>
-      <div class="footer-links">
-        <a href="/privacy.html">Privacy Policy</a>
-        <span class="footer-divider">·</span>
-        <a href="/terms.html">Terms of Service</a>
-        <span class="footer-divider">·</span>
-        <a href="/trust.html">Trust Center</a>
-        <span class="footer-divider">·</span>
-        <a href="/support.html">Support</a>
-      </div>
-    </div>
-  </footer>
+  <footer id="site-footer"></footer>
 
   <canvas id="fireworks" class="fireworks-container"></canvas>
 
@@ -1542,5 +1420,6 @@
     });
   </script>
 
+  <script src="/shared-nav-footer.js"></script>
 </body>
 </html>

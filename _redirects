@@ -4,7 +4,6 @@
 /trust.html /trust 301
 /how-it-works.html /how-it-works 301
 /support.html /support 301
-/.html / 404
 /signup https://admin.u4ia.ai/signup 302
 /login https://admin.u4ia.ai 302
 /join https://admin.u4ia.ai/signup 302

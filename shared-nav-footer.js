@@ -48,13 +48,13 @@
         '</div>' +
         '<p class="footer-text">\u00A9 2026 U4IA. Outcome-based acquisition infrastructure.</p>' +
         '<div class="footer-links">' +
-          '<a href="/privacy.html">Privacy Policy</a>' +
+          '<a href="/privacy">Privacy Policy</a>' +
           '<span class="footer-divider">\u00B7</span>' +
-          '<a href="/terms.html">Terms of Service</a>' +
+          '<a href="/terms">Terms of Service</a>' +
           '<span class="footer-divider">\u00B7</span>' +
-          '<a href="/trust.html">Trust Center</a>' +
+          '<a href="/trust">Trust Center</a>' +
           '<span class="footer-divider">\u00B7</span>' +
-          '<a href="/support.html">Support</a>' +
+          '<a href="/support">Support</a>' +
           '<span class="footer-divider">\u00B7</span>' +
           '<a href="/blog">Blog</a>' +
         '</div>' +

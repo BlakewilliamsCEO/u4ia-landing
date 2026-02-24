@@ -1569,7 +1569,7 @@ body.wt-locked .wt-scroll-hint{display:flex}
     </div>
     <div class="faq-item" data-audience="participant">
       <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false"><span>What data does U4IA access when I connect my accounts?</span><span class="faq-badge">Participants</span><svg class="faq-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="faq-answer"><div class="faq-answer-inner">U4IA scans metadata — sender domains, subject lines, calendar attendees — to identify warm relationship paths. It does <strong>not</strong> read email bodies or message content. All data is encrypted at rest and in transit. You can disconnect at any time from your settings, and your scan data is purged within 30 days. Full details are on our <a href="/trust.html">Trust Center</a>.</div></div>
+      <div class="faq-answer"><div class="faq-answer-inner">U4IA scans metadata — sender domains, subject lines, calendar attendees — to identify warm relationship paths. It does <strong>not</strong> read email bodies or message content. All data is encrypted at rest and in transit. You can disconnect at any time from your settings, and your scan data is purged within 30 days. Full details are on our <a href="/trust">Trust Center</a>.</div></div>
     </div>
     <div class="faq-item" data-audience="participant">
       <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false"><span>How much can I actually earn?</span><span class="faq-badge">Participants</span><svg class="faq-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -2360,7 +2360,7 @@ document.addEventListener('DOMContentLoaded', function() {
           tabs.map(function(tab, i) {
             return '<button class="trust-tab' + (active===i?' active':'') + '" data-idx="' + i + '">' + tabIcon(tab.icon) + ' ' + tab.label + '</button>';
           }).join('') +
-          '<a href="/trust.html" class="trust-tab-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Trust Center</a>' +
+          '<a href="/trust" class="trust-tab-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Trust Center</a>' +
         '</div>' +
         '<div class="trust-grid">' +
           tabs[active].items.map(function(item) {

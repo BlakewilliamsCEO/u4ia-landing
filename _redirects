@@ -1,5 +1,10 @@
-/privacy.html  /privacy  301
-/support.html  /support  301
-/signup  https://admin.u4ia.ai/signup  302
-/login   https://admin.u4ia.ai         302
-/join    https://admin.u4ia.ai/signup   302
+/privacy.html /privacy 301
+/terms.html /terms 301
+/about.html /about 301
+/trust.html /trust 301
+/how-it-works.html /how-it-works 301
+/support.html /support 301
+/.html / 404
+/signup https://admin.u4ia.ai/signup 302
+/login https://admin.u4ia.ai 302
+/join https://admin.u4ia.ai/signup 302

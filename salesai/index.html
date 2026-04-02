@@ -2301,7 +2301,7 @@
   /* ============================================
      SLIDE 21 — PROFORMA TABLE (finance style)
      ============================================ */
-  #slide-20 {
+  #slide-22 {
     background: #FAFAFA !important;
   }
   .pf-table-wrap {
@@ -2352,12 +2352,12 @@
   }
   .pf-table-note strong { color: #444; font-weight: 600; }
   /* Override layout colors for white slide */
-  #slide-20 .ph-eyebrow { color: #0A8F3C; }
-  #slide-20 .ph-title { color: #111; font-size: 40px; }
-  #slide-20 .ph-principle { color: #888; }
-  #slide-20 .nav-back { color: #999; }
-  #slide-20 .btn-green { background: #0A8F3C; }
-  #slide-20 .ph-bottom { border-top: 1px solid #E0E0E0; padding-top: 16px; }
+  #slide-22 .ph-eyebrow { color: #0A8F3C; }
+  #slide-22 .ph-title { color: #111; font-size: 40px; }
+  #slide-22 .ph-principle { color: #888; }
+  #slide-22 .nav-back { color: #999; }
+  #slide-22 .btn-green { background: #0A8F3C; }
+  #slide-22 .ph-bottom { border-top: 1px solid #E0E0E0; padding-top: 16px; }
   .slide.active .pf-table-wrap { opacity: 0; animation: fadeUp 0.6s ease-out 0.2s forwards; }
 
   /* ============================================
@@ -3504,9 +3504,342 @@
   </div>
 
   <!-- ==========================================
-       SLIDE 19 — SECTION TITLE: COHORT EXPANSION
+       SLIDE 18 — PARTNER OPS WORKFLOW
        ========================================== -->
   <div class="slide" id="slide-18">
+    <div class="ph-layout" style="padding:40px 60px;">
+      <div>
+        <div class="ph-eyebrow">04 · Validation & First Revenue</div>
+        <h2 class="ph-title" style="font-size:36px; margin-bottom:4px;">Partner GTM Ops — The Execution Stack</h2>
+        <div class="ph-principle">Proven across 80+ implementations. We start lean and layer as friction dictates.</div>
+      </div>
+
+      <div style="flex:1; position:relative; display:flex; flex-direction:column; gap:0; min-height:0;">
+
+        <!-- Flow arrow background -->
+        <svg style="position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none;" preserveAspectRatio="none" viewBox="0 0 1200 500">
+          <defs>
+            <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#3EDE6F" stop-opacity="0.03"/>
+              <stop offset="50%" stop-color="#3EDE6F" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#3EDE6F" stop-opacity="0.12"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="1200" height="500" rx="12" fill="url(#flowGrad)"/>
+          <!-- Horizontal flow arrows -->
+          <line x1="232" y1="250" x2="1180" y2="250" stroke="#3EDE6F" stroke-width="1" stroke-opacity="0.1" stroke-dasharray="6,4"/>
+        </svg>
+
+        <!-- 5-lane workflow -->
+        <div style="position:relative; z-index:1; display:grid; grid-template-columns:repeat(5,1fr); gap:12px; flex:1; padding:16px 12px;">
+
+          <!-- Lane 1: IDENTIFY -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="text-align:center; padding:10px 0; border-bottom:2px solid var(--green);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Identify</div>
+              <div style="font-size:14px; color:var(--white-30); margin-top:2px;">Who to target</div>
+            </div>
+            <div style="border:1px solid var(--white-10); border-radius:8px; padding:12px; background:rgba(255,255,255,0.02); flex:1; display:flex; flex-direction:column; gap:10px;">
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:15px; font-weight:600; color:var(--white);">PartnerStack</div>
+                <div style="font-size:13px; color:var(--white-30);">Partner portal + deal reg</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Crossbeam / Reveal</div>
+                <div style="font-size:13px; color:var(--white-30);">Account overlap mapping</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Apollo.io</div>
+                <div style="font-size:13px; color:var(--white-30);">Contact sourcing</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Clay</div>
+                <div style="font-size:13px; color:var(--white-30);">Company + contact enrichment</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lane 2: ENRICH -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="text-align:center; padding:10px 0; border-bottom:2px solid var(--green);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Enrich + Segment</div>
+              <div style="font-size:14px; color:var(--white-30); margin-top:2px;">Build the picture</div>
+            </div>
+            <div style="border:1px solid var(--white-10); border-radius:8px; padding:12px; background:rgba(255,255,255,0.02); flex:1; display:flex; flex-direction:column; gap:10px;">
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">HubSpot CRM</div>
+                <div style="font-size:13px; color:var(--white-30);">Company + contact records</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">LinkedIn Sales Nav</div>
+                <div style="font-size:13px; color:var(--white-30);">Org structure + signals</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Common Room</div>
+                <div style="font-size:13px; color:var(--white-30);">Signal exchange + intent</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">HubSpot Lists</div>
+                <div style="font-size:13px; color:var(--white-30);">Segmented campaign targets</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lane 3: ENGAGE -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="text-align:center; padding:10px 0; border-bottom:2px solid var(--green);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Engage</div>
+              <div style="font-size:14px; color:var(--white-30); margin-top:2px;">Start conversations</div>
+            </div>
+            <div style="border:1px solid var(--white-10); border-radius:8px; padding:12px; background:rgba(255,255,255,0.02); flex:1; display:flex; flex-direction:column; gap:10px;">
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Outbound Email</div>
+                <div style="font-size:13px; color:var(--white-30);">Sequenced partner outreach</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">LinkedIn Messaging</div>
+                <div style="font-size:13px; color:var(--white-30);">Direct + automated</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Contact-Based Ads</div>
+                <div style="font-size:13px; color:var(--white-30);">Influ2 / targeted surround</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Sendspark</div>
+                <div style="font-size:13px; color:var(--white-30);">Dynamic video for partners</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lane 4: CONVERT -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="text-align:center; padding:10px 0; border-bottom:2px solid var(--green);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Convert</div>
+              <div style="font-size:14px; color:var(--white-30); margin-top:2px;">Run the motion</div>
+            </div>
+            <div style="border:1px solid var(--white-10); border-radius:8px; padding:12px; background:rgba(255,255,255,0.02); flex:1; display:flex; flex-direction:column; gap:10px;">
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">HubSpot Deals</div>
+                <div style="font-size:13px; color:var(--white-30);">Pipeline tracking + attribution</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Co-Selling Motion</div>
+                <div style="font-size:13px; color:var(--white-30);">Joint demos + deal support</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Deal Registration</div>
+                <div style="font-size:13px; color:var(--white-30);">PartnerStack automated</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Co-Marketing</div>
+                <div style="font-size:13px; color:var(--white-30);">Joint content + campaigns</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Instantly</div>
+                <div style="font-size:13px; color:var(--white-30);">Email on behalf of partners</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">HeyReach</div>
+                <div style="font-size:13px; color:var(--white-30);">LinkedIn on behalf of partners</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lane 5: OPERATE -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="text-align:center; padding:10px 0; border-bottom:2px solid var(--green);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Operate + Scale</div>
+              <div style="font-size:14px; color:var(--white-30); margin-top:2px;">Systematize</div>
+            </div>
+            <div style="border:1px solid var(--white-10); border-radius:8px; padding:12px; background:rgba(255,255,255,0.02); flex:1; display:flex; flex-direction:column; gap:10px;">
+              <div style="padding:10px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Automated Onboarding</div>
+                <div style="font-size:13px; color:var(--white-30);">30 min, not 30 days</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Enablement Hub</div>
+                <div style="font-size:13px; color:var(--white-30);">Playbooks, assets, objection guides</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Partner Dashboards</div>
+                <div style="font-size:13px; color:var(--white-30);">Performance + attribution</div>
+              </div>
+              <div style="padding:10px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;">
+                <div style="font-size:16px; font-weight:600; color:var(--white);">Payout Processing</div>
+                <div style="font-size:13px; color:var(--white-30);">PartnerStack automated rev share</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Claude Code bar spanning all lanes -->
+          <div style="grid-column:1/-1; background:linear-gradient(90deg, rgba(62,222,111,0.06), rgba(62,222,111,0.12), rgba(62,222,111,0.06)); border:1px solid rgba(62,222,111,0.25); border-radius:8px; padding:12px 20px; display:flex; align-items:center; justify-content:center; gap:16px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px rgba(62,222,111,0.5); flex-shrink:0;"></div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--green);">Claude Code — Orchestration Layer</div>
+            <div style="font-size:13px; color:var(--white-60);">Automation, data piping, workflow glue, and rapid iteration across the entire stack</div>
+            <div style="width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px rgba(62,222,111,0.5); flex-shrink:0;"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="font-size:14px; color:var(--white-30); padding-top:8px;"><span style="color:var(--green);">Green border = already in place or day-one priority.</span> Everything else layers in as the motion produces friction. Stack proven across 80+ partner GTM implementations.</div>
+
+
+
+      <div class="ph-bottom">
+        <button class="nav-back" data-nav="prev">&#8592;&nbsp; Back</button>
+        <button class="btn-green" data-nav="next">
+          The Workflow <span class="arrow">&#8594;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SLIDE 19 — PARTNER OPS WORKFLOW (DATA FLOW)
+       ========================================== -->
+  <div class="slide" id="slide-19">
+    <div class="ph-layout" style="padding:40px 60px; overflow-y:auto;">
+      <div>
+        <div class="ph-eyebrow">04 · Validation & First Revenue</div>
+        <h2 class="ph-title" style="font-size:36px; margin-bottom:4px;">How Activity & Data Move Through the Stack</h2>
+        <div class="ph-principle">One partner. End to end. Every handoff, every tool, every output.</div>
+      </div>
+
+      <div style="position:relative; padding-left:60px;">
+
+        <!-- Vertical flow line -->
+        <div style="position:absolute; left:28px; top:0; bottom:0; width:3px; background:linear-gradient(180deg, var(--green), rgba(62,222,111,0.3)); border-radius:2px;"></div>
+
+        <!-- STEP 1 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">1</div>
+          <div style="border:1px solid var(--white-10); border-radius:10px; padding:18px 24px; background:rgba(255,255,255,0.015);">
+            <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:10px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase;">Identify Target Partners</div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">PartnerStack</div><div style="font-size:12px; color:var(--white-30);">Pull existing partner list</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Crossbeam</div><div style="font-size:12px; color:var(--white-30);">Map account overlaps</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Apollo.io</div><div style="font-size:12px; color:var(--white-30);">Source decision-maker contacts</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Clay</div><div style="font-size:12px; color:var(--white-30);">Enrich: headcount, titles, traffic, tech</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Enriched target list → HubSpot</div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">2</div>
+          <div style="border:1px solid var(--white-10); border-radius:10px; padding:18px 24px; background:rgba(255,255,255,0.015);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Build the Segment</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">LinkedIn Sales Nav</div><div style="font-size:12px; color:var(--white-30);">Validate org structure, count sellers/AMs</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HubSpot CRM</div><div style="font-size:12px; color:var(--white-30);">Create company + contact records</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Common Room</div><div style="font-size:12px; color:var(--white-30);">Layer intent signals + community activity</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HubSpot Lists</div><div style="font-size:12px; color:var(--white-30);">Segment into campaign-ready lists</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Segmented lists ready for outbound</div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">3</div>
+          <div style="border:1px solid var(--white-10); border-radius:10px; padding:18px 24px; background:rgba(255,255,255,0.015);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Run Partner Outbound</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Instantly</div><div style="font-size:12px; color:var(--white-30);">Email sequences to partner prospects</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HeyReach</div><div style="font-size:12px; color:var(--white-30);">LinkedIn messaging sequences</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Influ2</div><div style="font-size:12px; color:var(--white-30);">Contact-based ads surrounding targets</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Sendspark</div><div style="font-size:12px; color:var(--white-30);">Dynamic video for warm follow-ups</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Meetings booked with interested partners</div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">4</div>
+          <div style="border:1px solid rgba(62,222,111,0.2); border-radius:10px; padding:18px 24px; background:rgba(62,222,111,0.03);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Recruit & Activate Partner</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Meeting</div><div style="font-size:12px; color:var(--white-30);">Sell the opportunity, not the program</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">PartnerStack</div><div style="font-size:12px; color:var(--white-30);">Auto onboard: DocuSign, sandbox, portal in 30 min</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Slack</div><div style="font-size:12px; color:var(--white-30);">Private channel created — direct line</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Signed partner, ready to co-execute</div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">5</div>
+          <div style="border:1px solid rgba(62,222,111,0.2); border-radius:10px; padding:18px 24px; background:rgba(62,222,111,0.03);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Execute on Behalf of Partner — Zero Lift</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Partner's Client List</div><div style="font-size:12px; color:var(--white-30);">They share their book or we source from it</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Instantly</div><div style="font-size:12px; color:var(--white-30);">Email campaigns to their clients, on their behalf</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HeyReach</div><div style="font-size:12px; color:var(--white-30);">LinkedIn to their clients, on their behalf</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HubSpot</div><div style="font-size:12px; color:var(--white-30);">Track opportunities, attribute to partner</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Meetings booked with partner's clients — they did nothing</div>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div style="position:relative; margin-bottom:24px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">6</div>
+          <div style="border:1px solid var(--white-10); border-radius:10px; padding:18px 24px; background:rgba(255,255,255,0.015);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Close & Attribute</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">HubSpot Deals</div><div style="font-size:12px; color:var(--white-30);">Pipeline management + progression</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Co-Selling</div><div style="font-size:12px; color:var(--white-30);">Joint demos with partner present</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">PartnerStack</div><div style="font-size:12px; color:var(--white-30);">Automated deal registration + attribution</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Closed/won deal, attributed to partner, revenue recognized</div>
+          </div>
+        </div>
+
+        <!-- STEP 7 -->
+        <div style="position:relative; margin-bottom:16px;">
+          <div style="position:absolute; left:-48px; top:8px; width:24px; height:24px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--dark);">7</div>
+          <div style="border:1px solid rgba(62,222,111,0.25); border-radius:10px; padding:18px 24px; background:rgba(62,222,111,0.05);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-bottom:10px;">Payout & Compound</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px;">
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">PartnerStack</div><div style="font-size:12px; color:var(--white-30);">Automated rev share calc + payout by 15th</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Partner Dashboard</div><div style="font-size:12px; color:var(--white-30);">Performance visibility — they see the money</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--white-10); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Signal → Common Room</div><div style="font-size:12px; color:var(--white-30);">Learning loops back into intelligence layer</div></div>
+              <div style="padding:8px 12px; border-left:3px solid var(--green); background:rgba(62,222,111,0.04); border-radius:0 6px 6px 0;"><div style="font-size:14px; font-weight:600; color:var(--white);">Partner asks for more</div><div style="font-size:12px; color:var(--white-30);">They saw the outcome → repeat → certification pull</div></div>
+            </div>
+            <div style="font-size:13px; color:var(--green); font-family:'IBM Plex Mono',monospace;">&#8594; OUTPUT: Partner sees money, repeats behavior, asks for enablement. The flywheel turns.</div>
+          </div>
+        </div>
+
+        <!-- Claude Code bar -->
+        <div style="position:relative; margin-top:8px;">
+          <div style="position:absolute; left:-48px; top:12px; width:24px; height:24px; border-radius:50%; background:var(--green); box-shadow:0 0 12px rgba(62,222,111,0.5); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--dark);">&#9889;</div>
+          <div style="background:linear-gradient(90deg, rgba(62,222,111,0.06), rgba(62,222,111,0.12), rgba(62,222,111,0.06)); border:1px solid rgba(62,222,111,0.3); border-radius:8px; padding:14px 24px; display:flex; align-items:center; gap:16px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--green);">Claude Code</div>
+            <div style="font-size:14px; color:var(--white-60);">Orchestrates every handoff. Automates the piping between tools. Builds custom workflows in hours, not weeks. This is why one person can operate the entire stack.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ph-bottom" style="padding-top:16px;">
+        <button class="nav-back" data-nav="prev">&#8592;&nbsp; Back</button>
+        <button class="btn-green" data-nav="next">
+          Cohort Expansion <span class="arrow">&#8594;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SLIDE 20 — SECTION TITLE: COHORT EXPANSION
+       ========================================== -->
+  <div class="slide" id="slide-20">
     <div class="sec-bg"></div>
     <div class="sec-center">
       <div class="sec-eyebrow">05 · Cohort Expansion</div>
@@ -3524,7 +3857,7 @@
   <!-- ==========================================
        SLIDE 20 — DAYS 90-270 WORKFLOW
        ========================================== -->
-  <div class="slide" id="slide-19">
+  <div class="slide" id="slide-21">
     <div class="ph-layout">
       <div>
         <div class="ph-eyebrow">05 · Cohort Expansion</div>
@@ -3615,7 +3948,7 @@
   <!-- ==========================================
        SLIDE 21 — 9-MONTH PROFORMA
        ========================================== -->
-  <div class="slide" id="slide-20">
+  <div class="slide" id="slide-22">
     <div class="ph-layout" style="overflow-y:auto; padding-bottom:24px;">
       <div>
         <div class="ph-eyebrow">05 · Cohort Expansion</div>
@@ -3871,7 +4204,7 @@
   <!-- ==========================================
        SLIDE 22 — CODIFICATION
        ========================================== -->
-  <div class="slide" id="slide-21">
+  <div class="slide" id="slide-23">
     <div class="ph-layout">
       <div>
         <div class="ph-eyebrow">05 · Cohort Expansion</div>
@@ -3926,7 +4259,7 @@
   <!-- ==========================================
        SLIDE 23 — Q2 ROCKS
        ========================================== -->
-  <div class="slide" id="slide-22">
+  <div class="slide" id="slide-24">
     <div class="ph-layout">
       <div>
         <div class="ph-eyebrow">06 · Q2 Rocks & Next Steps</div>
@@ -3991,7 +4324,7 @@
   <!-- ==========================================
        SLIDE 24 — CLOSER
        ========================================== -->
-  <div class="slide" id="slide-23">
+  <div class="slide" id="slide-25">
     <div class="sec-bg"></div>
     <div class="fin-center">
       <div class="fin-line"><span>First 90 days:</span> prove it works.</div>
@@ -4008,7 +4341,7 @@
        ========================================== -->
   <script>
     let currentSlide = 1;
-    const totalSlides = 23;
+    const totalSlides = 25;
     const slides = document.querySelectorAll('.slide');
 
     document.querySelectorAll('[data-nav]').forEach(btn => {
